@@ -11,7 +11,6 @@ import { Image, TouchableOpacity } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 
-import Index from "~/app/resources";
 import Profile from "./profile";
 
 // const { Navigator } = createDrawerNavigator();
