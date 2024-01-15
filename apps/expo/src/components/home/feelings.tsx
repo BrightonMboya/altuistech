@@ -1,12 +1,14 @@
-import { FlatList, Image, View } from "react-native";
+import React, { useCallback, useRef } from "react";
+import { Image, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import P from "../ui/Text";
+import BottomSheet, { BottomSheetMethods } from "./bottom-sheets/BottomSheet";
+import BottomSheetScrollView from "./bottom-sheets/BottomSheetScrollView";
+import Lorem from "./bottom-sheets/Lorem";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const data = [
-  // {
-  //   id: 1,
-  //   name: "Happy",
-  // },
   {
     id: 2,
     name: "Calm",
@@ -39,12 +41,21 @@ function Card({ title, img }: { title: string; img: string }) {
 }
 
 export default function Feelings() {
+  const bottomSheetRef = useRef<BottomSheetMethods>(null);
+  const pressHandler = useCallback(() => {
+    bottomSheetRef.current?.expand();
+  }, []);
   return (
-    <View className="mt-5 h-[144px] w-[380px] rounded-md bg-[#f5f8fe] p-4 border-2 border-[#E4EDFF]">
+    <SafeAreaProvider>
+      <SafeAreaView  style={{flex: 1, backgroundColor: 'white'}}>
+    <View className="mt-5 h-[144px] w-[380px] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
       <P style="text-lg">How are you feeling today?</P>
 
-      <View className="flex flex-row space-x-5 mt-5">
-         <View className="flex flex-col items-center">
+      <View className="mt-5 flex flex-row space-x-5">
+        <TouchableOpacity
+          className="flex flex-col items-center"
+          onPress={() => pressHandler()}
+        >
           <Image
             source={require("../../../assets/imgs/emojis/happy.png")}
             className="h-12 w-12 object-cover"
@@ -53,7 +64,7 @@ export default function Feelings() {
             }}
           />
           <P>Happy</P>
-        </View>
+        </TouchableOpacity>
         <View className="flex flex-col items-center">
           <Image
             source={require("../../../assets/imgs/emojis/calm.png")}
@@ -99,19 +110,17 @@ export default function Feelings() {
         </View>
       </View>
 
-      {/* <FlatList
-        data={data}
-        renderItem={({ item }) => <Card title={item.name} img={item.img} />}
-        keyExtractor={(_, index) => index.toString()}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{
-          // paddingHorizontal: 10,
-          marginTop: 10,
-          gap: 5,
-        }}
-        horizontal={true}
-      /> */}
-      <View></View>
+      <BottomSheetScrollView
+        ref={bottomSheetRef}
+        snapTo={"70%"}
+        backgroundColor={"white"}
+        backDropColor={"black"}
+      >
+       <P>Helo World</P>
+      </BottomSheetScrollView>
+
     </View>
+    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }

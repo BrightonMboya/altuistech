@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import "text-encoding-polyfill";
 import React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
   // This example uses a basic Layout component, but you can use any Layout.
@@ -46,18 +47,19 @@ const RootLayout = () => {
       <SignedOut>
         <TRPCProvider>
           <SafeAreaProvider className="relative">
-            {/*
+            <GestureHandlerRootView style={{ flex: 1 }}>
+              {/*
           The Stack component displays the current page.
           It also allows you to configure your screens 
         */}
-            <Stack />
-       
-            <StatusBar />
-            <BottomTab />
+              <Stack />
+
+              <StatusBar />
+              <BottomTab />
+            </GestureHandlerRootView>
           </SafeAreaProvider>
         </TRPCProvider>
       </SignedOut>
-      
     </ClerkProvider>
   );
 };

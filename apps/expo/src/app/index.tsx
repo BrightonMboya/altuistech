@@ -21,8 +21,8 @@ const Index = () => {
         <ProfileCard />
         <BookSession />
         <Feelings />
-        <Services />
-        <Resources />
+        {/* <Services />
+        <Resources /> */}
       </ScrollView>
     </SafeAreaView>
   );
