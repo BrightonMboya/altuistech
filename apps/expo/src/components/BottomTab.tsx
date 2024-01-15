@@ -5,6 +5,8 @@ import IoniIcons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { usePathname, useRouter } from "expo-router";
 
+import P from "./ui/Text";
+
 const BottomTab: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -12,39 +14,34 @@ const BottomTab: React.FC = () => {
   return (
     <>
       <View className="] absolute bottom-0 flex h-[60px] w-full flex-row items-center justify-around border-t-[1px] border-[#ddd] bg-white">
-        <TouchableHighlight
+        <TouchableOpacity
           onPress={() => {
             router.push("/");
           }}
         >
-          <AntDesign
-            name="home"
-            size={25}
-            color={pathname === "/" ? "#000" : "#ddd"}
-          />
-        </TouchableHighlight>
-        <TouchableOpacity
-          onPress={() => {
-            router.push("/events");
-          }}
-        >
-          <IoniIcons
-            name="people-outline"
-            size={25}
-            color={pathname === "/events" ? "#000" : "#ddd"}
-          />
+          <View className="flex flex-col items-center">
+            <AntDesign
+              name="home"
+              size={25}
+              color={pathname === "/" ? "#000" : "#ddd"}
+            />
+            <P style={`${pathname === "/" ? "text-[#000]" : "text-[#ddd]"}`}>Home</P>
+          </View>
         </TouchableOpacity>
 
         <TouchableHighlight
           onPress={() => {
-            router.push("/post/add");
+            router.push("/resources");
           }}
         >
-          <AntDesign
-            name="pluscircleo"
-            size={25}
-            color={pathname === "/post/add" ? "#000" : "#ddd"}
-          />
+          <View className="flex flex-col items-center">
+            <AntDesign
+              name="pluscircleo"
+              size={25}
+              color={pathname === "/resources" ? "#000" : "#ddd"}
+            />
+            <P>Resources</P>
+          </View>
         </TouchableHighlight>
 
         <TouchableHighlight
