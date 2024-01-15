@@ -5,12 +5,12 @@ import H1 from "../ui/Heading";
 
 export function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   return (
-    <View className="w-[200px] overflow-hidden mt-1">
+    <View className="w-[120px] h-[150px] overflow-hidden mt-1">
       <Image
         source={{
           uri: imgSrc,
         }}
-        className="h-[180px] w-[200px] rounded-md"
+        className="w-[120px] h-[120px] rounded-md"
       />
       <P style="pt-2">{title}</P>
     </View>
@@ -41,7 +41,7 @@ export const data = [
 export default function Resources() {
   return (
     <View>
-      <H1 styling="text-2xl mt-5">Resources for You</H1>
+      <H1 styling="text-2xl mt-10">Resources for You</H1>
 
       <FlatList
         data={data}
