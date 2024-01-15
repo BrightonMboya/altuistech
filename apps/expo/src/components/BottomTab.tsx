@@ -25,11 +25,13 @@ const BottomTab: React.FC = () => {
               size={25}
               color={pathname === "/" ? "#1960F2" : "#ddd"}
             />
-            <P style={`${pathname === "/" ? "text-[#1960F2]" : "text-[#ddd]"}`}>Home</P>
+            <P style={`${pathname === "/" ? "text-[#1960F2]" : "text-[#ddd]"}`}>
+              Home
+            </P>
           </View>
         </TouchableOpacity>
 
-        <TouchableHighlight
+        <TouchableOpacity
           onPress={() => {
             router.push("/resources");
           }}
@@ -40,9 +42,15 @@ const BottomTab: React.FC = () => {
               size={25}
               color={pathname === "/resources" ? "#1960F2" : "#ddd"}
             />
-            <P style={`${pathname === "/resources" ? "text-[#1960F2]" : "text-[#ddd]"}`}>Resources</P>
+            <P
+              style={`${
+                pathname === "/resources" ? "text-[#1960F2]" : "text-[#ddd]"
+              }`}
+            >
+              Resources
+            </P>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
         <TouchableHighlight
           onPress={() => {

@@ -60,7 +60,7 @@ const data = [
 
 export default function Services() {
   return (
-    <View>
+    <View className="mt-5">
       <H1 styling="text-2xl mt-5">Services for You</H1>
 
       <View className="flex flex-row gap-2 pt-3">

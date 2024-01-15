@@ -1,6 +1,7 @@
 import { FlatList, Image, View } from "react-native";
 
 import P from "../ui/Text";
+import H1 from "../ui/Heading";
 
 export function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   return (
@@ -40,9 +41,7 @@ export const data = [
 export default function Resources() {
   return (
     <View>
-      <P style="text-xl mt-5" textType="medium">
-        Resources for You
-      </P>
+      <H1 styling="text-2xl mt-5">Resources for You</H1>
 
       <FlatList
         data={data}
@@ -52,6 +51,7 @@ export default function Resources() {
         contentContainerStyle={{
           // paddingHorizontal: 10,
           gap: 5,
+          marginTop: 5
         }}
         horizontal={true}
       />
