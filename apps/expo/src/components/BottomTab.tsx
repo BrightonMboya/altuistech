@@ -23,9 +23,9 @@ const BottomTab: React.FC = () => {
             <AntDesign
               name="home"
               size={25}
-              color={pathname === "/" ? "#000" : "#ddd"}
+              color={pathname === "/" ? "#1960F2" : "#ddd"}
             />
-            <P style={`${pathname === "/" ? "text-[#000]" : "text-[#ddd]"}`}>Home</P>
+            <P style={`${pathname === "/" ? "text-[#1960F2]" : "text-[#ddd]"}`}>Home</P>
           </View>
         </TouchableOpacity>
 
@@ -38,9 +38,9 @@ const BottomTab: React.FC = () => {
             <AntDesign
               name="pluscircleo"
               size={25}
-              color={pathname === "/resources" ? "#000" : "#ddd"}
+              color={pathname === "/resources" ? "#1960F2" : "#ddd"}
             />
-            <P>Resources</P>
+            <P style={`${pathname === "/resources" ? "text-[#1960F2]" : "text-[#ddd]"}`}>Resources</P>
           </View>
         </TouchableHighlight>
 

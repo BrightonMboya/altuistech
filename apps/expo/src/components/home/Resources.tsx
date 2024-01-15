@@ -2,9 +2,9 @@ import { FlatList, Image, View } from "react-native";
 
 import P from "../ui/Text";
 
-function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
+export function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   return (
-    <View className="w-[200px] overflow-hidden">
+    <View className="w-[200px] overflow-hidden mt-1">
       <Image
         source={{
           uri: imgSrc,
@@ -16,7 +16,7 @@ function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   );
 }
 
-const data = [
+export const data = [
   {
     id: 1,
     title: "Secret to a long distance relationships",

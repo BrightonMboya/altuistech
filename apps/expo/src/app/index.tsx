@@ -4,8 +4,9 @@ import { Stack } from "expo-router";
 
 import ProfileCard from "~/components/home/ProfileCard";
 import Resources from "~/components/home/Resources";
-import Services from "~/components/home/services";
+import BookSession from "~/components/home/book-session";
 import Feelings from "~/components/home/feelings";
+import Services from "~/components/home/services";
 
 const Index = () => {
   return (
@@ -18,7 +19,8 @@ const Index = () => {
           }}
         />
         <ProfileCard />
-        <Feelings/>
+        <BookSession />
+        <Feelings />
         <Services />
         <Resources />
       </ScrollView>

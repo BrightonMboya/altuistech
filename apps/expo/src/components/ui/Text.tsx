@@ -1,15 +1,11 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import {
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_700Bold,
-  Poppins_800ExtraBold,
-  Poppins_900Black,
-  useFonts,
-} from "@expo-google-fonts/poppins";
+import { Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold, Poppins_800ExtraBold, Poppins_900Black, useFonts } from "@expo-google-fonts/poppins";
+
+
+
+
 
 //prevents splash screen from auto hiding fonts
 SplashScreen.preventAutoHideAsync();
@@ -17,7 +13,14 @@ SplashScreen.preventAutoHideAsync();
 const P: React.FC<{
   children: React.ReactNode;
   style?: string;
-  textType?: "regular" | "medium" | "semiBold" | "bold" | "extraBold" | "light";
+  textType?:
+    | "regular"
+    | "medium"
+    | "semiBold"
+    | "bold"
+    | "extraBold"
+    | "light"
+    | "heading";
 }> = ({ children, style, textType }) => {
   let textStyle: {};
   switch (textType) {
@@ -26,6 +29,10 @@ const P: React.FC<{
       break;
     case "bold":
       textStyle = styles.bold;
+      break;
+
+    case "heading":
+      textStyle = styles.heading;
       break;
     case "light":
       textStyle = styles.light;
@@ -42,6 +49,7 @@ const P: React.FC<{
   const [fontsLoaded] = useFonts({
     regular: Poppins_400Regular,
     medium: Poppins_500Medium,
+    "clashDisplay-Bold": require("../../../assets/fonts/ClashDisplay-Bold.otf"),
     Poppins_600SemiBold,
     Poppins_700Bold,
     Poppins_800ExtraBold,
@@ -59,7 +67,9 @@ const P: React.FC<{
     return null;
   }
   return (
-    <Text className={`${style} `} style={textStyle}>
+    <Text className={`${style} `} style={textStyle}
+
+    >
       {children}
     </Text>
   );
@@ -82,5 +92,8 @@ const styles = StyleSheet.create({
   },
   medium: {
     fontFamily: "medium",
+  },
+  heading: {
+    fontFamily: "ClashDisplay-Bold",
   },
 });
