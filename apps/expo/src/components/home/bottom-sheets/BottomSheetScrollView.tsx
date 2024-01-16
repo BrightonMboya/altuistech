@@ -4,7 +4,7 @@ import React, {
   useImperativeHandle,
   useState,
 } from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
   AnimatedScrollViewProps,
@@ -173,22 +173,24 @@ const BottomSheetScrollView = forwardRef<BottomSheetMethods, Props>(
               },
             ]}
           >
-            <View style={styles.lineContainer}>
-              <View style={styles.line} />
-            </View>
-            <GestureDetector
-              gesture={Gesture.Simultaneous(scrollViewGesture, panScroll)}
-            >
-              <Animated.ScrollView
-                {...rest}
-                scrollEnabled={enableScroll}
-                bounces={false}
-                scrollEventThrottle={16}
-                onScroll={onScroll}
+            <ScrollView>
+              <View style={styles.lineContainer}>
+                <View style={styles.line} />
+              </View>
+              <GestureDetector
+                gesture={Gesture.Simultaneous(scrollViewGesture, panScroll)}
               >
-                {children}
-              </Animated.ScrollView>
-            </GestureDetector>
+                <Animated.ScrollView
+                  {...rest}
+                  scrollEnabled={enableScroll}
+                  bounces={false}
+                  scrollEventThrottle={16}
+                  onScroll={onScroll}
+                >
+                  {children}
+                </Animated.ScrollView>
+              </GestureDetector>
+            </ScrollView>
           </Animated.View>
         </GestureDetector>
       </>

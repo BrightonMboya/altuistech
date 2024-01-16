@@ -1,7 +1,8 @@
 import React, { useCallback, useRef } from "react";
-import { Button, ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { Stack } from "expo-router";
 
 import ProfileCard from "~/components/home/ProfileCard";
 import Resources from "~/components/home/Resources";
@@ -10,10 +11,10 @@ import BottomSheet, {
   BottomSheetMethods,
 } from "~/components/home/bottom-sheets/BottomSheet";
 import BottomSheetScrollView from "~/components/home/bottom-sheets/BottomSheetScrollView";
+import HappyBottomSheet from "~/components/home/bottom-sheets/HappyBottomSheet";
 import Lorem from "~/components/home/bottom-sheets/Lorem";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
-
 
 const BottomSheetScreenScroll = () => {
   const bottomSheetRef = useRef<BottomSheetMethods>(null);
@@ -37,21 +38,22 @@ const BottomSheetScreenScroll = () => {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaView style={styles.container} className="pl-5">
+        <SafeAreaView style={styles.container} className="pl-5 pt-5">
+          <Stack.Screen
+            options={{
+              headerShown: false,
+            }}
+          />
           <ScrollView>
             <ProfileCard />
             <BookSession />
-            {/* <Button title="Blank" onPress={() => pressHandler()} />
-          <ExampleButton pressHandler2={pressHandler2} />
-          <Button title="ScrollView" onPress={() => pressHandler3()} />
-          <Button title="Flatlist" onPress={() => pressHandler4()} /> */}
             <Feelings happyHandler={pressHandler2} />
             <Services />
             <Resources />
           </ScrollView>
         </SafeAreaView>
-
-        <BottomSheet
+        <HappyBottomSheet happyBottomRef={bottomSheetRef2} />
+        {/* <BottomSheet
           ref={bottomSheetRef}
           snapTo={"80%"}
           backgroundColor={"white"}
@@ -64,15 +66,15 @@ const BottomSheetScreenScroll = () => {
           backDropColor={"black"}
         >
           <Lorem />
-        </BottomSheet>
-        <BottomSheetScrollView
+        </BottomSheet> */}
+        {/* <BottomSheetScrollView
           ref={bottomSheetRef3}
           snapTo={"50%"}
           backgroundColor={"white"}
           backDropColor={"black"}
         >
           <Lorem />
-        </BottomSheetScrollView>
+        </BottomSheetScrollView> */}
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
