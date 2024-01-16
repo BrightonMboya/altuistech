@@ -5,3 +5,4 @@ export { default as WorriedBottomSheet } from "./WorriedBottomSheet";
 export { default as BackDrop } from "./BackDrop";
 export { default as BottomSheetScrollView } from "./BottomSheetScrollView";
 export { default as AngryBottomSheet } from "./AngryBottomSheet";
+export { default as SadBottomSheet } from "./SadBottomSheet";
