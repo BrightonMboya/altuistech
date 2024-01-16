@@ -18,11 +18,13 @@ interface bottomSheetRefProps {
   happyHandler: () => void;
   calmHandler: () => void;
   worriedHandler: () => void;
+  angryHandler: () => void;
 }
 export default function Feelings({
   happyHandler,
   calmHandler,
   worriedHandler,
+  angryHandler,
 }: bottomSheetRefProps) {
   return (
     <SafeAreaProvider>
@@ -72,7 +74,10 @@ export default function Feelings({
               <P>Worried</P>
             </TouchableOpacity>
 
-            <View className="flex flex-col items-center">
+            <TouchableOpacity
+              className="flex flex-col items-center"
+              onPress={() => angryHandler()}
+            >
               <Image
                 source={require("../../../assets/imgs/emojis/angry.png")}
                 className="h-12 w-12 object-cover"
@@ -81,7 +86,7 @@ export default function Feelings({
                 }}
               />
               <P>Angry</P>
-            </View>
+            </TouchableOpacity>
 
             <View className="flex flex-col items-center">
               <Image
