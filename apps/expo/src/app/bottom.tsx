@@ -44,10 +44,6 @@ const BottomSheetScreenScroll = () => {
           <ScrollView>
             <ProfileCard />
             <BookSession />
-            {/* <Button title="Blank" onPress={() => pressHandler()} />
-          <ExampleButton pressHandler2={pressHandler2} />
-          <Button title="ScrollView" onPress={() => pressHandler3()} />
-          <Button title="Flatlist" onPress={() => pressHandler4()} /> */}
             <Feelings happyHandler={pressHandler2} />
             <Services />
             <Resources />

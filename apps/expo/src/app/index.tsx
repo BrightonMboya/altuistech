@@ -11,28 +11,22 @@ import BottomSheet, {
   BottomSheetMethods,
 } from "~/components/home/bottom-sheets/BottomSheet";
 import BottomSheetScrollView from "~/components/home/bottom-sheets/BottomSheetScrollView";
+import CalmBottomSheet from "~/components/home/bottom-sheets/CalmBottomSheet";
 import HappyBottomSheet from "~/components/home/bottom-sheets/HappyBottomSheet";
 import Lorem from "~/components/home/bottom-sheets/Lorem";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
 
 const BottomSheetScreenScroll = () => {
-  const bottomSheetRef = useRef<BottomSheetMethods>(null);
-  const bottomSheetRef2 = useRef<BottomSheetMethods>(null);
-  const bottomSheetRef3 = useRef<BottomSheetMethods>(null);
-  const bottomSheetRef4 = useRef<BottomSheetMethods>(null);
+  const happyBottomSheetRef = useRef<BottomSheetMethods>(null);
+  const calmBottomSheetRef = useRef<BottomSheetMethods>(null);
 
-  const pressHandler = useCallback(() => {
-    bottomSheetRef.current?.expand();
+  const happyBottomSheetHandler = useCallback(() => {
+    happyBottomSheetRef.current?.expand();
   }, []);
-  const pressHandler2 = useCallback(() => {
-    bottomSheetRef2.current?.expand();
-  }, []);
-  const pressHandler3 = useCallback(() => {
-    bottomSheetRef3.current?.expand();
-  }, []);
-  const pressHandler4 = useCallback(() => {
-    bottomSheetRef4.current?.expand();
+
+  const calmBottomSheetHandler = useCallback(() => {
+    calmBottomSheetRef.current?.expand();
   }, []);
 
   return (
@@ -47,34 +41,16 @@ const BottomSheetScreenScroll = () => {
           <ScrollView>
             <ProfileCard />
             <BookSession />
-            <Feelings happyHandler={pressHandler2} />
+            <Feelings
+              happyHandler={happyBottomSheetHandler}
+              calmHandler={calmBottomSheetHandler}
+            />
             <Services />
             <Resources />
           </ScrollView>
         </SafeAreaView>
-        <HappyBottomSheet happyBottomRef={bottomSheetRef2} />
-        {/* <BottomSheet
-          ref={bottomSheetRef}
-          snapTo={"80%"}
-          backgroundColor={"white"}
-          backDropColor={"black"}
-        />
-        <BottomSheet
-          ref={bottomSheetRef2}
-          snapTo={"80%"}
-          backgroundColor={"#ffe7cf"}
-          backDropColor={"black"}
-        >
-          <Lorem />
-        </BottomSheet> */}
-        {/* <BottomSheetScrollView
-          ref={bottomSheetRef3}
-          snapTo={"50%"}
-          backgroundColor={"white"}
-          backDropColor={"black"}
-        >
-          <Lorem />
-        </BottomSheetScrollView> */}
+        <HappyBottomSheet happyBottomRef={happyBottomSheetRef} />
+        <CalmBottomSheet calmBottomRef={calmBottomSheetRef} />
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

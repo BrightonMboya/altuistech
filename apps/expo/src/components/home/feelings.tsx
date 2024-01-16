@@ -42,8 +42,12 @@ function Card({ title, img }: { title: string; img: string }) {
 
 interface bottomSheetRefProps {
   happyHandler: () => void;
+  calmHandler: () => void;
 }
-export default function Feelings({ happyHandler }: bottomSheetRefProps) {
+export default function Feelings({
+  happyHandler,
+  calmHandler,
+}: bottomSheetRefProps) {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
@@ -64,7 +68,10 @@ export default function Feelings({ happyHandler }: bottomSheetRefProps) {
               />
               <P>Happy</P>
             </TouchableOpacity>
-            <View className="flex flex-col items-center">
+            <TouchableOpacity
+              className="flex flex-col items-center"
+              onPress={() => calmHandler()}
+            >
               <Image
                 source={require("../../../assets/imgs/emojis/calm.png")}
                 className="h-12 w-12 object-cover"
@@ -73,9 +80,12 @@ export default function Feelings({ happyHandler }: bottomSheetRefProps) {
                 }}
               />
               <P>Calm</P>
-            </View>
+            </TouchableOpacity>
 
-            <View className="flex flex-col items-center">
+            <TouchableOpacity
+              className="flex flex-col items-center"
+              onPress={() => calmHandler()}
+            >
               <Image
                 source={require("../../../assets/imgs/emojis/worried.png")}
                 className="h-12 w-12 object-cover"
@@ -84,7 +94,7 @@ export default function Feelings({ happyHandler }: bottomSheetRefProps) {
                 }}
               />
               <P>Worried</P>
-            </View>
+            </TouchableOpacity>
 
             <View className="flex flex-col items-center">
               <Image
