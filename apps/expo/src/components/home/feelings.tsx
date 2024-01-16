@@ -4,32 +4,6 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import P from "../ui/Text";
-import BottomSheet, { BottomSheetMethods } from "./bottom-sheets/BottomSheet";
-import BottomSheetScrollView from "./bottom-sheets/BottomSheetScrollView";
-import Lorem from "./bottom-sheets/Lorem";
-
-const data = [
-  {
-    id: 2,
-    name: "Calm",
-    img: "../../../assets/imgs/emojis/calm.png",
-  },
-  {
-    id: 3,
-    name: "Worried",
-    img: "../../../assets/imgs/emojis/worried.png",
-  },
-  {
-    id: 4,
-    name: "Angry",
-    img: "../../../assets/imgs/emojis/angry.png",
-  },
-  {
-    id: 5,
-    name: "Sad",
-    img: "../../../assets/imgs/emojis/sad.png",
-  },
-];
 
 function Card({ title, img }: { title: string; img: string }) {
   return (
@@ -43,10 +17,12 @@ function Card({ title, img }: { title: string; img: string }) {
 interface bottomSheetRefProps {
   happyHandler: () => void;
   calmHandler: () => void;
+  worriedHandler: () => void;
 }
 export default function Feelings({
   happyHandler,
   calmHandler,
+  worriedHandler,
 }: bottomSheetRefProps) {
   return (
     <SafeAreaProvider>
@@ -84,7 +60,7 @@ export default function Feelings({
 
             <TouchableOpacity
               className="flex flex-col items-center"
-              onPress={() => calmHandler()}
+              onPress={() => worriedHandler()}
             >
               <Image
                 source={require("../../../assets/imgs/emojis/worried.png")}

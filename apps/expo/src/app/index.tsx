@@ -7,19 +7,22 @@ import { Stack } from "expo-router";
 import ProfileCard from "~/components/home/ProfileCard";
 import Resources from "~/components/home/Resources";
 import BookSession from "~/components/home/book-session";
+import {
+  BottomSheetScrollView,
+  CalmBottomSheet,
+  HappyBottomSheet,
+  WorriedBottomSheet,
+} from "~/components/home/bottom-sheets";
 import BottomSheet, {
   BottomSheetMethods,
 } from "~/components/home/bottom-sheets/BottomSheet";
-import BottomSheetScrollView from "~/components/home/bottom-sheets/BottomSheetScrollView";
-import CalmBottomSheet from "~/components/home/bottom-sheets/CalmBottomSheet";
-import HappyBottomSheet from "~/components/home/bottom-sheets/HappyBottomSheet";
-import Lorem from "~/components/home/bottom-sheets/Lorem";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
 
 const BottomSheetScreenScroll = () => {
   const happyBottomSheetRef = useRef<BottomSheetMethods>(null);
   const calmBottomSheetRef = useRef<BottomSheetMethods>(null);
+  const worriedBottomSheetRef = useRef<BottomSheetMethods>(null);
 
   const happyBottomSheetHandler = useCallback(() => {
     happyBottomSheetRef.current?.expand();
@@ -27,6 +30,10 @@ const BottomSheetScreenScroll = () => {
 
   const calmBottomSheetHandler = useCallback(() => {
     calmBottomSheetRef.current?.expand();
+  }, []);
+
+  const worriedBottomSheetHandler = useCallback(() => {
+    worriedBottomSheetRef.current?.expand();
   }, []);
 
   return (
@@ -44,6 +51,7 @@ const BottomSheetScreenScroll = () => {
             <Feelings
               happyHandler={happyBottomSheetHandler}
               calmHandler={calmBottomSheetHandler}
+              worriedHandler={worriedBottomSheetHandler}
             />
             <Services />
             <Resources />
@@ -51,6 +59,7 @@ const BottomSheetScreenScroll = () => {
         </SafeAreaView>
         <HappyBottomSheet happyBottomRef={happyBottomSheetRef} />
         <CalmBottomSheet calmBottomRef={calmBottomSheetRef} />
+        <WorriedBottomSheet worriedBottomRef={worriedBottomSheetRef} />
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
