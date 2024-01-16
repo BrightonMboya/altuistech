@@ -173,10 +173,12 @@ const BottomSheetScrollView = forwardRef<BottomSheetMethods, Props>(
               },
             ]}
           >
-            <ScrollView>
+            <ScrollView className="relative">
               <View style={styles.lineContainer}>
-                <View style={styles.line} />
+                <View className="absolute h-[5px] w-[124px] bg-white top-2 z-[100]" />
               </View>
+              <View className="absolute h-[170px] w-full rounded-t-[20px] bg-blue"/>
+              <View className="absolute h-[5px] w-[150px] bg-[#6D9DFF] top-3 z-[100] left-[33%] rounded-md" />
               <GestureDetector
                 gesture={Gesture.Simultaneous(scrollViewGesture, panScroll)}
               >
@@ -211,9 +213,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   line: {
-    width: 50,
-    height: 4,
-    backgroundColor: "black",
+    width: 124,
+    height: 6,
+    backgroundColor: "#6D9DFF",
     borderRadius: 20,
   },
 });
