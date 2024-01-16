@@ -52,17 +52,17 @@ const BottomTab: React.FC = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableHighlight
+        <TouchableOpacity
           onPress={() => {
-            router.push("/resources");
+            router.push("/bottom");
           }}
         >
           <MaterialCommunityIcons
             name="briefcase-edit-outline"
             size={25}
-            color={pathname === "/resources" ? "#000" : "#ddd"}
+            color={pathname === "/bottom" ? "#000" : "#ddd"}
           />
-        </TouchableHighlight>
+        </TouchableOpacity>
         <TouchableHighlight
           onPress={() => {
             router.push("/profile");

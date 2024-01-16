@@ -1,12 +1,12 @@
 import React, { useCallback, useRef } from "react";
 import { Image, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import P from "../ui/Text";
 import BottomSheet, { BottomSheetMethods } from "./bottom-sheets/BottomSheet";
 import BottomSheetScrollView from "./bottom-sheets/BottomSheetScrollView";
 import Lorem from "./bottom-sheets/Lorem";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const data = [
   {
@@ -40,87 +40,76 @@ function Card({ title, img }: { title: string; img: string }) {
   );
 }
 
-export default function Feelings() {
-  const bottomSheetRef = useRef<BottomSheetMethods>(null);
-  const pressHandler = useCallback(() => {
-    bottomSheetRef.current?.expand();
-  }, []);
+interface bottomSheetRefProps {
+  happyHandler: () => void;
+}
+export default function Feelings({ happyHandler }: bottomSheetRefProps) {
   return (
     <SafeAreaProvider>
-      <SafeAreaView  style={{flex: 1, backgroundColor: 'white'}}>
-    <View className="mt-5 h-[144px] w-[380px] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
-      <P style="text-lg">How are you feeling today?</P>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+        <View className="mt-5 h-[144px] w-[380px] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
+          <P style="text-lg">How are you feeling today?</P>
 
-      <View className="mt-5 flex flex-row space-x-5">
-        <TouchableOpacity
-          className="flex flex-col items-center"
-          onPress={() => pressHandler()}
-        >
-          <Image
-            source={require("../../../assets/imgs/emojis/happy.png")}
-            className="h-12 w-12 object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <P>Happy</P>
-        </TouchableOpacity>
-        <View className="flex flex-col items-center">
-          <Image
-            source={require("../../../assets/imgs/emojis/calm.png")}
-            className="h-12 w-12 object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <P>Calm</P>
+          <View className="mt-5 flex flex-row space-x-5">
+            <TouchableOpacity
+              className="flex flex-col items-center"
+              onPress={() => happyHandler()}
+            >
+              <Image
+                source={require("../../../assets/imgs/emojis/happy.png")}
+                className="h-12 w-12 object-cover"
+                style={{
+                  resizeMode: "contain",
+                }}
+              />
+              <P>Happy</P>
+            </TouchableOpacity>
+            <View className="flex flex-col items-center">
+              <Image
+                source={require("../../../assets/imgs/emojis/calm.png")}
+                className="h-12 w-12 object-cover"
+                style={{
+                  resizeMode: "contain",
+                }}
+              />
+              <P>Calm</P>
+            </View>
+
+            <View className="flex flex-col items-center">
+              <Image
+                source={require("../../../assets/imgs/emojis/worried.png")}
+                className="h-12 w-12 object-cover"
+                style={{
+                  resizeMode: "contain",
+                }}
+              />
+              <P>Worried</P>
+            </View>
+
+            <View className="flex flex-col items-center">
+              <Image
+                source={require("../../../assets/imgs/emojis/angry.png")}
+                className="h-12 w-12 object-cover"
+                style={{
+                  resizeMode: "contain",
+                }}
+              />
+              <P>Angry</P>
+            </View>
+
+            <View className="flex flex-col items-center">
+              <Image
+                source={require("../../../assets/imgs/emojis/sad.png")}
+                className="h-12 w-12 object-cover"
+                style={{
+                  resizeMode: "contain",
+                }}
+              />
+              <P>Sad</P>
+            </View>
+          </View>
         </View>
-
-        <View className="flex flex-col items-center">
-          <Image
-            source={require("../../../assets/imgs/emojis/worried.png")}
-            className="h-12 w-12 object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <P>Worried</P>
-        </View>
-
-        <View className="flex flex-col items-center">
-          <Image
-            source={require("../../../assets/imgs/emojis/angry.png")}
-            className="h-12 w-12 object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <P>Angry</P>
-        </View>
-
-        <View className="flex flex-col items-center">
-          <Image
-            source={require("../../../assets/imgs/emojis/sad.png")}
-            className="h-12 w-12 object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <P>Sad</P>
-        </View>
-      </View>
-
-      <BottomSheetScrollView
-        ref={bottomSheetRef}
-        snapTo={"70%"}
-        backgroundColor={"white"}
-        backDropColor={"black"}
-      >
-       <P>Helo World</P>
-      </BottomSheetScrollView>
-
-    </View>
-    </SafeAreaView>
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }

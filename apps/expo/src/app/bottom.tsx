@@ -14,6 +14,9 @@ import Lorem from "~/components/home/bottom-sheets/Lorem";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
 
+function ExampleButton({ pressHandler2 }: { pressHandler2: () => void }) {
+  return <Button title="Example" onPress={() => pressHandler2()} />;
+}
 
 const BottomSheetScreenScroll = () => {
   const bottomSheetRef = useRef<BottomSheetMethods>(null);
@@ -48,31 +51,32 @@ const BottomSheetScreenScroll = () => {
             <Feelings happyHandler={pressHandler2} />
             <Services />
             <Resources />
+           
           </ScrollView>
         </SafeAreaView>
 
-        <BottomSheet
-          ref={bottomSheetRef}
-          snapTo={"80%"}
-          backgroundColor={"white"}
-          backDropColor={"black"}
-        />
-        <BottomSheet
-          ref={bottomSheetRef2}
-          snapTo={"80%"}
-          backgroundColor={"#ffe7cf"}
-          backDropColor={"black"}
-        >
-          <Lorem />
-        </BottomSheet>
-        <BottomSheetScrollView
-          ref={bottomSheetRef3}
-          snapTo={"50%"}
-          backgroundColor={"white"}
-          backDropColor={"black"}
-        >
-          <Lorem />
-        </BottomSheetScrollView>
+         <BottomSheet
+              ref={bottomSheetRef}
+              snapTo={"80%"}
+              backgroundColor={"white"}
+              backDropColor={"black"}
+            />
+            <BottomSheet
+              ref={bottomSheetRef2}
+              snapTo={"80%"}
+              backgroundColor={"#ffe7cf"}
+              backDropColor={"black"}
+            >
+              <Lorem />
+            </BottomSheet>
+            <BottomSheetScrollView
+              ref={bottomSheetRef3}
+              snapTo={"50%"}
+              backgroundColor={"white"}
+              backDropColor={"black"}
+            >
+              <Lorem />
+            </BottomSheetScrollView>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
