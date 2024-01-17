@@ -1,12 +1,10 @@
 import React from "react";
 import { StyleSheet, useWindowDimensions } from "react-native";
-import Animated, {
-  Extrapolation,
-  SharedValue,
-  interpolate,
-  interpolateColor,
-  useAnimatedStyle,
-} from "react-native-reanimated";
+import Animated, { Extrapolation, SharedValue, interpolate, interpolateColor, useAnimatedStyle } from "react-native-reanimated";
+
+
+
+
 
 type Props = {
   index: number;
@@ -48,7 +46,7 @@ const Dot = ({ index, x }: Props) => {
     const backgroundColor = interpolateColor(
       x.value,
       [0, SCREEN_WIDTH, 2 * SCREEN_WIDTH],
-      ["#005b4f", "#1e2169", "#F15937"],
+      ["#B8B8B8", "#F3AB33", "#8E3AFF"],
     );
 
     return {

@@ -11,7 +11,8 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
-import P from "../ui/Text";
+
+import P from "../../ui/Text";
 
 type Props = {
   handlePress: () => void;
