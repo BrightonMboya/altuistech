@@ -21,25 +21,34 @@ export default function JoinGroupBottomSheet({
       backgroundColor={"white"}
       backDropColor={"black"}
     >
-      <View className="flex flex-col items-center pt-10">
+      <View className="flex flex-col justify-center px-10 pt-10">
         <View>
-          <TouchableOpacity className="flex flex-row items-center ">
-            <AntDesign name="pluscircleo" size={30} color="#1960F2" />
-            <P style="pl-5 text-xl">Create a group</P>
+          <TouchableOpacity
+            className="flex flex-row items-center justify-between "
+            onPress={() => router.push("/groups/create-group")}
+          >
+            <View className="flex flex-row items-center">
+              <AntDesign name="pluscircleo" size={30} color="#1960F2" />
+              <P style="pl-3 text-xl">Create a group</P>
+            </View>
+            <MaterialIcons name="chevron-right" size={35} color="#505050" />
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="mt-10 flex flex-row items-center"
+            className="mt-10 flex flex-row items-center justify-between"
             onPress={() => {
               router.push("/groups/join");
             }}
           >
-            <MaterialIcons
-              name="format-horizontal-align-right"
-              size={30}
-              color="#1960F2"
-            />
-            <P style="pl-5 text-xl">Join a group</P>
+            <View className="flex flex-row items-center">
+              <MaterialIcons
+                name="format-horizontal-align-right"
+                size={30}
+                color="#1960F2"
+              />
+              <P style="pl-5 text-xl">Join a group</P>
+            </View>
+            <MaterialIcons name="chevron-right" size={35} color="#505050" />
           </TouchableOpacity>
         </View>
       </View>
