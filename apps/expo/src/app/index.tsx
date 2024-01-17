@@ -4,8 +4,6 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
-
-
 import ProfileCard from "~/components/home/ProfileCard";
 import Resources from "~/components/home/Resources";
 import BookSession from "~/components/home/book-session";
@@ -19,7 +17,6 @@ import {
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
-
 
 const BottomSheetScreenScroll = () => {
   const happyBottomSheetRef = useRef<BottomSheetMethods>(null);
@@ -49,7 +46,7 @@ const BottomSheetScreenScroll = () => {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaView style={styles.container} className="pl-5 pt-5">
+        <SafeAreaView style={styles.container} className=" pl-5 pt-5">
           <Stack.Screen
             options={{
               headerShown: false,
@@ -73,7 +70,7 @@ const BottomSheetScreenScroll = () => {
         <CalmBottomSheet calmBottomRef={calmBottomSheetRef} />
         <WorriedBottomSheet worriedBottomRef={worriedBottomSheetRef} />
         <AngryBottomSheet angryBottomRef={angryBottomSheetRef} />
-        <SadBottomSheet sadBottomRef={sadBottomSheetRef}/>
+        <SadBottomSheet sadBottomRef={sadBottomSheetRef} />
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

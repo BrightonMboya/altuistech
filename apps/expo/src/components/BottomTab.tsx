@@ -30,6 +30,26 @@ const BottomTab: React.FC = () => {
             </P>
           </View>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/groups");
+          }}
+        >
+          <View className="flex flex-col items-center">
+            <IoniIcons
+              name="people"
+              size={25}
+              color={pathname === "/groups" ? "#1960F2" : "#ddd"}
+            />
+            <P
+              style={`${
+                pathname === "/groups" ? "text-[#1960F2]" : "text-[#ddd]"
+              }`}
+            >
+              Groups
+            </P>
+          </View>
+        </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => {
