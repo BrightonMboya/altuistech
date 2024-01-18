@@ -4,18 +4,18 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
-import { anxietyTest } from "~/components/tests/data";
+import { alcoholTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [endQns, setEndQns] = useState(false);
-  const currentQuestion = anxietyTest[questionIndex];
+  const currentQuestion = alcoholTest[questionIndex];
 
   const router = useRouter();
 
   const handleNextQuestion = () => {
-    if (questionIndex === anxietyTest.length - 1) {
+    if (questionIndex === alcoholTest.length - 1) {
       setEndQns(true);
     } else {
       setQuestionIndex(questionIndex + 1);
@@ -35,19 +35,25 @@ export default function Page() {
       >
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
-          <P style="text-lg pl-5 text-white" textType="medium">
-            Available
+          <P style="text-xl pl-5 text-white" textType="medium">
+            Alcohol/Non-Prescribed Drug Test
           </P>
         </View>
 
-        <P style="text-white text-xl pt-3" textType="medium">{`Question ${questionIndex}/${anxietyTest.length}`}</P>
+        <P
+          style="text-white text-xl pt-3"
+          textType="medium"
+        >{`Question ${questionIndex}/${alcoholTest.length}`}</P>
       </TouchableOpacity>
-      <View className="min-h-[500px] w-[90%] rounded-md bg-white p-5 shadow-sm mt-5">
+      <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         {endQns ? (
           <P>The end of the qn</P>
         ) : (
           <View>
-            <P style="text-base" textType="medium">
+            <P style="text-[#505050]" textType="medium">
+              {currentQuestion?.shortTitle}
+            </P>
+            <P style="text-base pt-2" textType="medium">
               {currentQuestion?.question}
             </P>
 

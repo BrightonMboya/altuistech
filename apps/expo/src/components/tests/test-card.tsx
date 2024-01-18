@@ -3,12 +3,12 @@ import { useRouter } from "expo-router";
 
 import P from "../ui/Text";
 
-export default function TestCard({ backgroundColor, name, img }: any) {
+export default function TestCard({ backgroundColor, name, img, href }: any) {
   const router = useRouter();
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push("/tests/anxietyTest");
+        router.push(href);
       }}
     >
       <View

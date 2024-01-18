@@ -4,32 +4,37 @@ export const tests = [
     name: "Anxiety Test",
     img: require("../../../assets/imgs/tests/anxiety.png"),
     backgroundColor: "#E4EDFF",
+    href: "/tests/anxiety",
   },
   {
     id: 2,
     name: "Depression Test",
     img: require("../../../assets/imgs/tests/depression.png"),
     backgroundColor: "#FFEFC6",
+    href: "/tests/depression",
   },
   {
     id: 3,
     name: "Alcohol/Non-Prescribed Drug Test",
     img: require("../../../assets/imgs/tests/alcohol.png"),
     backgroundColor: "#E4EDFF",
+    href: "/tests/alcohol",
   },
   {
     id: 4,
     name: "Post-traumatic disorder Test",
     img: require("../../../assets/imgs/tests/ptsd.png"),
     backgroundColor: "#F2E8FF",
+    href: "/tests/ptsd",
   },
 ];
 
-export const anxietyTest = [
+export const depressionTest = [
   {
     id: 1,
+    shortTitle: "During the last 24 hours,",
     question:
-      "During the last 24 hours, Do you find little interest or pleasure in doing things ( e.g: visiting friends, exercising, going out)?",
+      "Do you find little interest or pleasure in doing things ( e.g: visiting friends, exercising, going out)?",
     answers: [
       {
         id: 1,
@@ -51,6 +56,7 @@ export const anxietyTest = [
   },
   {
     id: 2,
+    shortTitle: "During the last 24 hours,",
     question:
       "Do you feel down, depressed, or hopeless ( ex: everything is not in your favor)?",
     answers: [
@@ -74,6 +80,7 @@ export const anxietyTest = [
   },
   {
     id: 3,
+    shortTitle: "Over the last two weeks,",
     question: "Have you been worrying too much about different things?",
     answers: [
       {
@@ -96,6 +103,7 @@ export const anxietyTest = [
   },
   {
     id: 4,
+    shortTitle: "Over the last two weeks,",
     question: "Do you have trouble resting and relaxing?",
     answers: [
       {
@@ -119,6 +127,7 @@ export const anxietyTest = [
 
   {
     id: 5,
+    shortTitle: "Over the last two weeks,",
     question: "Do you get easily annoyed or irritable?",
     answers: [
       {
@@ -141,6 +150,7 @@ export const anxietyTest = [
   },
   {
     id: 6,
+    shortTitle: "Over the last two weeks,",
     question:
       " Have you been feeling afraid as if something awful might happen?",
     answers: [
@@ -164,6 +174,7 @@ export const anxietyTest = [
   },
   {
     id: 7,
+    shortTitle: "Over the last two weeks,",
     question:
       "How difficult have these problems made for you at work, at home, or with other people?",
     answers: [
@@ -182,6 +193,281 @@ export const anxietyTest = [
       {
         id: 4,
         ans: "Nearly everyday",
+      },
+    ],
+  },
+];
+
+export const anxietyTest = [
+  {
+    id: 1,
+    shortTitle: "During the last 24 hours,",
+    question: "Have you been feeling nervous, anxious, or on edge?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    shortTitle: "During the last 24 hours,",
+    question: "Have you being able to stop or control worrying?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+  {
+    id: 3,
+    shortTitle: "Over the last two weeks,",
+    question: "Have you been worrying too much about different things?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+  {
+    id: 4,
+    shortTitle: "Over the last two weeks,",
+    question: "Do you have trouble resting and relaxing?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+  {
+    id: 5,
+    shortTitle: "Over the last two weeks,",
+    question: "Do you get easily annoyed or irritable?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+  {
+    id: 6,
+    shortTitle: "Over the last two weeks,",
+    question:
+      "Have you been feeling afraid as if something awful might happen?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+  {
+    id: 7,
+    shortTitle: "Over the last two weeks,",
+    question:
+      "How difficult have these problems made for you at work, at home, or with other people?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+      },
+    ],
+  },
+];
+
+export const alcoholTest = [
+  {
+    id: 1,
+    shortTitle: "Select an answer",
+    question:
+      "Have you ever felt/ told that you ought to cut down on your drinking or drug use?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    shortTitle: "Select an answer",
+    question:
+      "Have people annoyed you by criticizing your drinking or drug use?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 3,
+    shortTitle: "Select an answer",
+    question:
+      "Have you ever felt bad or guilty about your drinking or drug use?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 4,
+    shortTitle: "Select an answer",
+    question:
+      "Have you ever had a drink or used drugs first thing in the morning to steady your nerves or to get rid of a hangover?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 5,
+    shortTitle: "Select an answer",
+    question:
+      "Have you ever had a drink or used drugs first thing in the morning to steady your nerves or to get rid of a hangover?",
+    answers: [
+      {
+        id: 1,
+        ans: "not difficult at all",
+      },
+      {
+        id: 2,
+        ans: "somewhat difficult",
+      },
+      {
+        id: 3,
+        ans: "very difficult",
+      },
+      {
+        id: 4,
+        ans: "extremely difficult",
+      },
+    ],
+  },
+  {
+    id: 6,
+    shortTitle: "Select an answer",
+    question:
+      "Have you been feeling afraid as if something awful might happen?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
       },
     ],
   },
