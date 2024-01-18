@@ -1,4 +1,4 @@
-import { FlatList, Image, View } from "react-native";
+import { FlatList, View } from "react-native";
 
 import { Card } from "../home/Resources";
 import P from "../ui/Text";

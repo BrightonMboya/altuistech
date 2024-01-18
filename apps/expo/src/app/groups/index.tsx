@@ -4,6 +4,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
+import FeedCard from "~/components/groups/FeedCard";
 import Button from "~/components/groups/create-group-button";
 import GroupsView from "~/components/groups/groups-view";
 import JoinGroupBottomSheet from "~/components/groups/join-group-bottom-sheet";
@@ -34,6 +35,10 @@ export default function Page() {
             defaultValue={searchItem}
           />
           <GroupsView />
+          <View className="flex flex-col items-center mt-10">
+
+          <FeedCard />
+          </View>
           <ScrollView className=""></ScrollView>
           <Button bottomSheetHandler={joinGroupBottomSheetHandler} />
         </SafeAreaView>
