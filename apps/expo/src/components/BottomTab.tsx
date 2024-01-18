@@ -109,7 +109,7 @@ const BottomTab: React.FC = () => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.push("/");
+            router.push("/tests");
           }}
         >
           <View className="flex flex-col items-center">
@@ -177,18 +177,6 @@ const BottomTab: React.FC = () => {
               Resources
             </P>
           </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => {
-            router.push("/bottom");
-          }}
-        >
-          <MaterialCommunityIcons
-            name="briefcase-edit-outline"
-            size={25}
-            color={pathname === "/bottom" ? "#000" : "#ddd"}
-          />
         </TouchableOpacity>
       </View>
     </>
