@@ -83,17 +83,6 @@ const BottomTab: React.FC = () => {
             color={pathname === "/bottom" ? "#000" : "#ddd"}
           />
         </TouchableOpacity>
-        <TouchableHighlight
-          onPress={() => {
-            router.push("/profile");
-          }}
-        >
-          <AntDesign
-            name="mail"
-            size={25}
-            color={pathname === "/profile" ? "#000" : "#ddd"}
-          />
-        </TouchableHighlight>
       </View>
     </>
   );
