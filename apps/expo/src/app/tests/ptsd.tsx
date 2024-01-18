@@ -4,18 +4,18 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
-import { anxietyTest } from "~/components/tests/data";
+import { ptsdTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [endQns, setEndQns] = useState(false);
-  const currentQuestion = anxietyTest[questionIndex];
+  const currentQuestion = ptsdTest[questionIndex];
 
   const router = useRouter();
 
   const handleNextQuestion = () => {
-    if (questionIndex === anxietyTest.length - 1) {
+    if (questionIndex === ptsdTest.length - 1) {
       setEndQns(true);
     } else {
       setQuestionIndex(questionIndex + 1);
@@ -36,14 +36,14 @@ export default function Page() {
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
           <P style="text-xl pl-5 text-white" textType="medium">
-            Anxiety Test
+            Post-traumatic Disorder
           </P>
         </View>
       </TouchableOpacity>
       <P
         style="text-white text-xl pt-3"
         textType="medium"
-      >{`Question ${questionIndex}/${anxietyTest.length}`}</P>
+      >{`Question ${questionIndex}/${ptsdTest.length}`}</P>
       {/* <View className="mt-5 h-2 rounded-md bg-[#b8b8b8]">
         <View
           className={`bg-[#F3AB33] h-2 rounded-md w-[${`${Math.ceil(Math.round((questionIndex / anxietyTest.length) * 100) / 10) * 10}%`}]`}

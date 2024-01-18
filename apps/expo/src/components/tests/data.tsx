@@ -472,3 +472,111 @@ export const alcoholTest = [
     ],
   },
 ];
+
+export const ptsdTest = [
+  {
+    id: 1,
+    shortTitle: "Select an answer",
+    question:
+      "Have you ever had nightmares about the event(s) or thought about the event(s) when you did not want to?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    shortTitle: "Select an answer",
+    question:
+      "Have you tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 3,
+    shortTitle: "Select an answer",
+    question:
+      "Have you been constantly on guard, watchful, or easily startled?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 4,
+    shortTitle: "Select an answer",
+    question:
+      "Did you feel numb or detached from people, activities, or surroundings?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 5,
+    shortTitle: "Select an answer",
+    question:
+      "Ever felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?",
+    answers: [
+      {
+        id: 1,
+        ans: "Yes",
+      },
+      {
+        id: 2,
+        ans: "No",
+      },
+    ],
+  },
+  {
+    id: 6,
+    shortTitle: "Select an answer",
+    question:
+      "How difficult have these problems made for you at work, at home, or with other people?",
+    answers: [
+      {
+        id: 1,
+        ans: "not difficult at all",
+      },
+      {
+        id: 2,
+        ans: "somewhat difficult",
+      },
+      {
+        id: 3,
+        ans: "very difficult",
+      },
+      {
+        id: 4,
+        ans: "extremely difficult",
+      },
+    ],
+  },
+];
