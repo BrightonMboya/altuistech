@@ -4,7 +4,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
-import { SadBottomSheet } from "~/components/home/bottom-sheets";
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { depressionTest } from "~/components/tests/data";
@@ -103,7 +102,7 @@ export default function Page() {
       </View>
       <TestBottomSheet
         bottomRef={bottomSheetRef}
-        testName="Anxiety"
+        testName="Depression"
         testScore={currentScore}
         nextQuestionHandler={closeBottomSheet}
       />

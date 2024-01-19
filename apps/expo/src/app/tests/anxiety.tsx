@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
+import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { anxietyTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
@@ -12,15 +14,29 @@ export default function Page() {
   const [endQns, setEndQns] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = anxietyTest[questionIndex];
+  const bottomSheetRef = useRef<BottomSheetMethods>(null);
+  const bottomSheetHandler = useCallback(() => {
+    bottomSheetRef.current?.expand();
+  }, []);
+
+  const closeBottomSheet = useCallback(() => {
+    bottomSheetRef.current?.close();
+  }, []);
 
   const router = useRouter();
 
   const handleNextQuestion = () => {
     if (questionIndex === anxietyTest.length - 1) {
       setEndQns(true);
+    }
+    if (currentScore <= 3 && questionIndex === 2) {
+      router.push("/tests/results");
+    }
+    if (currentScore > 3 && questionIndex === 2) {
+      bottomSheetHandler();
+      setQuestionIndex(questionIndex + 1);
     } else {
       setQuestionIndex(questionIndex + 1);
-
     }
   };
   return (
@@ -46,7 +62,7 @@ export default function Page() {
         style="text-white text-xl pt-3"
         textType="medium"
       >{`Question ${questionIndex}/${anxietyTest.length}`}</P>
-      
+
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         {endQns ? (
           <P>The end of the qn</P>
@@ -63,6 +79,10 @@ export default function Page() {
               <TouchableOpacity
                 key={ans.id}
                 className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
+               onPress={() => {
+                  setCurrentScore(currentScore + ans.value);
+                  handleNextQuestion();
+                }}
               >
                 <P style="text-center text-lg text-[#505050] uppercase tracking-wide">
                   {ans.ans}
@@ -79,6 +99,12 @@ export default function Page() {
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
         </TouchableOpacity>
       </View>
+      <TestBottomSheet
+        bottomRef={bottomSheetRef}
+        testName="Anxiety"
+        testScore={currentScore}
+        nextQuestionHandler={closeBottomSheet}
+      />
     </SafeAreaView>
   );
 }
