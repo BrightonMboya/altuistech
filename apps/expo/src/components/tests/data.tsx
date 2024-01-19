@@ -39,18 +39,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -63,18 +67,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -86,18 +94,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -109,18 +121,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -133,18 +149,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -157,18 +177,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },
@@ -181,18 +205,22 @@ export const depressionTest = [
       {
         id: 1,
         ans: "Not at all",
+        value: 0,
       },
       {
         id: 2,
         ans: "Several Days",
+        value: 1,
       },
       {
         id: 3,
         ans: "More than half a day",
+        value: 1.5,
       },
       {
         id: 4,
         ans: "Nearly everyday",
+        value: 2,
       },
     ],
   },

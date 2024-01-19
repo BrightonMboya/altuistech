@@ -10,6 +10,7 @@ import P from "~/components/ui/Text";
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [endQns, setEndQns] = useState(false);
+  const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = depressionTest[questionIndex];
 
   const router = useRouter();
@@ -17,6 +18,9 @@ export default function Page() {
   const handleNextQuestion = () => {
     if (questionIndex === depressionTest.length - 1) {
       setEndQns(true);
+    }
+    if (currentScore <= 3 && questionIndex === 2) {
+      router.push("/tests/results");
     } else {
       setQuestionIndex(questionIndex + 1);
     }
@@ -36,7 +40,7 @@ export default function Page() {
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
           <P style="text-xl pl-5 text-white" textType="medium">
-            Anxiety Test
+            Depression Test
           </P>
         </View>
 
@@ -44,6 +48,7 @@ export default function Page() {
           style="text-white text-xl pt-3"
           textType="medium"
         >{`Question ${questionIndex}/${depressionTest.length}`}</P>
+        <P>{` Current Score ${currentScore}`}</P>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         {endQns ? (
@@ -60,6 +65,10 @@ export default function Page() {
             {currentQuestion?.answers.map((ans) => (
               <TouchableOpacity
                 key={ans.id}
+                onPress={() => {
+                  setCurrentScore(currentScore + ans.value);
+                  handleNextQuestion();
+                }}
                 className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
               >
                 <P style="text-center text-lg text-[#505050] uppercase tracking-wide">

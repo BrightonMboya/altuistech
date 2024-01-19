@@ -10,6 +10,7 @@ import P from "~/components/ui/Text";
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [endQns, setEndQns] = useState(false);
+  const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = anxietyTest[questionIndex];
 
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function Page() {
       setEndQns(true);
     } else {
       setQuestionIndex(questionIndex + 1);
+
     }
   };
   return (
@@ -44,11 +46,7 @@ export default function Page() {
         style="text-white text-xl pt-3"
         textType="medium"
       >{`Question ${questionIndex}/${anxietyTest.length}`}</P>
-      {/* <View className="mt-5 h-2 rounded-md bg-[#b8b8b8]">
-        <View
-          className={`bg-[#F3AB33] h-2 rounded-md w-[${`${Math.ceil(Math.round((questionIndex / anxietyTest.length) * 100) / 10) * 10}%`}]`}
-        />
-      </View> */}
+      
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         {endQns ? (
           <P>The end of the qn</P>
