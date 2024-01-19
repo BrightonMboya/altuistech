@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+import { SadBottomSheet } from "~/components/home/bottom-sheets";
+import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
+import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { depressionTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
@@ -13,6 +16,15 @@ export default function Page() {
   const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = depressionTest[questionIndex];
 
+  const bottomSheetRef = useRef<BottomSheetMethods>(null);
+  const bottomSheetHandler = useCallback(() => {
+    bottomSheetRef.current?.expand();
+  }, []);
+
+  const closeBottomSheet = useCallback(() => {
+    bottomSheetRef.current?.close();
+  }, []);
+
   const router = useRouter();
 
   const handleNextQuestion = () => {
@@ -21,6 +33,10 @@ export default function Page() {
     }
     if (currentScore <= 3 && questionIndex === 2) {
       router.push("/tests/results");
+    }
+    if (currentScore > 3 && questionIndex === 2) {
+      bottomSheetHandler();
+      setQuestionIndex(questionIndex + 1);
     } else {
       setQuestionIndex(questionIndex + 1);
     }
@@ -48,7 +64,6 @@ export default function Page() {
           style="text-white text-xl pt-3"
           textType="medium"
         >{`Question ${questionIndex}/${depressionTest.length}`}</P>
-        <P>{` Current Score ${currentScore}`}</P>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         {endQns ? (
@@ -86,6 +101,12 @@ export default function Page() {
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
         </TouchableOpacity>
       </View>
+      <TestBottomSheet
+        bottomRef={bottomSheetRef}
+        testName="Anxiety"
+        testScore={currentScore}
+        nextQuestionHandler={closeBottomSheet}
+      />
     </SafeAreaView>
   );
 }

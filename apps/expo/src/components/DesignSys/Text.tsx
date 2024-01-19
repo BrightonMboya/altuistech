@@ -15,7 +15,7 @@ import {
 SplashScreen.preventAutoHideAsync();
 
 const P: React.FC<{
-  children: React.ReactNode;
+  children: any,
   style?: string;
   textType?: "regular" | "medium" | "semiBold" | "bold" | "extraBold" | "light";
 }> = ({ children, style, textType }) => {

@@ -11,7 +11,7 @@ import { Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700
 SplashScreen.preventAutoHideAsync();
 
 const P: React.FC<{
-  children: React.ReactNode;
+  children: any
   style?: string;
   textType?:
     | "regular"
@@ -67,9 +67,7 @@ const P: React.FC<{
     return null;
   }
   return (
-    <Text className={`${style} `} style={textStyle}
-
-    >
+    <Text className={`${style}`} style={textStyle}>
       {children}
     </Text>
   );
