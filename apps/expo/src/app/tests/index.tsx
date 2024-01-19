@@ -6,14 +6,20 @@ import { Stack } from "expo-router";
 
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import AlcoholBottomSheet from "~/components/home/bottom-sheets/alcohol-test";
+import PTSDSheet from "~/components/home/bottom-sheets/ptsd-sheet";
 import TestCard from "~/components/tests/test-card";
 import P from "~/components/ui/Text";
 
 export default function Page() {
   const bottomSheetRef = useRef<BottomSheetMethods>(null);
+  const ptsdSheetRef = useRef<BottomSheetMethods>(null);
 
   const bottomSheetHandler = useCallback(() => {
     bottomSheetRef.current?.expand();
+  }, []);
+
+  const ptsdSheetHandler = useCallback(() => {
+    ptsdSheetRef.current?.expand();
   }, []);
   return (
     <SafeAreaView className="min-h-screen bg-white pl-5 pt-5">
@@ -51,15 +57,19 @@ export default function Page() {
               backgroundColor="#E4EDFF"
             />
           </TouchableOpacity>
-          <TestCard
-            name="Post-traumatic disorder Test"
-            href="/tests/ptsd"
-            img={require("../../../assets/imgs/tests/ptsd.png")}
-            backgroundColor="#F2E8FF"
-          />
+
+          <TouchableOpacity onPress={() => ptsdSheetHandler()}>
+            <TestCard
+              name="Post-traumatic disorder Test"
+              href=""
+              img={require("../../../assets/imgs/tests/ptsd.png")}
+              backgroundColor="#F2E8FF"
+            />
+          </TouchableOpacity>
         </View>
       </ScrollView>
       <AlcoholBottomSheet bottomRef={bottomSheetRef} />
+      <PTSDSheet bottomRef={ptsdSheetRef} />
     </SafeAreaView>
   );
 }
