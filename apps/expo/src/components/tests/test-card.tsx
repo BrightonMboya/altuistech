@@ -8,7 +8,7 @@ export default function TestCard({ backgroundColor, name, img, href }: any) {
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push(href);
+        href && router.push(href);
       }}
     >
       <View
