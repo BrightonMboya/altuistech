@@ -1,23 +1,31 @@
 import { useState } from "react";
-import { Image, TouchableOpacity, View, Pressable } from "react-native";
+import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+
+
 import { alcoholTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
+
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [endQns, setEndQns] = useState(false);
+  const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = alcoholTest[questionIndex];
 
   const router = useRouter();
 
   const handleNextQuestion = () => {
     if (questionIndex === alcoholTest.length - 1) {
-      setEndQns(true);
-    } else {
+      router.push({
+        pathname: "/tests/results",
+        params: { test: "alcohol", score: currentScore, showWarning: true },
+      });
+    }
+    else {
       setQuestionIndex(questionIndex + 1);
     }
   };
@@ -57,38 +65,37 @@ export default function Page() {
               {currentQuestion?.question}
             </P>
 
-            <View className="pt-10 flex flex-row items-center justify-center gap-5">
+            <View className="flex flex-row items-center justify-center gap-5 pt-10">
               {currentQuestion?.answers.map((ans) => (
-                <TouchableOpacity
+                <Pressable
                   key={ans.id}
-                  style={
-                    {
-                      // backgroundColor: "red"
-                    }
-                  }
-                  className=" h-[100px]  rounded-md border-[1px] border-[#b8b8b8] py-2 flex flex-row items-center px-5"
+                  onPress={() => {
+                    setCurrentScore(currentScore + ans.value);
+                    handleNextQuestion();
+                  }}
+                  className=" flex  h-[100px] flex-row items-center rounded-md border-[1px] border-[#b8b8b8] px-5 py-2"
                 >
-                  {ans.ans.toLowerCase() === 'yes' ? (
-
+                  {ans.ans.toLowerCase() === "yes" ? (
                     <Image
                       source={require(`../../../assets/imgs/emojis/yes.png`)}
                     />
                   ) : (
-                     <Image
+                    <Image
                       source={require(`../../../assets/imgs/emojis/no.png`)}
                     />
                   )}
+
                   <P style="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
                     {ans.ans}
                   </P>
-                </TouchableOpacity>
+                </Pressable>
               ))}
             </View>
           </View>
         )}
         <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
-          disabled={endQns}
+  
           onPress={handleNextQuestion}
         >
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
