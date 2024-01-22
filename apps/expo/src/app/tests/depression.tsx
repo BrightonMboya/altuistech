@@ -4,17 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
-
-
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { depressionTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
-
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [endQns, setEndQns] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = depressionTest[questionIndex];
 
@@ -31,7 +27,11 @@ export default function Page() {
 
   const handleNextQuestion = () => {
     if (questionIndex === depressionTest.length - 1) {
-      setEndQns(true);
+      router.push({
+        pathname: "/tests/results",
+        params: { test: "depression", score: currentScore, showWarning: true },
+      });
+      
     }
     if (currentScore <= 3 && questionIndex === 2) {
       router.push({
@@ -71,9 +71,7 @@ export default function Page() {
         >{`Question ${questionIndex}/${depressionTest.length}`}</P>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
-        {endQns ? (
-          <P>The end of the qn</P>
-        ) : (
+     
           <View>
             <P style="text-[#505050]" textType="medium">
               {currentQuestion?.shortTitle}
@@ -83,7 +81,7 @@ export default function Page() {
             </P>
 
             {currentQuestion?.answers.map((ans) => (
-               <Pressable
+              <Pressable
                 key={ans.id}
                 onPress={() => {
                   setCurrentScore(currentScore + ans.value);
@@ -112,10 +110,10 @@ export default function Page() {
               </Pressable>
             ))}
           </View>
-        )}
+       
         <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
-          disabled={endQns}
+     
           onPress={handleNextQuestion}
         >
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
