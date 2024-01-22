@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Pressable, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Link, Stack, useRouter } from "expo-router";
@@ -77,18 +77,45 @@ export default function Page() {
             </P>
 
             {currentQuestion?.answers.map((ans) => (
-              <TouchableOpacity
+              // <TouchableOpacity
+              //   key={ans.id}
+              //   className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
+              //   onPress={() => {
+              //     setCurrentScore(currentScore + ans.value);
+              //     handleNextQuestion();
+              //   }}
+              // >
+              //   <P style="text-center text-lg text-[#505050] uppercase tracking-wide">
+              //     {ans.ans}
+              //   </P>
+              // </TouchableOpacity>
+              <Pressable
                 key={ans.id}
-                className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
                 onPress={() => {
                   setCurrentScore(currentScore + ans.value);
                   handleNextQuestion();
                 }}
+                style={({ pressed }) => [
+                  {
+                    backgroundColor: pressed ? "#FFF2EB" : "white",
+                    marginTop: 20,
+                    borderWidth: 1,
+                    borderRadius: 5,
+                    paddingVertical: 8,
+                    borderColor: pressed ? "#F3AB33" : "#b8b8b8",
+                  },
+                ]}
               >
-                <P style="text-center text-lg text-[#505050] uppercase tracking-wide">
-                  {ans.ans}
-                </P>
-              </TouchableOpacity>
+                {({ pressed }) => (
+                  <P
+                    style={`${
+                      pressed ? "text-[#F3AB33]" : "text-[#505050]"
+                    } text-lg uppercase tracking-wide text-center`}
+                  >
+                    {ans.ans}
+                  </P>
+                )}
+              </Pressable>
             ))}
           </View>
         )}

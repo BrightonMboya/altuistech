@@ -4,10 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+
+
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { depressionTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
+
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -31,7 +34,10 @@ export default function Page() {
       setEndQns(true);
     }
     if (currentScore <= 3 && questionIndex === 2) {
-      router.push("/tests/results");
+      router.push({
+        pathname: "/tests/results",
+        params: { test: "depression", score: currentScore },
+      });
     }
     if (currentScore > 3 && questionIndex === 2) {
       bottomSheetHandler();
