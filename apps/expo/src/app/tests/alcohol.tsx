@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Image, TouchableOpacity, View, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
@@ -57,16 +57,33 @@ export default function Page() {
               {currentQuestion?.question}
             </P>
 
-            {currentQuestion?.answers.map((ans) => (
-              <TouchableOpacity
-                key={ans.id}
-                className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
-              >
-                <P style="text-center text-lg text-[#505050] uppercase tracking-wide">
-                  {ans.ans}
-                </P>
-              </TouchableOpacity>
-            ))}
+            <View className="pt-10 flex flex-row items-center justify-center gap-5">
+              {currentQuestion?.answers.map((ans) => (
+                <TouchableOpacity
+                  key={ans.id}
+                  style={
+                    {
+                      // backgroundColor: "red"
+                    }
+                  }
+                  className=" h-[100px]  rounded-md border-[1px] border-[#b8b8b8] py-2 flex flex-row items-center px-5"
+                >
+                  {ans.ans.toLowerCase() === 'yes' ? (
+
+                    <Image
+                      source={require(`../../../assets/imgs/emojis/yes.png`)}
+                    />
+                  ) : (
+                     <Image
+                      source={require(`../../../assets/imgs/emojis/no.png`)}
+                    />
+                  )}
+                  <P style="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
+                    {ans.ans}
+                  </P>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         )}
         <TouchableOpacity
