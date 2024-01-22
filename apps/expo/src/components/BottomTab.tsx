@@ -1,9 +1,6 @@
 import React from "react";
-import { TouchableHighlight, TouchableOpacity, View } from "react-native";
-import Svg, { Circle, Path, Rect } from "react-native-svg";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import IoniIcons from "react-native-vector-icons/Ionicons";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { TouchableOpacity, View } from "react-native";
+import Svg, { Path } from "react-native-svg";
 import { usePathname, useRouter } from "expo-router";
 
 import P from "./ui/Text";
@@ -14,7 +11,7 @@ const BottomTab: React.FC = () => {
 
   return (
     <>
-      <View className="] absolute bottom-0 flex h-[60px] w-full flex-row items-center justify-around border-t-[1px] border-[#ddd] bg-white">
+      <View className="absolute bottom-0 flex h-[60px] w-full flex-row items-center justify-around border-t-[1px] border-[#ddd] bg-white px-5">
         <TouchableOpacity
           onPress={() => {
             router.push("/");
@@ -175,6 +172,41 @@ const BottomTab: React.FC = () => {
               }`}
             >
               Resources
+            </P>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/more");
+          }}
+        >
+          <View className="flex flex-col items-center">
+            <Svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <Path
+                d="M15.5 23.25H9.5C4.07 23.25 1.75 20.93 1.75 15.5V9.5C1.75 4.07 4.07 1.75 9.5 1.75H15.5C20.93 1.75 23.25 4.07 23.25 9.5V15.5C23.25 20.93 20.93 23.25 15.5 23.25ZM9.5 3.25C4.89 3.25 3.25 4.89 3.25 9.5V15.5C3.25 20.11 4.89 21.75 9.5 21.75H15.5C20.11 21.75 21.75 20.11 21.75 15.5V9.5C21.75 4.89 20.11 3.25 15.5 3.25H9.5Z"
+                fill={pathname.startsWith("/more") ? "#1960F2" : "#ddd"}
+              />
+              <Path
+                d="M12.5 13.5C11.94 13.5 11.5 13.05 11.5 12.5C11.5 11.95 11.95 11.5 12.5 11.5C13.05 11.5 13.5 11.95 13.5 12.5C13.5 13.05 13.06 13.5 12.5 13.5Z"
+                fill={pathname.startsWith("/more") ? "#1960F2" : "#ddd"}
+              />
+              <Path
+                d="M16.5 13.5C15.94 13.5 15.5 13.05 15.5 12.5C15.5 11.95 15.95 11.5 16.5 11.5C17.05 11.5 17.5 11.95 17.5 12.5C17.5 13.05 17.06 13.5 16.5 13.5Z"
+                fill={pathname.startsWith("/more") ? "#1960F2" : "#ddd"}
+              />
+              <Path
+                d="M8.5 13.5C7.94 13.5 7.5 13.05 7.5 12.5C7.5 11.95 7.95 11.5 8.5 11.5C9.05 11.5 9.5 11.95 9.5 12.5C9.5 13.05 9.06 13.5 8.5 13.5Z"
+                fill={pathname.startsWith("/more") ? "#1960F2" : "#ddd"}
+              />
+            </Svg>
+
+            <P
+              style={`${
+                pathname.startsWith("/more") ? "text-[#1960F2]" : "text-[#ddd]"
+              }`}
+            >
+              More
             </P>
           </View>
         </TouchableOpacity>
