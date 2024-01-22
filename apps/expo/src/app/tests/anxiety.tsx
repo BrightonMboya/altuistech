@@ -1,8 +1,8 @@
 import { useCallback, useRef, useState } from "react";
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { Link, Stack, useRouter } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
@@ -77,18 +77,6 @@ export default function Page() {
             </P>
 
             {currentQuestion?.answers.map((ans) => (
-              // <TouchableOpacity
-              //   key={ans.id}
-              //   className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
-              //   onPress={() => {
-              //     setCurrentScore(currentScore + ans.value);
-              //     handleNextQuestion();
-              //   }}
-              // >
-              //   <P style="text-center text-lg text-[#505050] uppercase tracking-wide">
-              //     {ans.ans}
-              //   </P>
-              // </TouchableOpacity>
               <Pressable
                 key={ans.id}
                 onPress={() => {
