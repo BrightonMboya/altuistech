@@ -16,7 +16,7 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
     // @ts-ignore
     <BottomSheet
       ref={bottomRef}
-      snapTo={"80%"}
+      snapTo={"70%"}
       backgroundColor={"white"}
       backDropColor={"black"}
     >
@@ -25,7 +25,7 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
           Have you ever experienced any of the below?
         </P>
       </View>
-      <View className="mt-[16px] flex flex-col gap-2 pl-5">
+      <View className="mt-[16px] flex flex-col gap-2 pl-5 pt-6">
         <View className="flex flex-row items-center">
           <Image
             source={require("../../../../assets/imgs/tests/fire.png")}
