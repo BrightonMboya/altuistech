@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { Stack, useRouter } from "expo-router";
+import { Link, Stack, useRouter } from "expo-router";
 
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
@@ -30,7 +30,10 @@ export default function Page() {
       setEndQns(true);
     }
     if (currentScore <= 3 && questionIndex === 2) {
-      router.push("/tests/results");
+      router.push({
+        pathname: "/tests/results",
+        params: { test: "anxiety", score: currentScore },
+      });
     }
     if (currentScore > 3 && questionIndex === 2) {
       bottomSheetHandler();
@@ -46,11 +49,8 @@ export default function Page() {
           headerShown: false,
         }}
       />
-      <TouchableOpacity
-        onPress={() => {
-          router.push("/tests/");
-        }}
-      >
+
+      <TouchableOpacity onPress={() => router.push("/tests")}>
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
           <P style="text-xl pl-5 text-white" textType="medium">
@@ -58,6 +58,7 @@ export default function Page() {
           </P>
         </View>
       </TouchableOpacity>
+
       <P
         style="text-white text-xl pt-3"
         textType="medium"
@@ -79,7 +80,7 @@ export default function Page() {
               <TouchableOpacity
                 key={ans.id}
                 className="mt-5 rounded-md border-[1px] border-[#b8b8b8] py-2"
-               onPress={() => {
+                onPress={() => {
                   setCurrentScore(currentScore + ans.value);
                   handleNextQuestion();
                 }}
