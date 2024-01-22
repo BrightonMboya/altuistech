@@ -543,10 +543,12 @@ export const ptsdTest = [
       {
         id: 1,
         ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
         ans: "No",
+        value: 0,
       },
     ],
   },
@@ -560,10 +562,12 @@ export const ptsdTest = [
       {
         id: 1,
         ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
         ans: "No",
+        value: 0,
       },
     ],
   },
@@ -576,10 +580,12 @@ export const ptsdTest = [
       {
         id: 1,
         ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
         ans: "No",
+        value: 0,
       },
     ],
   },
@@ -592,10 +598,12 @@ export const ptsdTest = [
       {
         id: 1,
         ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
         ans: "No",
+        value: 0,
       },
     ],
   },
@@ -608,10 +616,12 @@ export const ptsdTest = [
       {
         id: 1,
         ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
         ans: "No",
+        value: 0,
       },
     ],
   },
@@ -623,19 +633,13 @@ export const ptsdTest = [
     answers: [
       {
         id: 1,
-        ans: "not difficult at all",
+        ans: "Yes",
+        value: 1,
       },
       {
         id: 2,
-        ans: "somewhat difficult",
-      },
-      {
-        id: 3,
-        ans: "very difficult",
-      },
-      {
-        id: 4,
-        ans: "extremely difficult",
+        ans: "No",
+        value: 0,
       },
     ],
   },

@@ -4,15 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
-
-
 import { alcoholTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
-
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [endQns, setEndQns] = useState(false);
+
   const [currentScore, setCurrentScore] = useState(0);
   const currentQuestion = alcoholTest[questionIndex];
 
@@ -24,8 +21,7 @@ export default function Page() {
         pathname: "/tests/results",
         params: { test: "alcohol", score: currentScore, showWarning: true },
       });
-    }
-    else {
+    } else {
       setQuestionIndex(questionIndex + 1);
     }
   };
@@ -54,48 +50,44 @@ export default function Page() {
         >{`Question ${questionIndex}/${alcoholTest.length}`}</P>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
-        {endQns ? (
-          <P>The end of the qn</P>
-        ) : (
-          <View>
-            <P style="text-[#505050]" textType="medium">
-              {currentQuestion?.shortTitle}
-            </P>
-            <P style="text-base pt-2" textType="medium">
-              {currentQuestion?.question}
-            </P>
+        <View>
+          <P style="text-[#505050]" textType="medium">
+            {currentQuestion?.shortTitle}
+          </P>
+          <P style="text-base pt-2" textType="medium">
+            {currentQuestion?.question}
+          </P>
 
-            <View className="flex flex-row items-center justify-center gap-5 pt-10">
-              {currentQuestion?.answers.map((ans) => (
-                <Pressable
-                  key={ans.id}
-                  onPress={() => {
-                    setCurrentScore(currentScore + ans.value);
-                    handleNextQuestion();
-                  }}
-                  className=" flex  h-[100px] flex-row items-center rounded-md border-[1px] border-[#b8b8b8] px-5 py-2"
-                >
-                  {ans.ans.toLowerCase() === "yes" ? (
-                    <Image
-                      source={require(`../../../assets/imgs/emojis/yes.png`)}
-                    />
-                  ) : (
-                    <Image
-                      source={require(`../../../assets/imgs/emojis/no.png`)}
-                    />
-                  )}
+          <View className="flex flex-row items-center justify-center gap-5 pt-10">
+            {currentQuestion?.answers.map((ans) => (
+              <Pressable
+                key={ans.id}
+                onPress={() => {
+                  setCurrentScore(currentScore + ans.value);
+                  handleNextQuestion();
+                }}
+                className=" flex  h-[100px] flex-row items-center rounded-md border-[1px] border-[#b8b8b8] px-5 py-2"
+              >
+                {ans.ans.toLowerCase() === "yes" ? (
+                  <Image
+                    source={require(`../../../assets/imgs/emojis/yes.png`)}
+                  />
+                ) : (
+                  <Image
+                    source={require(`../../../assets/imgs/emojis/no.png`)}
+                  />
+                )}
 
-                  <P style="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
-                    {ans.ans}
-                  </P>
-                </Pressable>
-              ))}
-            </View>
+                <P style="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
+                  {ans.ans}
+                </P>
+              </Pressable>
+            ))}
           </View>
-        )}
+        </View>
+
         <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
-  
           onPress={handleNextQuestion}
         >
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>

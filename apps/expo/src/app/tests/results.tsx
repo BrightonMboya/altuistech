@@ -23,7 +23,7 @@ const Index = () => {
       <View className="pt-[60px]">
         <TouchableOpacity
           onPress={() => {
-            router.push(`/tests/${params.test?.toString()}`);
+            router.push("/tests");
           }}
           className="pl-5"
         >
