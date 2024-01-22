@@ -31,7 +31,6 @@ export default function Page() {
         pathname: "/tests/results",
         params: { test: "depression", score: currentScore, showWarning: true },
       });
-      
     }
     if (currentScore <= 3 && questionIndex === 2) {
       router.push({
@@ -71,49 +70,47 @@ export default function Page() {
         >{`Question ${questionIndex}/${depressionTest.length}`}</P>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
-     
-          <View>
-            <P style="text-[#505050]" textType="medium">
-              {currentQuestion?.shortTitle}
-            </P>
-            <P style="text-base pt-2" textType="medium">
-              {currentQuestion?.question}
-            </P>
+        <View>
+          <P style="text-[#505050]" textType="medium">
+            {currentQuestion?.shortTitle}
+          </P>
+          <P style="text-base pt-2" textType="medium">
+            {currentQuestion?.question}
+          </P>
 
-            {currentQuestion?.answers.map((ans) => (
-              <Pressable
-                key={ans.id}
-                onPress={() => {
-                  setCurrentScore(currentScore + ans.value);
-                  handleNextQuestion();
-                }}
-                style={({ pressed }) => [
-                  {
-                    backgroundColor: pressed ? "#FFF2EB" : "white",
-                    marginTop: 20,
-                    borderWidth: 1,
-                    borderRadius: 5,
-                    paddingVertical: 8,
-                    borderColor: pressed ? "#F3AB33" : "#b8b8b8",
-                  },
-                ]}
-              >
-                {({ pressed }) => (
-                  <P
-                    style={`${
-                      pressed ? "text-[#F3AB33]" : "text-[#505050]"
-                    } text-lg uppercase tracking-wide text-center`}
-                  >
-                    {ans.ans}
-                  </P>
-                )}
-              </Pressable>
-            ))}
-          </View>
-       
+          {currentQuestion?.answers.map((ans) => (
+            <Pressable
+              key={ans.id}
+              onPress={() => {
+                setCurrentScore(currentScore + ans.value);
+                handleNextQuestion();
+              }}
+              style={({ pressed }) => [
+                {
+                  backgroundColor: pressed ? "#FFF2EB" : "white",
+                  marginTop: 20,
+                  borderWidth: 1,
+                  borderRadius: 5,
+                  paddingVertical: 8,
+                  borderColor: pressed ? "#F3AB33" : "#b8b8b8",
+                },
+              ]}
+            >
+              {({ pressed }) => (
+                <P
+                  style={`${
+                    pressed ? "text-[#F3AB33]" : "text-[#505050]"
+                  } text-lg uppercase tracking-wide text-center`}
+                >
+                  {ans.ans}
+                </P>
+              )}
+            </Pressable>
+          ))}
+        </View>
+
         <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
-     
           onPress={handleNextQuestion}
         >
           <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
