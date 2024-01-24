@@ -117,6 +117,9 @@ importers:
       expo-auth-session:
         specifier: ~4.0.3
         version: 4.0.3(expo@48.0.21)
+      expo-av:
+        specifier: ~13.2.1
+        version: 13.2.1(expo@48.0.21)
       expo-constants:
         specifier: ~14.2.1
         version: 14.2.1(expo@48.0.21)
@@ -183,6 +186,15 @@ importers:
       react-native-svg:
         specifier: 13.4.0
         version: 13.4.0(react-native@0.71.14)(react@18.2.0)
+      react-native-webview:
+        specifier: ^13.6.4
+        version: 13.6.4(react-native@0.71.14)(react@18.2.0)
+      react-native-youtube:
+        specifier: ^2.0.2
+        version: 2.0.2(react-native@0.71.14)
+      react-native-youtube-iframe:
+        specifier: ^2.3.0
+        version: 2.3.0(react-native-webview@13.6.4)(react-native@0.71.14)(react@18.2.0)
       superjson:
         specifier: 1.9.1
         version: 1.9.1
@@ -8097,6 +8109,14 @@ packages:
       - supports-color
     dev: false
 
+  /expo-av@13.2.1(expo@48.0.21):
+    resolution: {integrity: sha512-mC0mYSzaOaZgXjzhW2l4Ag325JjH6q5IbptfwD7gkMOFYy7VPOMxEMUnetadbs3DDzmgE6vUWrTjUIUbwq59qg==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.21(@babel/core@7.23.3)
+    dev: false
+
   /expo-constants@14.2.1(expo@48.0.21):
     resolution: {integrity: sha512-DD5u4QmBds2U7uYo409apV7nX+XjudARcgqe7S9aRFJ/6kyftmuxvk1DpaU4X42Av8z/tfKwEpuxl+vl7HHx/Q==}
     peerDependencies:
@@ -12893,6 +12913,46 @@ packages:
     dependencies:
       prop-types: 15.8.1
       yargs: 16.2.0
+    dev: false
+
+  /react-native-webview@13.6.4(react-native@0.71.14)(react@18.2.0):
+    resolution: {integrity: sha512-AdgmaMBHPcyERTvng9eSGgHX6AleyUlSusWAxngSOSdiYGgHW81T6C5A8j/ImJAF9oZg0bQDxp43Hu56tzENZQ==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      escape-string-regexp: 2.0.0
+      invariant: 2.2.4
+      react: 18.2.0
+      react-native: 0.71.14(@babel/core@7.23.3)(@babel/preset-env@7.23.3)(react@18.2.0)
+    dev: false
+
+  /react-native-youtube-iframe@2.3.0(react-native-webview@13.6.4)(react-native@0.71.14)(react@18.2.0):
+    resolution: {integrity: sha512-M+z63xwXVtS4dX3k8PbtHUUcWN+gRZt6J1EtPE7Y60BMOB979KjpkdrHqeR96or9pNR2W8K5tQhIkMXW2jwo7Q==}
+    peerDependencies:
+      react: '>=16.8.6'
+      react-native: '>=0.60'
+      react-native-web-webview: '>=1.0.2'
+      react-native-webview: '>=7.0.0'
+    peerDependenciesMeta:
+      react-native-web-webview:
+        optional: true
+      react-native-webview:
+        optional: true
+    dependencies:
+      events: 3.3.0
+      react: 18.2.0
+      react-native: 0.71.14(@babel/core@7.23.3)(@babel/preset-env@7.23.3)(react@18.2.0)
+      react-native-webview: 13.6.4(react-native@0.71.14)(react@18.2.0)
+    dev: false
+
+  /react-native-youtube@2.0.2(react-native@0.71.14):
+    resolution: {integrity: sha512-tyoGG8mqv0q2327BUYCXBmloUO8twFTOsGdwYvj0tiINAwtxNid8bS0KxnjViH3f/HmBqATDbPwhHpNXpOCsLA==}
+    peerDependencies:
+      react-native: '>=0.60'
+    dependencies:
+      prop-types: 15.8.1
+      react-native: 0.71.14(@babel/core@7.23.3)(@babel/preset-env@7.23.3)(react@18.2.0)
     dev: false
 
   /react-native@0.71.14(@babel/core@7.23.3)(@babel/preset-env@7.23.3)(react@18.2.0):
