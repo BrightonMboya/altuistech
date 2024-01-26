@@ -1,6 +1,7 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheetScrollView from "./BottomSheetScrollView";
 
@@ -23,28 +24,25 @@ export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
               className="h-[56px] w-[56px] object-cover"
             />
 
-            <P style="text-lg" textType="medium">
+            <H1 styling="text-lg pt-2">
               Keep Shining! Celebrate Your Happiness.
-            </P>
-            <P style="pt-3 pr-[2px] text-base">
+            </H1>
+            <P style="pt-3 pr-[2px] text-base text-[#505050]">
               Feeling great is awesome! Savor this positive mood and share it
               with others. Remember to take care of yourself and keep doing
               things that bring you joy.
             </P>
           </View>
-          <P style="text-lg mt-5">Here are some ideas:</P>
+          <P style="text-lg mt-5 text-[#505050]">Here are some ideas:</P>
           <TouchableOpacity
             className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
             onPress={() => {
               router.push("/");
             }}
           >
-            <P
-              style="text-lg tracking-wide text-white p-3 text-center"
-              textType="medium"
-            >
+            <H1 styling="text-lg tracking-wide text-white pt-2 text-center">
               Watch a Video
-            </P>
+            </H1>
           </TouchableOpacity>
           <TouchableOpacity
             className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2]  bg-white "
@@ -52,15 +50,12 @@ export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
               router.push("/");
             }}
           >
-            <P
-              style="text-lg tracking-wide text-[#1960F2] p-3 text-center"
-              textType="medium"
-            >
+            <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center">
               Write down your feeling
-            </P>
+            </H1>
           </TouchableOpacity>
 
-          <View className="flex flex-row items-center mt-5  ">
+          <View className="mt-5 flex flex-row items-center  ">
             <View className="w-[150px] border-[1px] border-[#989898]"></View>
             <P style="px-2 text-[#989898]">or</P>
             <View className="w-[150px] border-[1px]  border-[#989898]"></View>
