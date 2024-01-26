@@ -3,6 +3,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 import { Stack } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
 export default function Page() {
@@ -15,13 +16,13 @@ export default function Page() {
           }}
         />
         <ScrollView>
-          <P style="text-xl" textType="medium">
-            More
-          </P>
+          <H1 styling="text-xl">My Account</H1>
+          <P style="text-lg pt-1 text-[#505050]">Adediwura Adedigba</P>
 
           <P style="text-lg  mt-5 uppercase tracking-wider text-[#505050]">
             account
           </P>
+
           <View className="mt-2 flex  w-[80%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
             <View className="flex flex-row items-center ">
               <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -157,7 +158,7 @@ export default function Page() {
             </View>
           </View>
 
-          <View className="flex flex-row justify-center ml-[-40px] mt-[40px] items-center">
+          <View className="ml-[-40px] mt-[40px] flex flex-row items-center justify-center">
             <P style="pr-3 text-lg text-[#FF2525]">Log Out</P>
             <Svg width="20" height="20" viewBox="0 0 17 16" fill="none">
               <Path
