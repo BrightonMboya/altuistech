@@ -16,6 +16,7 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { TRPCProvider } from "~/utils/api";
 import BottomTab from "~/components/BottomTab";
 import SignUpScreen from "~/components/Signup";
+import OnboardingScreen from "~/components/auth/AuthScreen";
 
 // fn to secure the cache from clerk
 const tokenCache = {
@@ -43,7 +44,7 @@ const RootLayout = () => {
       publishableKey="pk_test_aG9uZXN0LWJvYmNhdC01OS5jbGVyay5hY2NvdW50cy5kZXYk"
       tokenCache={tokenCache}
     >
-      <SignedOut>
+      <SignedIn>
         <TRPCProvider>
           <SafeAreaProvider className="relative">
             {/*
@@ -56,6 +57,9 @@ const RootLayout = () => {
             <BottomTab />
           </SafeAreaProvider>
         </TRPCProvider>
+      </SignedIn>
+      <SignedOut>
+        <OnboardingScreen />
       </SignedOut>
     </ClerkProvider>
   );

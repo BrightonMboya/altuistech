@@ -5,6 +5,7 @@ import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from "react-native-reanimated";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
 import Pagination from "~/components/auth/onboarding-screen/Pagination";
@@ -33,41 +34,43 @@ const OnboardingScreen = () => {
   });
 
   return (
-    <View style={styles.container}>
-      <Stack.Screen
+
+      <View style={styles.container} className="mt-5" >
+        {/* <Stack.Screen
         options={{
           headerShown: false,
         }}
-      />
-      <Animated.FlatList
-        ref={flatListRef}
-        onScroll={onScroll}
-        data={data}
-        renderItem={({ item, index }) => {
-          return <RenderItem item={item} index={index} x={x} />;
-        }}
-        keyExtractor={(item) => item.id}
-        scrollEventThrottle={16}
-        horizontal={true}
-        bounces={false}
-        pagingEnabled={true}
-        showsHorizontalScrollIndicator={false}
-        onViewableItemsChanged={onViewableItemsChanged}
-        viewabilityConfig={{
-          minimumViewTime: 300,
-          viewAreaCoveragePercentThreshold: 10,
-        }}
-        contentContainerStyle={{
-          paddingTop: 30,
-          marginTop: 10,
-        }}
-      />
-      <View style={styles.bottomContainer}>
-        <Pagination data={data} x={x} />
+      /> */}
+        <Animated.FlatList
+          ref={flatListRef}
+          onScroll={onScroll}
+          data={data}
+          renderItem={({ item, index }) => {
+            return <RenderItem item={item} index={index} x={x} />;
+          }}
+          keyExtractor={(item) => item.id}
+          scrollEventThrottle={16}
+          horizontal={true}
+          bounces={false}
+          pagingEnabled={true}
+          showsHorizontalScrollIndicator={false}
+          onViewableItemsChanged={onViewableItemsChanged}
+          viewabilityConfig={{
+            minimumViewTime: 300,
+            viewAreaCoveragePercentThreshold: 10,
+          }}
+          contentContainerStyle={{
+            paddingTop: 30,
+            marginTop: 10,
+          }}
+        />
+        <View style={styles.bottomContainer}>
+          <Pagination data={data} x={x} />
+        </View>
       </View>
-    </View>
-  );
-};
+
+  )
+}
 
 export default OnboardingScreen;
 
