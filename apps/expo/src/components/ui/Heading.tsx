@@ -12,6 +12,8 @@ const H1: React.FC<{
 }> = ({ children, styling }) => {
   const [fontsLoaded] = useFonts({
     "clashDisplay-Bold": require("../../../assets/fonts/ClashDisplay-Bold.otf"),
+    "clashDisplay-Regular": require("../../../assets/fonts/ClashDisplay-Regular.otf"),
+    "clashDisplay-Medium": require("../../../assets/fonts/ClashDisplay-Medium.otf"),
   });
 
   // after the fonts are loaded we have to remove the splash screen
@@ -25,7 +27,10 @@ const H1: React.FC<{
     return null;
   }
   return (
-    <Text className={`${styling} `} style={{ fontFamily: "clashDisplay-Bold" }}>
+    <Text
+      className={`${styling} `}
+      style={{ fontFamily: "clashDisplay-Medium" }}
+    >
       {children}
     </Text>
   );
