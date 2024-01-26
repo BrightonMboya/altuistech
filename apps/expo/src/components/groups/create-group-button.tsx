@@ -1,6 +1,5 @@
 import { TouchableOpacity, View } from "react-native";
-
-import P from "../ui/Text";
+import H1 from "../ui/Heading";
 
 export default function Button({
   bottomSheetHandler,
@@ -15,9 +14,9 @@ export default function Button({
           bottomSheetHandler();
         }}
       >
-        <P style="text-xl tracking-wide text-white p-3 text-center">
-          + Create/ Join Groups
-        </P>
+        <H1 styling="text-xl tracking-wide text-white p-3 text-center">
+          +   Create/ Join Groups
+        </H1>
       </TouchableOpacity>
     </View>
   );

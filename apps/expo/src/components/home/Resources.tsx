@@ -1,18 +1,17 @@
 import { FlatList, Image, View } from "react-native";
 
-import P from "../ui/Text";
 import H1 from "../ui/Heading";
 
 export function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   return (
-    <View className="w-[120px] h-[150px] overflow-hidden mt-1">
+    <View className="mt-1 h-[150px] w-[120px] overflow-hidden">
       <Image
         source={{
           uri: imgSrc,
         }}
-        className="w-[120px] h-[120px] rounded-md"
+        className="h-[120px] w-[120px] rounded-md"
       />
-      <P style="pt-2">{title}</P>
+      <H1 styling="pt-2">{title}</H1>
     </View>
   );
 }
@@ -51,7 +50,7 @@ export default function Resources() {
         contentContainerStyle={{
           // paddingHorizontal: 10,
           gap: 5,
-          marginTop: 5
+          marginTop: 5,
         }}
         horizontal={true}
       />

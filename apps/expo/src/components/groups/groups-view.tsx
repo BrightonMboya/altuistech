@@ -1,14 +1,14 @@
 import { FlatList, View } from "react-native";
 
 import { Card } from "../home/Resources";
-import P from "../ui/Text";
 import { groupsData } from "./join-group-card";
+import H1 from "../ui/Heading";
 
 
 export default function GroupsView() {
   return (
     <View className="pl-5">
-        <P style="text-xl pt-5" textType="medium">Your Groups</P>
+        <H1 styling="text-xl pt-5">Your Groups</H1>
       <FlatList
         data={groupsData}
         renderItem={({ item }) => <Card imgSrc={item.img} title={item.title} />}
