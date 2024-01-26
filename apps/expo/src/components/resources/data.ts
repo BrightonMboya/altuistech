@@ -27,14 +27,14 @@ export const meditationVideos = [
     id: 1,
     link: "https://www.youtube.com/watch?v=xv-ejEOogaA",
     thumbNail:
-      "https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1611800065908-233b597db552?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D",
     label: "A 10-Minute Journey to Inner Peace",
   },
   {
     id: 2,
     link: "https://www.youtube.com/watch?v=ZVcQXX7fmFI",
     thumbNail:
-      "https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1532798442725-41036acc7489?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D",
     label: "Clear Your Mind, A Guided Mindfulness Meditation",
   },
   {

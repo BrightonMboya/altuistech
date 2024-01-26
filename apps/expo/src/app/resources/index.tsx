@@ -4,6 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
 import ResourceGrid from "~/components/resources/ResourceGrid";
+import {
+  meditationVideos,
+  mentalRelaxationVideos,
+  motivationalVideos,
+} from "~/components/resources/data";
 import P from "~/components/ui/Text";
 
 export default function Page() {
@@ -24,11 +29,12 @@ export default function Page() {
           defaultValue={searchItem}
         />
         <View className="flex flex-col space-y-5">
-          <ResourceGrid title="General" />
-          <ResourceGrid title="Anxiety" />
-          <ResourceGrid title="Depression" />
-          <ResourceGrid title="Non-Prescribed Drugs" />
-          <ResourceGrid title="Post Traumatic Disorder" />
+          <ResourceGrid title="Meditation Videos" data={meditationVideos} />
+          <ResourceGrid title="Motivation Videos" data={motivationalVideos} />
+          <ResourceGrid
+            title="Mental Relaxation Videos"
+            data={mentalRelaxationVideos}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

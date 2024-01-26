@@ -1,46 +1,47 @@
 import { useRef } from "react";
-import { FlatList, View } from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
-import { ResizeMode, Video } from "expo-av";
-
-
-
+import { FlatList, Image, View } from "react-native";
+import { A } from "@expo/html-elements";
+import P from "../ui/Text";
 import { Card, data } from "~/components/home/Resources";
 import H1 from "../ui/Heading";
 
+interface Props {
+  id: number;
+  link: string;
+  thumbNail: string;
+  label: string;
+}
 
-function VideoCard() {
-  const video = useRef(null);
+function VideoCard({ link, thumbNail, label }: Props) {
   return (
-    <View>
-      {/* <Video
-        ref={video}
-        className="h-[150px] w-[120px]"
-        source={{
-          uri: "https://www.youtube.com/embed/9Qt8ftivJ5A?modestbranding=1&playsinline=1&showinfo=0&rel=0",
-        }}
-        useNativeControls
-        resizeMode={ResizeMode.CONTAIN}
-        isLooping
-        // onPlaybackStatusUpdate={status => setStatus(() => status)}
-      /> */}
-     <YoutubePlayer
-        height={300}
-        play={true}
-        videoId={'hhrRi5pan4g'}
-      />
-    </View>
+    <A href={link} className="h-[150px] w-[120px]">
+      <View className="mt-1 h-[150px] w-[120px] overflow-hidden">
+        <Image
+          source={{
+            uri: thumbNail,
+          }}
+          className="h-[120px] w-[120px] rounded-md"
+        />
+        <P style="pt-2">{label}</P>
+      </View>
+    </A>
   );
 }
 
-export default function ResourceGrid({ title }: { title: string }) {
+export default function ResourceGrid({
+  data,
+  title,
+}: {
+  data: Props[];
+  title: string;
+}) {
   return (
-    <View className="mt-5">
+    <View className="mt-5 max-h-[250px]">
       {/* <P style="text-xl leading-[1.2em]" textType="heading">{title}</P> */}
       <H1 styling="text-xl tracking-[0.32px]">{title}</H1>
       <FlatList
         data={data}
-        renderItem={({ item }) => <VideoCard />}
+        renderItem={({ item }) => <VideoCard {...item} />}
         keyExtractor={(_, index) => index.toString()}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
