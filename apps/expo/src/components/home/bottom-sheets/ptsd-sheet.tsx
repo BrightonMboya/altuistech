@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheet from "./BottomSheet";
 
@@ -21,9 +22,9 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
       backDropColor={"black"}
     >
       <View className="flex flex-col items-center pt-5">
-        <P style="text-lg text-[#121212] pl-3 w-[90%]" textType="medium">
+        <H1 styling="text-lg text-[#121212] pl-3 w-[90%]">
           Have you ever experienced any of the below?
-        </P>
+        </H1>
       </View>
       <View className="mt-[16px] flex flex-col gap-2 pl-5 pt-6">
         <View className="flex flex-row items-center">
@@ -79,12 +80,9 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
             router.push("/tests/ptsd");
           }}
         >
-          <P
-            style="text-lg tracking-wide text-white pt-2 text-center"
-            textType="medium"
-          >
+          <H1 styling="text-lg tracking-wide text-white pt-2 text-center">
             Yes, I have
-          </P>
+          </H1>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -93,12 +91,9 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
             closeBottomSheet();
           }}
         >
-          <P
-            style="text-lg tracking-wide text-[#1960F2] pt-2 text-center"
-            textType="medium"
-          >
+          <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center">
             No, I have not
-          </P>
+          </H1>
         </TouchableOpacity>
       </View>
     </BottomSheet>

@@ -3,6 +3,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import { Path, Svg } from "react-native-svg";
 import { useRouter } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheet from "./BottomSheet";
 
@@ -26,11 +27,11 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
         className="pt-3"
       />
       <View className="flex flex-col items-center pt-5">
-        <P style="text-lg text-[#121212] pl-3 w-[90%]" textType="medium">
+        <H1 styling="text-lg text-[#121212] pl-3 w-[90%]">
           Do you take Alcohol Or Any Non-Prescribed Drug Substance?{" "}
-        </P>
-       
-        <View className="flex flex-row items-start rounded-md bg-[#FFF2EB] p-4 w-[90%] mt-5">
+        </H1>
+
+        <View className="mt-5 flex w-[90%] flex-row items-start rounded-md bg-[#FFF2EB] p-4">
           <Svg width="20" height="20" viewBox="0 0 16 16" fill="none">
             <Path
               d="M8.00016 15.1667C4.04683 15.1667 0.833496 11.9533 0.833496 8C0.833496 4.04667 4.04683 0.833333 8.00016 0.833333C11.9535 0.833333 15.1668 4.04667 15.1668 8C15.1668 11.9533 11.9535 15.1667 8.00016 15.1667ZM8.00016 1.83333C4.60016 1.83333 1.8335 4.6 1.8335 8C1.8335 11.4 4.60016 14.1667 8.00016 14.1667C11.4002 14.1667 14.1668 11.4 14.1668 8C14.1668 4.6 11.4002 1.83333 8.00016 1.83333Z"
@@ -46,7 +47,7 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
             />
           </Svg>
           <P style="text-[#505050] pl-[10px]">
-           You don’t need to take this test if you don’t take alcohol or
+            You don’t need to take this test if you don’t take alcohol or
             Non-Prescribed drugs.
           </P>
         </View>
@@ -57,12 +58,9 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
             router.push("/tests/alcohol");
           }}
         >
-          <P
-            style="text-lg tracking-wide text-white pt-2 text-center"
-            textType="medium"
-          >
+          <H1 styling="text-lg tracking-wide text-white pt-2 text-center">
             Yes I do
-          </P>
+          </H1>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -71,12 +69,9 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
             closeBottomSheet();
           }}
         >
-          <P
-            style="text-lg tracking-wide text-[#1960F2] pt-2 text-center"
-            textType="medium"
-          >
+          <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center">
             No I don’t
-          </P>
+          </H1>
         </TouchableOpacity>
       </View>
     </BottomSheet>

@@ -3,7 +3,7 @@ import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
-
+import H1 from "~/components/ui/Heading";
 import { ptsdTest } from "~/components/tests/data";
 import P from "~/components/ui/Text";
 
@@ -42,15 +42,14 @@ export default function Page() {
       >
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
-          <P style="text-xl pl-5 text-white" textType="medium">
+          <H1 styling="text-xl pl-5 text-white">
             Post-traumatic Disorder
-          </P>
+          </H1>
         </View>
       </TouchableOpacity>
-      <P
-        style="text-white text-xl pt-3"
-        textType="medium"
-      >{`Question ${questionIndex}/${ptsdTest.length}`}</P>
+      <H1
+        styling="text-white text-xl pt-3"
+      >{`Question ${questionIndex}/${ptsdTest.length}`}</H1>
       {/* <View className="mt-5 h-2 rounded-md bg-[#b8b8b8]">
         <View
           className={`bg-[#F3AB33] h-2 rounded-md w-[${`${Math.ceil(Math.round((questionIndex / anxietyTest.length) * 100) / 10) * 10}%`}]`}
@@ -58,12 +57,12 @@ export default function Page() {
       </View> */}
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         <View>
-          <P style="text-[#505050]" textType="medium">
+          <P style="text-[#505050] text-base" textType="medium">
             {currentQuestion?.shortTitle}
           </P>
-          <P style="text-base pt-2" textType="medium">
+          <H1 styling="text-lg pt-2">
             {currentQuestion?.question}
-          </P>
+          </H1>
           <View className="flex flex-row items-center justify-center gap-5 pt-10">
             {currentQuestion?.answers.map((ans) => (
               <Pressable
@@ -84,9 +83,9 @@ export default function Page() {
                   />
                 )}
 
-                <P style="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
+                <H1 styling="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
                   {ans.ans}
-                </P>
+                </H1>
               </Pressable>
             ))}
           </View>
@@ -96,7 +95,7 @@ export default function Page() {
           className="mt-5 rounded-md bg-blue"
           onPress={handleNextQuestion}
         >
-          <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
+          <H1 styling="text-xl tracking-wide text-white p-3 text-center">Next</H1>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
