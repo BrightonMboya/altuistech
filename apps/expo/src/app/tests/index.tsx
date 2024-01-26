@@ -3,7 +3,7 @@ import { ScrollView, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
-
+import H1 from "~/components/ui/Heading";
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import AlcoholBottomSheet from "~/components/home/bottom-sheets/alcohol-test";
 import PTSDSheet from "~/components/home/bottom-sheets/ptsd-sheet";
@@ -29,9 +29,9 @@ export default function Page() {
         }}
       />
       <ScrollView>
-        <P style="text-xl" textType="medium">
+        <H1 styling="text-xl" >
           Mental Health Test
-        </P>
+        </H1>
         <P style="text-base pt-1 text-[#505050] w-[90%]">
           Pls select the type of mental health test you will like to take.
         </P>
