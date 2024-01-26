@@ -5,11 +5,12 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
 import P from "~/components/ui/Text";
+import H1 from "~/components/ui/Heading";
 
 const Index = () => {
   const router = useRouter();
   return (
-    <SafeAreaView className="relative min-h-screen bg-white pl-5 pt-5 ">
+    <SafeAreaView className="relative min-h-screen bg-white pt-5 ">
       <Stack.Screen
         options={{
           title: "",
@@ -21,17 +22,18 @@ const Index = () => {
         onPress={() => {
           router.push("/");
         }}
+        className="pl-5"
       >
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} />
-          <P style="text-lg pl-5 " textType="medium">
+          <H1 styling="text-lg pl-5 ">
             Book 1-on-1 Session
-          </P>
+          </H1>
         </View>
       </TouchableOpacity>
 
       <View className="mt-20 flex flex-col items-center justify-center ">
-        <P style="text-center px-2">
+        <P style="text-center text-[#505050] text-base">
           We’ve sent an appointment request to the professional. If they accept,
           you will receive confirmation and a calendar invite.
         </P>
@@ -48,9 +50,9 @@ const Index = () => {
             router.push("/sessions/available-proffesionals");
           }}
         >
-          <P style="text-xl tracking-wide text-white p-3 text-center">
+          <H1 styling="text-xl tracking-wide text-white p-3 text-center">
             Check Available Proffesionals
-          </P>
+          </H1>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -1,8 +1,6 @@
 import { Image, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import IoniIcons from "react-native-vector-icons/Ionicons";
-import { useClerk } from "@clerk/clerk-expo";
 
+import H1 from "../ui/Heading";
 import P from "../ui/Text";
 
 export default function ProfileCard() {
@@ -16,7 +14,7 @@ export default function ProfileCard() {
       />
       <View>
         <P style="text-base">Good Morning,</P>
-        <P style="text-xl" textType="medium">Adediwura</P>
+        <H1 styling="text-xl">Adediwura</H1>
       </View>
     </View>
   );

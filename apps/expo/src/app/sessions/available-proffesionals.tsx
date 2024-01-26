@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
 const data = [
@@ -58,9 +59,7 @@ function Card({
       />
 
       <View className="pl-5">
-        <P style="text-lg" textType="medium">
-          {name}
-        </P>
+        <H1 styling="text-lg">{name}</H1>
         <P>{occupation}</P>
         <Image
           source={require("../../../assets/imgs/stars.png")}
@@ -89,9 +88,7 @@ const Index = () => {
         >
           <View className="flex flex-row items-center">
             <FontAwesome name="long-arrow-left" size={30} />
-            <P style="text-lg pl-5 " textType="medium">
-              Available
-            </P>
+            <H1 styling="text-xl pl-5 ">Available</H1>
           </View>
         </TouchableOpacity>
         <View className="flex flex-col">

@@ -72,9 +72,7 @@ export default function Services() {
               resizeMode: "contain",
             }}
           />
-          <P style="pt-2 text-lg" textType="medium">
-            Resource Centers
-          </P>
+          <H1 styling="pt-2 text-lg">Resource Centers</H1>
           <P style="pt-3">
             Take this 6 minute assessment to know your personality type.
           </P>
@@ -88,9 +86,9 @@ export default function Services() {
               resizeMode: "contain",
             }}
           />
-          <P style="pt-2 text-lg" textType="medium">
+          <H1 styling="pt-2 text-lg">
             Help Groups
-          </P>
+          </H1>
           <P style="pt-3">
             Take this 6 minute assessment to know your personality type.
           </P>
@@ -98,7 +96,7 @@ export default function Services() {
       </View>
 
       <View className="flex flex-row gap-2 pt-3">
-        <View className="h-[180px] w-[200px] overflow-hidden bg-[#E4EDFF] p-3 rounded-md">
+        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#E4EDFF] p-3">
           <Image
             source={require("../../../assets/imgs/emojis/star.png")}
             className="h-10 w-10 rounded-md object-cover"
@@ -106,15 +104,15 @@ export default function Services() {
               resizeMode: "contain",
             }}
           />
-          <P style="pt-2 text-lg" textType="medium">
+          <H1 styling="pt-2 text-lg">
             Health Screening
-          </P>
+          </H1>
           <P style="pt-3">
             Take this 6 minute assessment to know your personality type.
           </P>
         </View>
 
-        <View className="h-[180px] w-[200px] overflow-hidden bg-[#F2E8FF] p-3 rounded-md">
+        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#F2E8FF] p-3">
           <Image
             source={require("../../../assets/imgs/emojis/message.png")}
             className="h-10 w-10 rounded-md object-cover"
@@ -122,9 +120,9 @@ export default function Services() {
               resizeMode: "contain",
             }}
           />
-          <P style="pt-2 text-lg" textType="medium">
+          <H1 styling="pt-2 text-lg">
             Consultations
-          </P>
+          </H1>
           <P style="pt-3">
             Take this 6 minute assessment to know your personality type.
           </P>
