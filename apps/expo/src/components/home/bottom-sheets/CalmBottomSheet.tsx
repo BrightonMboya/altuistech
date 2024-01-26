@@ -1,5 +1,6 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
+import H1 from "~/components/ui/Heading";
 
 import P from "~/components/ui/Text";
 import BottomSheetScrollView from "./BottomSheetScrollView";
@@ -23,28 +24,27 @@ export default function Component({ calmBottomRef }: { calmBottomRef: any }) {
               className="h-[56px] w-[56px] object-cover"
             />
 
-            <P style="text-lg" textType="medium">
+            <H1 styling="text-lg pt-2">
               Embrace the Peace, Recharge, and Renew.
-            </P>
-            <P style="pt-3 pr-[2px] text-base">
+            </H1>
+            <P style="pt-3 pr-[2px] text-base text-[#505050]">
               Enjoy this feeling of calm! Take some time to appreciate the
               present moment and recharge your energy. Do something that brings
               you inner peace.
             </P>
           </View>
-          <P style="text-lg mt-5">Here are some ideas:</P>
+          <P style="text-lg mt-5 text-[#505050]">Here are some ideas:</P>
           <TouchableOpacity
             className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
             onPress={() => {
               router.push("/");
             }}
           >
-            <P
-              style="text-lg tracking-wide text-white p-3 text-center"
-              textType="medium"
+            <H1
+              styling="text-lg tracking-wide text-white pt-2 text-center"
             >
               Read a Book
-            </P>
+            </H1>
           </TouchableOpacity>
           <TouchableOpacity
             className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2]  bg-white "
@@ -52,12 +52,11 @@ export default function Component({ calmBottomRef }: { calmBottomRef: any }) {
               router.push("/");
             }}
           >
-            <P
-              style="text-lg tracking-wide text-[#1960F2] p-3 text-center"
-              textType="medium"
+            <H1
+              styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center"
             >
               Practice Yoga
-            </P>
+            </H1>
           </TouchableOpacity>
 
           <View className="mt-5 flex flex-row items-center  ">
