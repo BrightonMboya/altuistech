@@ -27,7 +27,7 @@ function VideoCard() {
      <YoutubePlayer
         height={300}
         play={true}
-        videoId={'84WIaK3bl_s'}
+        videoId={'hhrRi5pan4g'}
       />
     </View>
   );
