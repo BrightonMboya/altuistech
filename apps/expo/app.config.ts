@@ -1,8 +1,12 @@
 import type { ExpoConfig } from "@expo/config";
 
+
+
+
+
 const defineConfig = (): ExpoConfig => ({
-  name: "nane-nane",
-  slug: "nane-nane",
+  name: "altuistech",
+  slug: "altuistech",
   scheme: "expo",
   version: "1.0.0",
   orientation: "portrait",
@@ -22,7 +26,7 @@ const defineConfig = (): ExpoConfig => ({
     bundleIdentifier: "your.bundle.identifier",
   },
   android: {
-    package: "com.mboya.nane_nane",
+    package: "com.mboya.altuistech",
     versionCode: 1,
     // adaptiveIcon: {
     //   foregroundImage: "./assets/icon.png",
@@ -31,7 +35,7 @@ const defineConfig = (): ExpoConfig => ({
   },
   extra: {
     eas: {
-      projectId: "",
+      projectId: "12fcf8c5-b32c-4899-9cf8-4d49a15be14d",
     },
   },
   plugins: ["./expo-plugins/with-modify-gradle.js"],
