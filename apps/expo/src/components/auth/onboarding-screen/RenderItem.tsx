@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type Dispatch, type SetStateAction } from "react";
 import {
   Image,
   StyleSheet,
@@ -17,9 +17,10 @@ type Props = {
   item: OnboardingData;
   index: number;
   x: SharedValue<number>;
+  setShowOnboarding: Dispatch<SetStateAction<boolean>>;
 };
 
-const RenderItem = ({ item }: Props) => {
+const RenderItem = ({ item, setShowOnboarding }: Props) => {
   const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
   const router = useRouter();
   return (
@@ -44,7 +45,7 @@ const RenderItem = ({ item }: Props) => {
       <TouchableOpacity
         className="mt-10 h-12 w-[350px] rounded-md bg-[#1960F2]"
         onPress={() => {
-          router.push("/");
+          setShowOnboarding(false);
         }}
       >
         <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
