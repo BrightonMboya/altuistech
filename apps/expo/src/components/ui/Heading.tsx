@@ -8,7 +8,7 @@ SplashScreen.preventAutoHideAsync();
 
 interface Props {
   children: React.ReactNode;
-  styling: string;
+  styling?: string;
 }
 
 const H1 = ({ children, styling }: Props) => {
