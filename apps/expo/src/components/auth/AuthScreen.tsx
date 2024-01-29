@@ -11,6 +11,7 @@ import { Stack } from "expo-router";
 import Pagination from "~/components/auth/onboarding-screen/Pagination";
 import RenderItem from "~/components/auth/onboarding-screen/RenderItem";
 import data, { OnboardingData } from "~/components/auth/onboarding-screen/data";
+import P from "../ui/Text";
 
 const OnboardingScreen = () => {
   const flatListRef = useAnimatedRef<FlatList<OnboardingData>>();
@@ -41,7 +42,8 @@ const OnboardingScreen = () => {
           headerShown: false,
         }}
       /> */}
-        <Animated.FlatList
+      <P>Hello World</P>
+        {/* <Animated.FlatList
           ref={flatListRef}
           onScroll={onScroll}
           data={data}
@@ -66,7 +68,7 @@ const OnboardingScreen = () => {
         />
         <View style={styles.bottomContainer}>
           <Pagination data={data} x={x} />
-        </View>
+        </View> */}
       </View>
 
   )

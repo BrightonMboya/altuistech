@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "expo-router";
 
 import P from "./ui/Text";
 
-const BottomTab: React.FC = () => {
+const BottomTab = () => {
   const router = useRouter();
   const pathname = usePathname();
 

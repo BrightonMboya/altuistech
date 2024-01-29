@@ -1,17 +1,21 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import { Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold, Poppins_800ExtraBold, Poppins_900Black, useFonts } from "@expo-google-fonts/poppins";
-
-
-
-
+import {
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+  Poppins_800ExtraBold,
+  Poppins_900Black,
+  useFonts,
+} from "@expo-google-fonts/poppins";
 
 //prevents splash screen from auto hiding fonts
 SplashScreen.preventAutoHideAsync();
 
-const P: React.FC<{
-  children: any
+interface Props {
+  children: any;
   style?: string;
   textType?:
     | "regular"
@@ -21,7 +25,9 @@ const P: React.FC<{
     | "extraBold"
     | "light"
     | "heading";
-}> = ({ children, style, textType }) => {
+}
+
+const P = ({ children, style, textType }: Props) => {
   let textStyle: {};
   switch (textType) {
     case "regular":

@@ -41,7 +41,7 @@ const tokenCache = {
 const RootLayout = () => {
   return (
     <ClerkProvider
-      publishableKey="pk_test_aG9uZXN0LWJvYmNhdC01OS5jbGVyay5hY2NvdW50cy5kZXYk"
+      publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
       tokenCache={tokenCache}
     >
       <SignedIn>
