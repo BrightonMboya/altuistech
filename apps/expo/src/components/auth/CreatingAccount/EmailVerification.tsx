@@ -2,8 +2,11 @@ import { useState } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
 import { useSignUp } from "@clerk/clerk-expo";
 
+
+
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
+
 
 export default function EmailVerification() {
   const [verifyEmailError, setVerifyEmailError] = useState("");
@@ -22,13 +25,19 @@ export default function EmailVerification() {
       });
 
       await setActive({ session: completeSignUp.createdSessionId });
+       console.log("^^^^^^^ I am succccesful");
     } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
+      // console.error(JSON.stringify(err, null, 2));
+      console.error(
+        "<<<<<<<<<<<",
+        JSON.stringify(err, null, 2),
+        ">>>>>>>>>>>>",
+      );
       setVerifyEmailError(err.errors[0].longMessage);
     }
   };
   return (
-    <View className="flex pt-20 flex-col items-center justify-center">
+    <View className="flex flex-col items-center justify-center pt-20">
       <View>
         <H1 styling="text-lg font-bold ">
           Enter the code sent to your email address
@@ -49,7 +58,7 @@ export default function EmailVerification() {
             placeholder="Code..."
             onChangeText={(code) => setCode(code)}
             placeholderTextColor="#505050"
-            className="w-[150px] border-[1px] border-[#505050] rounded-md p-2 "
+            className="w-[150px] rounded-md border-[1px] border-[#505050] p-2 "
           />
           <TouchableOpacity onPress={onPressVerify}>
             <View className="rounded-md bg-blue ">

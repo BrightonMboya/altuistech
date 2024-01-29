@@ -1,5 +1,9 @@
 import type { ExpoConfig } from "@expo/config";
 
+
+
+
+
 const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
@@ -32,6 +36,7 @@ const defineConfig = (): ExpoConfig => ({
   extra: {
     eas: {
       projectId: "12fcf8c5-b32c-4899-9cf8-4d49a15be14d",
+      clerkPublishableKey: process.env.CLERK_PUBLISHABLE_KEY,
     },
   },
   plugins: ["./expo-plugins/with-modify-gradle.js"],

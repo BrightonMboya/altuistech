@@ -33,13 +33,18 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
       // send the email.
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       setPendingVerification(true);
+      console.log("****** I am succccesful");
 
       // doing the phone number verification
       //   await signUp.preparePhoneNumberVerification({
       //     strategy: "phone_code",
       //   });
     } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
+      console.error(
+        "<<<<<<<<<<<",
+        JSON.stringify(err, null, 2),
+        ">>>>>>>>>>>>",
+      );
       setError(err.errors[0].longMessage);
     }
   };
@@ -84,6 +89,7 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
           />
         </View>
 
+        <H1 styling="text-red-500">{error}</H1>
         <TouchableOpacity
           className="mt-10 h-12  rounded-md bg-[#1960F2]"
           onPress={onSignUpPress}

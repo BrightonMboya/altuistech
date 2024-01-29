@@ -2,6 +2,7 @@ import "react-native-gesture-handler";
 import "text-encoding-polyfill";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import Constants from "expo-constants";
 import {
   // This example uses a basic Layout component, but you can use any Layout.
   Slot,
@@ -41,11 +42,11 @@ const tokenCache = {
 const RootLayout = () => {
   return (
     <ClerkProvider
-      publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
+      publishableKey={Constants.expoConfig?.extra?.clerkPublishableKey}
       tokenCache={tokenCache}
     >
-      <SignedIn>
-        <TRPCProvider>
+      <TRPCProvider>
+        <SignedIn>
           <SafeAreaProvider className="relative">
             {/*
           The Stack component displays the current page.
@@ -55,11 +56,11 @@ const RootLayout = () => {
             <StatusBar />
             <BottomTab />
           </SafeAreaProvider>
-        </TRPCProvider>
-      </SignedIn>
-      <SignedOut>
-        <OnboardingScreen />
-      </SignedOut>
+        </SignedIn>
+        <SignedOut>
+          <OnboardingScreen />
+        </SignedOut>
+      </TRPCProvider>
     </ClerkProvider>
   );
 };
