@@ -1,17 +1,15 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView, Pressable, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { useUser } from "@clerk/clerk-expo";
-
-
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
-
 export default function Page() {
-   const { user } = useUser();
+  const { user } = useUser();
+  const router = useRouter();
   return (
     <SafeAreaProvider>
       <SafeAreaView className="min-h-screen bg-white pl-5">
@@ -75,7 +73,7 @@ export default function Page() {
             consultation
           </P>
           <View className="mt-2 flex  w-[80%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
-            <View className="flex flex-row items-center ">
+            {/* <View className="flex flex-row items-center ">
               <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
                 <Path
                   d="M11.5933 10.9467L8.9 8.5H7.09333L4.4 10.9467C3.64666 11.6267 3.4 12.6733 3.76666 13.62C4.13333 14.56 5.02666 15.1667 6.03333 15.1667H9.96C10.9733 15.1667 11.86 14.56 12.2267 13.62C12.5933 12.6733 12.3467 11.6267 11.5933 10.9467ZM9.21333 12.5933H6.78666C6.53333 12.5933 6.33333 12.3867 6.33333 12.14C6.33333 11.8933 6.54 11.6867 6.78666 11.6867H9.21333C9.46666 11.6867 9.66666 11.8933 9.66666 12.14C9.66666 12.3867 9.46 12.5933 9.21333 12.5933Z"
@@ -90,24 +88,28 @@ export default function Page() {
               <P style="text-[#505050] text-lg pl-[12px]">
                 Upcoming Consultations
               </P>
-            </View>
+            </View> */}
 
-            <View className="mt-3 flex flex-row items-center">
-              <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <Path
-                  d="M8 8.50016C9.84095 8.50016 11.3333 7.00778 11.3333 5.16683C11.3333 3.32588 9.84095 1.8335 8 1.8335C6.15905 1.8335 4.66667 3.32588 4.66667 5.16683C4.66667 7.00778 6.15905 8.50016 8 8.50016Z"
-                  fill="#1960F2"
-                />
-                <Path
-                  d="M8 10.1665C4.66 10.1665 1.94 12.4065 1.94 15.1665C1.94 15.3532 2.08667 15.4998 2.27333 15.4998H13.7267C13.9133 15.4998 14.06 15.3532 14.06 15.1665C14.06 12.4065 11.34 10.1665 8 10.1665Z"
-                  fill="#1960F2"
-                />
-              </Svg>
+            <Pressable
+              onPress={() => router.push("/sessions/available-proffesionals")}
+            >
+              <View className=" flex flex-row items-center">
+                <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
+                  <Path
+                    d="M8 8.50016C9.84095 8.50016 11.3333 7.00778 11.3333 5.16683C11.3333 3.32588 9.84095 1.8335 8 1.8335C6.15905 1.8335 4.66667 3.32588 4.66667 5.16683C4.66667 7.00778 6.15905 8.50016 8 8.50016Z"
+                    fill="#1960F2"
+                  />
+                  <Path
+                    d="M8 10.1665C4.66 10.1665 1.94 12.4065 1.94 15.1665C1.94 15.3532 2.08667 15.4998 2.27333 15.4998H13.7267C13.9133 15.4998 14.06 15.3532 14.06 15.1665C14.06 12.4065 11.34 10.1665 8 10.1665Z"
+                    fill="#1960F2"
+                  />
+                </Svg>
 
-              <P style="text-[#505050] text-lg pl-[12px]">
-                Available Proffesionals
-              </P>
-            </View>
+                <P style="text-[#505050] text-lg pl-[12px]">
+                  Available Proffesionals
+                </P>
+              </View>
+            </Pressable>
           </View>
 
           <P style="text-lg  mt-10 uppercase tracking-wider text-[#505050]">
