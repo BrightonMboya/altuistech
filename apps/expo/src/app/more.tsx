@@ -2,11 +2,16 @@ import { ScrollView, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 import { Stack } from "expo-router";
+import { useUser } from "@clerk/clerk-expo";
+
+
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
+
 export default function Page() {
+   const { user } = useUser();
   return (
     <SafeAreaProvider>
       <SafeAreaView className="min-h-screen bg-white pl-5">
@@ -17,7 +22,7 @@ export default function Page() {
         />
         <ScrollView>
           <H1 styling="text-xl">My Account</H1>
-          <P style="text-lg pt-1 text-[#505050]">Adediwura Adedigba</P>
+          <P style="text-lg pt-1 text-[#505050]">{user?.username}</P>
 
           <P style="text-lg  mt-5 uppercase tracking-wider text-[#505050]">
             account

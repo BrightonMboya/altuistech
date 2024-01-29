@@ -1,9 +1,14 @@
 import { Image, View } from "react-native";
+import { useUser } from "@clerk/clerk-expo";
+
+
 
 import H1 from "../ui/Heading";
 import P from "../ui/Text";
 
+
 export default function ProfileCard() {
+   const { user } = useUser();
   return (
     <View className="flex flex-row gap-5">
       <Image
@@ -14,7 +19,7 @@ export default function ProfileCard() {
       />
       <View>
         <P style="text-base">Good Morning,</P>
-        <H1 styling="text-xl">Adediwura</H1>
+        <H1 styling="text-xl">{user?.username}</H1>
       </View>
     </View>
   );
