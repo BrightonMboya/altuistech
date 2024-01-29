@@ -11,18 +11,19 @@ import P from "~/components/ui/Text";
 export default function Page() {
   const router = useRouter();
   return (
-    <SafeAreaView className="relative min-h-screen bg-white pl-5 pt-5 ">
+    <SafeAreaView className="relative min-h-screen bg-white  pt-5 ">
       <Stack.Screen
         options={{
           title: "",
           headerShown: false,
         }}
       />
-      <ScrollView>
+      <ScrollView className="relative">
         <TouchableOpacity
           onPress={() => {
             router.push("/more");
           }}
+          className="pl-5"
         >
           <View className="flex flex-row items-center">
             <FontAwesome name="long-arrow-left" size={30} />
@@ -30,12 +31,19 @@ export default function Page() {
           </View>
         </TouchableOpacity>
 
-        <P style="text-base text-[#505050]">
+        <View className="bg-[#F5F8FE] w-full h-[40px] mt-5">
+            <View className="flex flex-row items-center justify-center pt-2">
+                <P style="text-base">Currently on</P>
+                <H1 styling="text-blue text-base pl-1 uppercase">free plan</H1>
+            </View>
+        </View>
+
+        <P style="text-base text-[#505050] mt-[20px] pl-5">
           Explore our pricing options designed to cater to a range of
           requirements.
         </P>
 
-        <View className="">
+        <View className="pl-5">
           <PricingCard
             imgUrl={require("../../../assets/imgs/emojis/premium.png")}
             title="Premium"
