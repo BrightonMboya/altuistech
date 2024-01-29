@@ -109,7 +109,7 @@ importers:
         specifier: ^10.32.0
         version: 10.43.3
       expo:
-        specifier: ^48.0.17
+        specifier: ^48.0.21
         version: 48.0.21(@babel/core@7.23.3)
       expo-app-loading:
         specifier: ^2.1.1

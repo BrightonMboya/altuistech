@@ -22,7 +22,7 @@
     "@trpc/client": "^10.32.0",
     "@trpc/react-query": "^10.32.0",
     "@trpc/server": "^10.32.0",
-    "expo": "^48.0.17",
+    "expo": "^48.0.21",
     "expo-app-loading": "^2.1.1",
     "expo-auth-session": "~4.0.3",
     "expo-av": "~13.2.1",
