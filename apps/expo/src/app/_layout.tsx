@@ -42,7 +42,7 @@ const tokenCache = {
 const RootLayout = () => {
   return (
     <ClerkProvider
-      publishableKey={Constants.expoConfig?.extra?.clerkPublishableKey}
+      publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
       tokenCache={tokenCache}
     >
       <TRPCProvider>

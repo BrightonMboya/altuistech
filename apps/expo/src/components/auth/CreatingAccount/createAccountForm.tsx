@@ -92,7 +92,7 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
         <H1 styling="text-red-500">{error}</H1>
         <TouchableOpacity
           className="mt-10 h-12  rounded-md bg-[#1960F2]"
-          onPress={onSignUpPress}
+          onPress={() => onSignUpPress()}
         >
           <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
             Create an Account

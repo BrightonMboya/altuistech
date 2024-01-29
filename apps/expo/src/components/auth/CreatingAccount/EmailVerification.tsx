@@ -60,7 +60,7 @@ export default function EmailVerification() {
             placeholderTextColor="#505050"
             className="w-[150px] rounded-md border-[1px] border-[#505050] p-2 "
           />
-          <TouchableOpacity onPress={onPressVerify}>
+          <TouchableOpacity onPress={() => onPressVerify()}>
             <View className="rounded-md bg-blue ">
               <H1 styling="px-4 py-2 text-center text-white font-medium ">
                 Verify Email
