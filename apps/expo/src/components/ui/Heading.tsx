@@ -6,13 +6,13 @@ import { useFonts } from "@expo-google-fonts/poppins";
 //prevents splash screen from auto hiding fonts
 SplashScreen.preventAutoHideAsync();
 
-const H1: React.FC<{
+interface Props {
   children: React.ReactNode;
   styling: string;
-}> = ({ children, styling }) => {
+}
+
+const H1 = ({ children, styling }: Props) => {
   const [fontsLoaded] = useFonts({
-    "clashDisplay-Bold": require("../../../assets/fonts/ClashDisplay-Bold.otf"),
-    "clashDisplay-Regular": require("../../../assets/fonts/ClashDisplay-Regular.otf"),
     "clashDisplay-Medium": require("../../../assets/fonts/ClashDisplay-Medium.otf"),
   });
 
@@ -31,6 +31,7 @@ const H1: React.FC<{
       className={`${styling} `}
       style={{ fontFamily: "clashDisplay-Medium" }}
     >
+      {/* @ts-ignore */}
       {children}
     </Text>
   );

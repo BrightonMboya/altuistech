@@ -6,12 +6,10 @@ import Animated, {
   useSharedValue,
 } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
 
 import Pagination from "~/components/auth/onboarding-screen/Pagination";
 import RenderItem from "~/components/auth/onboarding-screen/RenderItem";
 import data, { OnboardingData } from "~/components/auth/onboarding-screen/data";
-import P from "../ui/Text";
 
 const OnboardingScreen = () => {
   const flatListRef = useAnimatedRef<FlatList<OnboardingData>>();
@@ -23,8 +21,9 @@ const OnboardingScreen = () => {
   }: {
     viewableItems: ViewToken[];
   }) => {
-    if (viewableItems[0].index !== null) {
-      flatListIndex.value = viewableItems[0].index;
+    if (viewableItems[0]?.index !== null) {
+      // @ts-expect-error  coz i know for a fact its not undefined  
+      flatListIndex.value  = viewableItems[0]?.index;
     }
   };
 
@@ -35,44 +34,43 @@ const OnboardingScreen = () => {
   });
 
   return (
-
-      <View style={styles.container} className="mt-5" >
-        {/* <Stack.Screen
+    <View style={styles.container} className="mt-5">
+      {/* <Stack.Screen
         options={{
           headerShown: false,
         }}
       /> */}
-      <P>Hello World</P>
-        {/* <Animated.FlatList
-          ref={flatListRef}
-          onScroll={onScroll}
-          data={data}
-          renderItem={({ item, index }) => {
-            return <RenderItem item={item} index={index} x={x} />;
-          }}
-          keyExtractor={(item) => item.id}
-          scrollEventThrottle={16}
-          horizontal={true}
-          bounces={false}
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          onViewableItemsChanged={onViewableItemsChanged}
-          viewabilityConfig={{
-            minimumViewTime: 300,
-            viewAreaCoveragePercentThreshold: 10,
-          }}
-          contentContainerStyle={{
-            paddingTop: 30,
-            marginTop: 10,
-          }}
-        />
-        <View style={styles.bottomContainer}>
-          <Pagination data={data} x={x} />
-        </View> */}
-      </View>
 
-  )
-}
+      {/* @ts-ignore */}
+      <Animated.FlatList
+        ref={flatListRef}
+        onScroll={onScroll}
+        data={data}
+        renderItem={({ item, index }) => {
+          return <RenderItem item={item} index={index} x={x} />;
+        }}
+        keyExtractor={(item) => item.id}
+        scrollEventThrottle={16}
+        horizontal={true}
+        bounces={false}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={{
+          minimumViewTime: 300,
+          viewAreaCoveragePercentThreshold: 10,
+        }}
+        contentContainerStyle={{
+          paddingTop: 30,
+          marginTop: 10,
+        }}
+      />
+      <View style={styles.bottomContainer}>
+        <Pagination data={data} x={x} />
+      </View>
+    </View>
+  );
+};
 
 export default OnboardingScreen;
 

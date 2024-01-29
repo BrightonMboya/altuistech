@@ -52,7 +52,6 @@ const RootLayout = () => {
           It also allows you to configure your screens 
         */}
             <Stack />
-
             <StatusBar />
             <BottomTab />
           </SafeAreaProvider>

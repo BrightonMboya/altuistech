@@ -1,12 +1,8 @@
 import { ImageProps } from "react-native";
 
-
-
-
-
 export interface OnboardingData {
   id: number;
-  image: ImageProps;
+  image: ImageProps | any;
   text: string;
   textColor: string;
   caption: string;

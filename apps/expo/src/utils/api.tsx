@@ -1,14 +1,13 @@
 import React from "react";
 import Constants from "expo-constants";
 import { useAuth } from "@clerk/clerk-expo";
+import { type AppRouter } from "@repo/api";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { httpBatchLink } from "@trpc/client";
 import { createWSClient, wsLink } from "@trpc/client/links/wsLink";
 import { createTRPCReact } from "@trpc/react-query";
 import superjson from "superjson";
-
-import { type AppRouter } from "@repo/api";
 
 /**
  * Extend this function when going to production by
@@ -28,7 +27,7 @@ const getBaseUrl = () => {
     Constants.manifest2?.extra?.expoGo?.debuggerHost;
   const localhost = debuggerHost?.split(":")[0];
   if (!localhost) {
-    return` https://nane-nane.vercel.app/`
+    return ` https://nane-nane.vercel.app/`;
     // throw new Err or(
     //   "Failed to get localhost. Please point to your production server.",
     // );
@@ -64,9 +63,8 @@ export { type RouterInputs, type RouterOutputs } from "@acme/api";
  * A wrapper for your app that provides the TRPC context.
  * Use only in _app.tsx
  */
-export const TRPCProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+
+export const TRPCProvider = ({ children }: { children: React.ReactNode }) => {
   const { getToken } = useAuth();
   const [queryClient] = React.useState(() => new QueryClient());
   const [trpcClient] = React.useState(() =>

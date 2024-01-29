@@ -9,7 +9,6 @@ import {
   mentalRelaxationVideos,
   motivationalVideos,
 } from "~/components/resources/data";
-import P from "~/components/ui/Text";
 
 export default function Page() {
   const [searchItem, setSearchItem] = useState("");

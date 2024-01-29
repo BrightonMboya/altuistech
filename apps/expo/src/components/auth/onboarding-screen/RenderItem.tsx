@@ -6,6 +6,7 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
+import { type SharedValue } from "react-native-reanimated";
 import { useRouter } from "expo-router";
 
 import H1 from "../../ui/Heading";
@@ -14,6 +15,8 @@ import { OnboardingData } from "./data";
 
 type Props = {
   item: OnboardingData;
+  index: number;
+  x: SharedValue<number>;
 };
 
 const RenderItem = ({ item }: Props) => {
@@ -31,14 +34,8 @@ const RenderItem = ({ item }: Props) => {
       ]}
       className="pt-10"
     >
-      {/* <H1  styling="text-xl">
-        {item.text}
-      </H1> */}
-
       <View className=" w-[90%]">
-        <P style="text-xl " textType="medium">
-          {item.text}
-        </P>
+        <H1 styling="text-xl ">{item.text}</H1>
         <P style="text-base pt-3 ">{item.caption}</P>
       </View>
 
@@ -50,12 +47,12 @@ const RenderItem = ({ item }: Props) => {
           router.push("/");
         }}
       >
-        <P style="text-xl tracking-wide text-white pt-2 text-center">
+        <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
           Create an Account
-        </P>
+        </H1>
       </TouchableOpacity>
 
-      <P style="text-lg text-blue pt-5">I already have an account</P>
+      <H1 styling="text-lg text-blue pt-5">I already have an account</H1>
     </View>
   );
 };
