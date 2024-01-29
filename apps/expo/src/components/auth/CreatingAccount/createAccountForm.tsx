@@ -1,14 +1,48 @@
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
 import { useSignUp } from "@clerk/clerk-expo";
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
-export default function CreateAccountForm() {
+interface Props {
+  setPendingVerification: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function CreateAccountForm({ setPendingVerification }: Props) {
   const [userName, setUserName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { isLoaded, signUp, setActive } = useSignUp();
+
+  // start the sign up process.
+  const onSignUpPress = async () => {
+    if (!isLoaded) {
+      return;
+    }
+
+    try {
+      await signUp.create({
+        emailAddress,
+        password,
+        username: userName,
+      });
+
+      // send the email.
+      await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+      setPendingVerification(true);
+
+      // doing the phone number verification
+      //   await signUp.preparePhoneNumberVerification({
+      //     strategy: "phone_code",
+      //   });
+    } catch (err: any) {
+      console.error(JSON.stringify(err, null, 2));
+      setError(err.errors[0].longMessage);
+    }
+  };
   return (
     <View>
       <H1 styling=" text-xl pt-[60px]">Create an Account</H1>
@@ -52,7 +86,7 @@ export default function CreateAccountForm() {
 
         <TouchableOpacity
           className="mt-10 h-12  rounded-md bg-[#1960F2]"
-          onPress={() => {}}
+          onPress={onSignUpPress}
         >
           <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
             Create an Account
