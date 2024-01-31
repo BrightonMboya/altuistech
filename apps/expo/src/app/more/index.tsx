@@ -163,7 +163,7 @@ export default function Page() {
               </View>
             </Pressable>
           </View>
-
+{/* 
           <View className="ml-[-40px] mt-[40px] flex flex-row items-center justify-center">
             <P style="pr-3 text-lg text-[#FF2525]">Log Out</P>
             <Svg width="20" height="20" viewBox="0 0 17 16" fill="none">
@@ -176,7 +176,7 @@ export default function Page() {
                 fill="#FF2525"
               />
             </Svg>
-          </View>
+          </View> */}
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>

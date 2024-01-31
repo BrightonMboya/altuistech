@@ -3,7 +3,6 @@ import type { ExpoConfig } from "@expo/config";
 
 
 
-
 const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
