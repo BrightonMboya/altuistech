@@ -12,9 +12,10 @@ import data, { OnboardingData } from "~/components/auth/onboarding-screen/data";
 
 interface Props {
   setShowOnboarding: Dispatch<SetStateAction<boolean>>;
+  setShowLogin: Dispatch<SetStateAction<boolean>>;
 }
 
-const OnboardingScreen = ({ setShowOnboarding }: Props) => {
+const OnboardingScreen = ({ setShowOnboarding, setShowLogin }: Props) => {
   const flatListRef = useAnimatedRef<FlatList<OnboardingData>>();
   const x = useSharedValue(0);
   const flatListIndex = useSharedValue(0);
@@ -56,6 +57,7 @@ const OnboardingScreen = ({ setShowOnboarding }: Props) => {
               index={index}
               x={x}
               setShowOnboarding={setShowOnboarding}
+              setShowLogin={setShowLogin}
             />
           );
         }}

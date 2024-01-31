@@ -1,26 +1,24 @@
 import React, { type Dispatch, type SetStateAction } from "react";
-import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View, useWindowDimensions } from "react-native";
 import { type SharedValue } from "react-native-reanimated";
 import { useRouter } from "expo-router";
+
+
 
 import H1 from "../../ui/Heading";
 import P from "../../ui/Text";
 import { OnboardingData } from "./data";
+
 
 type Props = {
   item: OnboardingData;
   index: number;
   x: SharedValue<number>;
   setShowOnboarding: Dispatch<SetStateAction<boolean>>;
+  setShowLogin: Dispatch<SetStateAction<boolean>>;
 };
 
-const RenderItem = ({ item, setShowOnboarding }: Props) => {
+const RenderItem = ({ item, setShowOnboarding, setShowLogin }: Props) => {
   const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
   const router = useRouter();
   return (
@@ -46,6 +44,7 @@ const RenderItem = ({ item, setShowOnboarding }: Props) => {
         className="mt-10 h-12 w-[350px] rounded-md bg-[#1960F2]"
         onPress={() => {
           setShowOnboarding(false);
+      
         }}
       >
         <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
@@ -53,7 +52,14 @@ const RenderItem = ({ item, setShowOnboarding }: Props) => {
         </H1>
       </TouchableOpacity>
 
-      <H1 styling="text-lg text-blue pt-5">I already have an account</H1>
+      <TouchableOpacity
+        onPress={() => {
+          setShowLogin(true);
+          setShowOnboarding(false);
+        }}
+      >
+        <H1 styling="text-lg text-blue pt-5">I already have an account</H1>
+      </TouchableOpacity>
     </View>
   );
 };
