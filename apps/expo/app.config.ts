@@ -3,6 +3,7 @@ import type { ExpoConfig } from "@expo/config";
 
 
 
+
 const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
@@ -22,7 +23,7 @@ const defineConfig = (): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "your.bundle.identifier",
+    bundleIdentifier: "com.tonero.altuistech",
   },
   android: {
     package: "com.mboya.altuistech",
