@@ -8,7 +8,6 @@ export default function AuthScreen() {
   const [showOnboarding, setShowOnboarding] = useState(true);
   const [showLogin, setShowLogin] = useState(false);
 
-  console.log("login is", showLogin, "showOnboarding is", showOnboarding);
 
   if (showOnboarding) {
     return (
