@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "12fcf8c5-b32c-4899-9cf8-4d49a15be14d"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.tonero.altuistech"
+    }
+  }
+}

@@ -11,11 +11,11 @@ const defineConfig = (): ExpoConfig => ({
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "light",
-  // splash: {
-  //   image: "./assets/icon.png",
-  //   resizeMode: "contain",
-  //   backgroundColor: "#f6f6f6",
-  // },
+  splash: {
+    image: "./assets/icon.png",
+    resizeMode: "contain",
+    backgroundColor: "#f6f6f6",
+  },
   updates: {
     fallbackToCacheTimeout: 0,
   },
@@ -27,10 +27,10 @@ const defineConfig = (): ExpoConfig => ({
   android: {
     package: "com.mboya.altuistech",
     versionCode: 1,
-    // adaptiveIcon: {
-    //   foregroundImage: "./assets/icon.png",
-    //   backgroundColor: "#f6f6f6",
-    // },
+    adaptiveIcon: {
+      foregroundImage: "./assets/icon.png",
+      backgroundColor: "#f6f6f6",
+    },
   },
   extra: {
     eas: {
