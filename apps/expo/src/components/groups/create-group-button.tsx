@@ -9,12 +9,12 @@ export default function Button({
   return (
     <View className="flex flex-col items-center">
       <TouchableOpacity
-        className="sticky  bottom-10 h-12  w-[350px] rounded-md bg-[#1960F2]"
+        className="sticky  bottom-10 h-12 md:h-14  w-[350px] rounded-md bg-[#1960F2]"
         onPress={() => {
           bottomSheetHandler();
         }}
       >
-        <H1 styling="text-xl tracking-wide text-white p-3 text-center">
+        <H1 styling="text-xl tracking-wide text-white p-3 text-center md:text-2xl">
           +   Create/ Join Groups
         </H1>
       </TouchableOpacity>
