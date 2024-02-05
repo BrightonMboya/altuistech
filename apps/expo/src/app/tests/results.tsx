@@ -4,6 +4,7 @@ import { Path, Svg } from "react-native-svg";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
 const Index = () => {
@@ -29,14 +30,14 @@ const Index = () => {
         >
           <View className="flex flex-row items-center">
             <FontAwesome name="long-arrow-left" size={30} color="white" />
-            <P style="text-lg pl-5 text-white" textType="medium">
+            <H1 styling="text-lg pl-5 text-white md:text-2xl">
               Results
-            </P>
+            </H1>
           </View>
         </TouchableOpacity>
 
         <View className="mt-20 flex flex-col items-center justify-center ">
-          <P style="text-center px-2 text-white text-lg">{`Your ${params.test} test score is`}</P>
+          <H1 styling="text-center px-2 text-white text-lg md:text-2xl">{`Your ${params.test} test score is`}</H1>
           <P
             style="text-[#F3AB33] pt-1 text-2xl"
             textType="medium"
@@ -52,10 +53,10 @@ const Index = () => {
                 }}
               />
               <View className="pl-3">
-                <P style="text-lg " textType="medium">
+                <H1 styling="text-lg md:text-2xl ">
                   Results
-                </P>
-                <P style="pr-10 text-base">
+                </H1>
+                <P style="pr-10 text-base md:text-xl">
                   {`Your scores indicate elevated levels of ${params.test} and difficulty controlling worry. This suggests there might be a significant impact on your well-being. Seeking professional help from therapist or counselor is highly recommended.
                `}
                 </P>
@@ -91,23 +92,23 @@ const Index = () => {
               router.push("/sessions/available-proffesionals");
             }}
           >
-            <P style="text-xl tracking-wide text-white p-3 text-center">
+            <H1 styling="text-xl tracking-wide text-white p-3 md:pt-2 text-center md:text-2xl">
               Book Appointment
-            </P>
+            </H1>
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2]  bg-white "
+            className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2]   bg-white "
             onPress={() => {
               router.push("/resources");
             }}
           >
-            <P
-              style="text-lg tracking-wide text-[#1960F2] pt-2 text-center"
-              textType="medium"
+            <H1
+              styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center md:text-2xl md:pt-1"
+             
             >
               Visit Resource Center
-            </P>
+            </H1>
           </TouchableOpacity>
         </View>
       </View>
