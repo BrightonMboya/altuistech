@@ -60,17 +60,17 @@ export default function Page() {
       >
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
-          <H1 styling="text-xl pl-5 text-white">Depression Test</H1>
+          <H1 styling="text-xl pl-5 text-white md:text-2xl">Depression Test</H1>
         </View>
 
-        <H1 styling="text-white text-xl pt-3">{`Question ${questionIndex}/${depressionTest.length}`}</H1>
+        <H1 styling="text-white text-xl pt-3 md:text-2xl">{`Question ${questionIndex}/${depressionTest.length}`}</H1>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         <View>
-          <P style="text-[#505050]" textType="medium">
+          <P style="text-[#505050] md:text-lg" textType="medium">
             {currentQuestion?.shortTitle}
           </P>
-          <H1 styling="text-base pt-2">{currentQuestion?.question}</H1>
+          <H1 styling="text-base pt-2 md:text-lg">{currentQuestion?.question}</H1>
 
           {currentQuestion?.answers.map((ans) => (
             <Pressable
@@ -94,7 +94,7 @@ export default function Page() {
                 <H1
                   styling={`${
                     pressed ? "text-[#F3AB33]" : "text-[#505050]"
-                  } text-lg uppercase tracking-wide text-center`}
+                  } text-lg uppercase tracking-wide text-center md:text-xl`}
                 >
                   {ans.ans}
                 </H1>
@@ -107,7 +107,7 @@ export default function Page() {
           className="mt-5 rounded-md bg-blue"
           onPress={handleNextQuestion}
         >
-          <P style="text-xl tracking-wide text-white p-3 text-center">Next</P>
+          <H1 styling="text-xl tracking-wide text-white p-3 text-center md:text-2xl">Next</H1>
         </TouchableOpacity>
       </View>
       <TestBottomSheet

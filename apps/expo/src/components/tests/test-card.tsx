@@ -2,7 +2,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
 
 import H1 from "../ui/Heading";
-import P from "../ui/Text";
+
 
 export default function TestCard({ backgroundColor, name, img, href }: any) {
   const router = useRouter();
@@ -13,10 +13,10 @@ export default function TestCard({ backgroundColor, name, img, href }: any) {
       }}
     >
       <View
-        className={`h-[88px] w-[90%] bg-[${backgroundColor}] mt-5 flex flex-row justify-between overflow-hidden rounded-md p-5  `}
+        className={`h-[88px] md:h-[150px] w-[90%] bg-[${backgroundColor}] mt-5 flex flex-row justify-between overflow-hidden rounded-md p-5 md:pr-0  `}
       >
-        <H1 styling="w-[200px] text-base">{name}</H1>
-        <Image source={img} className="h-[80px] translate-y-[-15px]" />
+        <H1 styling="w-[200px] text-base md:text-xl">{name}</H1>
+        <Image source={img} className="h-[80px] md:h-[150px] translate-y-[-15px]" />
       </View>
     </TouchableOpacity>
   );

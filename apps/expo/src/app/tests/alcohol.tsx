@@ -40,21 +40,21 @@ export default function Page() {
       >
         <View className="flex flex-row items-center">
           <FontAwesome name="long-arrow-left" size={30} color="#fff" />
-          <H1 styling="text-xl pl-5 text-white" >
+          <H1 styling="text-xl pl-5 text-white md:text-2xl" >
             Alcohol/Non-Prescribed Drug Test
           </H1>
         </View>
 
         <H1
-          styling="text-white text-xl pt-3"
+          styling="text-white text-xl pt-3 md:text-2xl"
         >{`Question ${questionIndex}/${alcoholTest.length}`}</H1>
       </TouchableOpacity>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         <View>
-          <P style="text-[#505050] text-lg" textType="medium">
+          <P style="text-[#505050] text-lg md:text-2xl" textType="medium">
             {currentQuestion?.shortTitle}
           </P>
-          <H1 styling="text-lg pt-2">
+          <H1 styling="text-lg pt-2 md:text-2xl">
             {currentQuestion?.question}
           </H1>
 
@@ -66,7 +66,7 @@ export default function Page() {
                   setCurrentScore(currentScore + ans.value);
                   handleNextQuestion();
                 }}
-                className=" flex  h-[100px] flex-row items-center rounded-md border-[1px] border-[#b8b8b8] px-5 py-2"
+                className=" flex  h-[100px] flex-row items-center rounded-md border-[1px] border-[#b8b8b8] px-5 py-2 md:w-[350px] md:justify-center"
               >
                 {ans.ans.toLowerCase() === "yes" ? (
                   <Image
@@ -78,7 +78,7 @@ export default function Page() {
                   />
                 )}
 
-                <H1 styling="text-center text-lg text-[#505050] uppercase tracking-wide pl-5">
+                <H1 styling="text-center text-lg text-[#505050] uppercase tracking-wide pl-5 md:text-xl">
                   {ans.ans}
                 </H1>
               </Pressable>
@@ -90,7 +90,7 @@ export default function Page() {
           className="mt-5 rounded-md bg-blue"
           onPress={handleNextQuestion}
         >
-          <H1 styling="text-xl tracking-wide text-white p-3 text-center">Next</H1>
+          <H1 styling="text-xl tracking-wide text-white p-3 text-center md:text-2xl">Next</H1>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

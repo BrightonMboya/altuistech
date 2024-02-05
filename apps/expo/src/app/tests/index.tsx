@@ -29,10 +29,10 @@ export default function Page() {
         }}
       />
       <ScrollView>
-        <H1 styling="text-xl" >
+        <H1 styling="text-xl md:text-2xl" >
           Mental Health Test
         </H1>
-        <P style="text-base pt-1 text-[#505050] w-[90%]">
+        <P style="text-base pt-1 text-[#505050] w-[90%] md:text-lg">
           Pls select the type of mental health test you will like to take.
         </P>
 
