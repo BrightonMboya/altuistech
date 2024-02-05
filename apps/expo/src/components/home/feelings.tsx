@@ -31,10 +31,10 @@ export default function Feelings({
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-        <View className="mt-5 h-[144px] md:h-full w-[380px] md:w-[90%] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
+        <View className="mt-5 h-[144px] md:h-full w-[350px] md:w-[90%] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
           <P style="text-lg md:text-xl">How are you feeling today?</P>
 
-          <View className="mt-5 flex flex-row space-x-5 md:justify-between md:w-[90%] md:space-x-0 ">
+          <View className="mt-5 flex flex-row space-x-5 md:justify-between md:w-[90%] md:space-x-0 md:pb-5">
             <TouchableOpacity
               className="flex flex-col items-center"
               onPress={() => happyHandler()}

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, TouchableOpacity, View } from "react-native";
 import { Path, Svg } from "react-native-svg";
 import { useRouter } from "expo-router";
 
@@ -14,11 +14,13 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
     bottomRef.current?.close();
   }, []);
 
+  const screenWidth = Dimensions.get("screen").width;
+
   return (
     // @ts-ignore
     <BottomSheet
       ref={bottomRef}
-      snapTo={"40%"}
+      snapTo={screenWidth > 700 ? "40%" : "80%"}
       backgroundColor={"white"}
       backDropColor={"black"}
     >
@@ -52,32 +54,29 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
           </P>
         </View>
 
-        <View className="md:flex md:flex-row md:mt-10">
+        <View className="md:mt-10 md:flex md:flex-row">
+          <TouchableOpacity
+            className=" mt-[48px] h-12 w-[350px] rounded-md bg-[#1960F2] md:mt-0"
+            onPress={() => {
+              router.push("/tests/alcohol");
+            }}
+          >
+            <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
+              Yes I do
+            </H1>
+          </TouchableOpacity>
 
-
-        <TouchableOpacity
-          className=" mt-[48px] md:mt-0 h-12 w-[350px] rounded-md bg-[#1960F2]"
-          onPress={() => {
-            router.push("/tests/alcohol");
-          }}
-        >
-          <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
-            Yes I do
-          </H1>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          className="mt-5 md:mt-0 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2] md:ml-5  bg-white "
-          onPress={() => {
-            closeBottomSheet();
-          }}
-        >
-          <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center  md:text-xl">
-            No I don’t
-          </H1>
-        </TouchableOpacity>
+          <TouchableOpacity
+            className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2] bg-white md:ml-5  md:mt-0 "
+            onPress={() => {
+              closeBottomSheet();
+            }}
+          >
+            <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center  md:text-xl">
+              No I don’t
+            </H1>
+          </TouchableOpacity>
         </View>
-
       </View>
     </BottomSheet>
   );

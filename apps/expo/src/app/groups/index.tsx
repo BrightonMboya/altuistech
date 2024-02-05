@@ -21,30 +21,33 @@ export default function Page() {
 
   return (
     <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaView className="relative min-h-screen md:pt-10">
-          <Stack.Screen
-            options={{
-              headerShown: false,
-            }}
-          />
-          <TextInput
-            className="ml-5 h-[50px] w-[90%] rounded-lg border-[1px] border-[#b8b8b8]  px-5 md:text-base "
-            placeholder="Search Groups"
-            onChangeText={(text) => setSearchItem(text)}
-            defaultValue={searchItem}
-          />
-          <GroupsView />
-          <View className="mt-10 flex flex-col items-center ">
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-          </View>
-          <ScrollView className=""></ScrollView>
-          <Button bottomSheetHandler={joinGroupBottomSheetHandler} />
-        </SafeAreaView>
-        <JoinGroupBottomSheet joinGroupRef={joinGroupRef} />
-      </GestureHandlerRootView>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+      <ScrollView>
+          <SafeAreaView className="relative min-h-screen md:pt-10">
+            <Stack.Screen
+              options={{
+                headerShown: false,
+              }}
+            />
+
+            <TextInput
+              className="ml-5 h-[50px] w-[90%] rounded-lg border-[1px] border-[#b8b8b8]  px-5 md:text-base "
+              placeholder="Search Groups"
+              onChangeText={(text) => setSearchItem(text)}
+              defaultValue={searchItem}
+            />
+            <GroupsView />
+            <View className=" flex flex-col items-center ">
+              <FeedCard />
+              <FeedCard />
+              <FeedCard />
+            </View>
+            <ScrollView className=""></ScrollView>
+            <Button bottomSheetHandler={joinGroupBottomSheetHandler} />
+          </SafeAreaView>
+      </ScrollView>
+          <JoinGroupBottomSheet joinGroupRef={joinGroupRef} />
+        </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }
