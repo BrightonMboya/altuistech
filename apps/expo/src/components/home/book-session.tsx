@@ -12,7 +12,7 @@ export default function BookSession() {
       <View className="mt-6">
         <Image
           source={require("../../../assets/imgs/bookSession.png")}
-          className="h-[106px] w-[90%] object-cover"
+          className="h-[106px] w-[90%] md:h-[150px] object-cover"
         />
 
       </View>

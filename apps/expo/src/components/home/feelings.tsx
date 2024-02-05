@@ -31,22 +31,22 @@ export default function Feelings({
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-        <View className="mt-5 h-[144px] w-[380px] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
-          <P style="text-lg">How are you feeling today?</P>
+        <View className="mt-5 h-[144px] md:h-full w-[380px] md:w-[90%] rounded-md border-2 border-[#E4EDFF] bg-[#f5f8fe] p-4">
+          <P style="text-lg md:text-xl">How are you feeling today?</P>
 
-          <View className="mt-5 flex flex-row space-x-5">
+          <View className="mt-5 flex flex-row space-x-5 md:justify-between md:w-[90%] md:space-x-0 ">
             <TouchableOpacity
               className="flex flex-col items-center"
               onPress={() => happyHandler()}
             >
               <Image
                 source={require("../../../assets/imgs/emojis/happy.png")}
-                className="h-12 w-12 object-cover"
+                className="h-12 w-12 md:h-[60px] md:w-[60px] object-cover"
                 style={{
                   resizeMode: "contain",
                 }}
               />
-              <P>Happy</P>
+              <P style="md:text-base">Happy</P>
             </TouchableOpacity>
             <TouchableOpacity
               className="flex flex-col items-center"
@@ -54,12 +54,12 @@ export default function Feelings({
             >
               <Image
                 source={require("../../../assets/imgs/emojis/calm.png")}
-                className="h-12 w-12 object-cover"
+                className="h-12 w-12  md:h-[60px] md:w-[60px] object-cover"
                 style={{
                   resizeMode: "contain",
                 }}
               />
-              <P>Calm</P>
+              <P style="md:text-base">Calm</P>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -68,12 +68,12 @@ export default function Feelings({
             >
               <Image
                 source={require("../../../assets/imgs/emojis/worried.png")}
-                className="h-12 w-12 object-cover"
+                className="h-12 w-12  md:h-[60px] md:w-[60px] object-cover"
                 style={{
                   resizeMode: "contain",
                 }}
               />
-              <P>Worried</P>
+              <P style="md:text-base">Worried</P>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -82,12 +82,12 @@ export default function Feelings({
             >
               <Image
                 source={require("../../../assets/imgs/emojis/angry.png")}
-                className="h-12 w-12 object-cover"
+                className="h-12 w-12  md:h-[60px] md:w-[60px] object-cover"
                 style={{
                   resizeMode: "contain",
                 }}
               />
-              <P>Angry</P>
+              <P style="md:text-base">Angry</P>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -96,12 +96,12 @@ export default function Feelings({
             >
               <Image
                 source={require("../../../assets/imgs/emojis/sad.png")}
-                className="h-12 w-12 object-cover"
+                className="h-12 w-12  md:h-[60px] md:w-[60px] object-cover"
                 style={{
                   resizeMode: "contain",
                 }}
               />
-              <P>Sad</P>
+              <P style="md:text-base">Sad</P>
             </TouchableOpacity>
           </View>
         </View>

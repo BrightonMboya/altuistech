@@ -61,71 +61,67 @@ const data = [
 export default function Services() {
   return (
     <View className="mt-5">
-      <H1 styling="text-2xl mt-5">Services for You</H1>
+      <H1 styling="text-2xl mt-5 md:pt-5">Services for You</H1>
 
-      <View className="flex flex-row gap-2 pt-3">
-        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#FFF2EB] p-3">
-          <Image
-            source={require("../../../assets/imgs/emojis/file.png")}
-            className="h-10 w-10 rounded-md object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <H1 styling="pt-2 text-lg">Resource Centers</H1>
-          <P style="pt-3">
-            Take this 6 minute assessment to know your personality type.
-          </P>
+      <View className="md:flex-row md:pt-5">
+        <View className="flex flex-row gap-2 pt-5 md:pt-0">
+          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full  overflow-hidden rounded-md bg-[#FFF2EB] p-3">
+            <Image
+              source={require("../../../assets/imgs/emojis/file.png")}
+              className="h-10 w-10 rounded-md object-cover"
+              style={{
+                resizeMode: "contain",
+              }}
+            />
+            <H1 styling="pt-2 text-lg">Resource Centers</H1>
+            <P style="pt-3">
+              Take this 6 minute assessment to know your personality type.
+            </P>
+          </View>
+
+          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#FFEFC6] p-3">
+            <Image
+              source={require("../../../assets/imgs/emojis/avatar.png")}
+              className="h-10 w-10 rounded-md object-cover"
+              style={{
+                resizeMode: "contain",
+              }}
+            />
+            <H1 styling="pt-2 text-lg">Help Groups</H1>
+            <P style="pt-3 md:text-base">
+              Take this 6 minute assessment to know your personality type.
+            </P>
+          </View>
         </View>
 
-        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#FFEFC6] p-3">
-          <Image
-            source={require("../../../assets/imgs/emojis/avatar.png")}
-            className="h-10 w-10 rounded-md object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <H1 styling="pt-2 text-lg">
-            Help Groups
-          </H1>
-          <P style="pt-3">
-            Take this 6 minute assessment to know your personality type.
-          </P>
-        </View>
-      </View>
+        <View className="flex flex-row gap-2 pt-3 md:pt-0 md:pl-3">
+          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#E4EDFF] p-3">
+            <Image
+              source={require("../../../assets/imgs/emojis/star.png")}
+              className="h-10 w-10 rounded-md object-cover"
+              style={{
+                resizeMode: "contain",
+              }}
+            />
+            <H1 styling="pt-2 text-lg">Health Screening</H1>
+            <P style="pt-3 md:text-base">
+              Take this 6 minute assessment to know your personality type.
+            </P>
+          </View>
 
-      <View className="flex flex-row gap-2 pt-3">
-        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#E4EDFF] p-3">
-          <Image
-            source={require("../../../assets/imgs/emojis/star.png")}
-            className="h-10 w-10 rounded-md object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <H1 styling="pt-2 text-lg">
-            Health Screening
-          </H1>
-          <P style="pt-3">
-            Take this 6 minute assessment to know your personality type.
-          </P>
-        </View>
-
-        <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#F2E8FF] p-3">
-          <Image
-            source={require("../../../assets/imgs/emojis/message.png")}
-            className="h-10 w-10 rounded-md object-cover"
-            style={{
-              resizeMode: "contain",
-            }}
-          />
-          <H1 styling="pt-2 text-lg">
-            Consultations
-          </H1>
-          <P style="pt-3">
-            Take this 6 minute assessment to know your personality type.
-          </P>
+          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#F2E8FF] p-3">
+            <Image
+              source={require("../../../assets/imgs/emojis/message.png")}
+              className="h-10 w-10 rounded-md object-cover"
+              style={{
+                resizeMode: "contain",
+              }}
+            />
+            <H1 styling="pt-2 text-lg">Consultations</H1>
+            <P style="pt-3 md:text-base ">
+              Take this 6 minute assessment to know your personality type.
+            </P>
+          </View>
         </View>
       </View>
     </View>

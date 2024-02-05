@@ -4,14 +4,14 @@ import H1 from "../ui/Heading";
 
 export function Card({ title, imgSrc }: { title: string; imgSrc: string }) {
   return (
-    <View className="mt-1 h-[150px] w-[120px] overflow-hidden">
+    <View className="mt-1 h-[150px] w-[120px] overflow-hidden md:h-full  md:w-[250px]">
       <Image
         source={{
           uri: imgSrc,
         }}
-        className="h-[120px] w-[120px] rounded-md"
+        className="h-[120px] w-[120px] rounded-md md:h-[200px]  md:w-[250px]"
       />
-      <H1 styling="pt-2">{title}</H1>
+      <H1 styling="pt-2 md:text-xl">{title}</H1>
     </View>
   );
 }
@@ -39,7 +39,7 @@ export const data = [
 
 export default function Resources() {
   return (
-    <View>
+    <View className="md:mb-10">
       <H1 styling="text-2xl mt-10">Resources for You</H1>
 
       <FlatList
@@ -49,6 +49,7 @@ export default function Resources() {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
           // paddingHorizontal: 10,
+     
           gap: 5,
           marginTop: 5,
         }}
