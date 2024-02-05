@@ -4,8 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+
+
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
+
 
 const data = [
   {
@@ -50,20 +53,20 @@ function Card({
   occupation: string;
 }) {
   return (
-    <View className="mt-5 flex h-[100px] w-[335px] flex-row bg-[#f5f8fe] p-3">
+    <View className="mt-5 flex h-[100px] w-[335px] flex-row bg-[#f5f8fe] p-3 md:w-[700px] md:h-[150px]">
       <Image
         source={{
           uri: img,
         }}
-        className="h-[80px] w-[80px] rounded-md object-cover"
+        className="h-[80px] w-[80px] md:w-[120px] md:h-[120px] rounded-md object-cover"
       />
 
       <View className="pl-5">
-        <H1 styling="text-lg">{name}</H1>
-        <P>{occupation}</P>
+        <H1 styling="text-lg md:text-2xl">{name}</H1>
+        <P style="md:text-xl">{occupation}</P>
         <Image
           source={require("../../../assets/imgs/stars.png")}
-          className="mt-2"
+          className="mt-2 md:h-[20px] md:w-[150px]"
         />
       </View>
     </View>
@@ -88,7 +91,7 @@ const Index = () => {
         >
           <View className="flex flex-row items-center">
             <FontAwesome name="long-arrow-left" size={30} />
-            <H1 styling="text-xl pl-5 ">Available</H1>
+            <H1 styling="text-xl pl-5 md:text-2xl">Available</H1>
           </View>
         </TouchableOpacity>
         <View className="flex flex-col">

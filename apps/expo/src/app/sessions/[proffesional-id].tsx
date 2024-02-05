@@ -3,6 +3,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
+import { useUser } from "@clerk/clerk-expo";
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
@@ -28,6 +29,7 @@ const expertise = [
 
 export default function Page() {
   const router = useRouter();
+  const { user } = useUser();
   return (
     <SafeAreaView className="pl-5">
       <Stack.Screen
@@ -53,14 +55,12 @@ export default function Page() {
             }}
             className="mt-10 h-[80px] w-[80px] rounded-full"
           />
-          <H1 styling="text-xl mt-5">Adedigba Adediwura</H1>
-          <P style="text-lg">Mental Therapist</P>
+          <H1 styling="text-xl mt-5 md:text-2xl">{user?.username}</H1>
+          <P style="text-lg md:text-2xl">Mental Therapist</P>
 
           <View className="mt-10 ">
-            <P style="text-lg" textType="medium">
-              About
-            </P>
-            <P style="pt-1 pr-[20px] text-base">
+            <H1 styling="text-lg md:text-2xl">About</H1>
+            <P style="pt-1 pr-[20px] text-base md:text-xl md:w-[90%]">
               My journey in the field of respiratory therapy began with a strong
               desire to make a positive impact on individuals with respiratory
               conditions. Over the years, I have honed my skills in assessing,
@@ -69,9 +69,7 @@ export default function Page() {
           </View>
 
           <View className="mt-10 ">
-            <P style="text-lg" textType="medium">
-              Expertise
-            </P>
+            <H1 styling="text-lg md:text-2xl">Expertise</H1>
 
             <FlatList
               data={expertise}
@@ -84,7 +82,7 @@ export default function Page() {
                     padding: 5,
                   }}
                 >
-                  <P>{item.name}</P>
+                  <P style="md:text-xl">{item.name}</P>
                 </View>
               )}
               numColumns={2}
@@ -94,16 +92,16 @@ export default function Page() {
               }}
             />
           </View>
-           <TouchableOpacity
-          className="h-12 w-[350px] rounded-md bg-[#1960F2] mt-5"
-          onPress={() => {
-            router.push("/sessions/available-proffesionals");
-          }}
-        >
-          <P style="text-xl tracking-wide text-white p-3 text-center">
-            Book Appointment
-          </P>
-        </TouchableOpacity>
+          <TouchableOpacity
+            className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
+            onPress={() => {
+              router.push("/sessions/available-proffesionals");
+            }}
+          >
+            <H1 styling="text-xl tracking-wide text-white p-3 md:pt-2 md:text-2xl text-center">
+              Book Appointment
+            </H1>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
