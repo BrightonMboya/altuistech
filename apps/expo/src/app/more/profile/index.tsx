@@ -12,7 +12,7 @@ export default function Page() {
   const router = useRouter();
   const { signOut } = useAuth();
   return (
-    <SafeAreaView className="min-h-screen bg-white">
+    <SafeAreaView className="min-h-screen bg-white md:pt-10">
       <Stack.Screen
         options={{
           title: "",
@@ -48,7 +48,7 @@ export default function Page() {
             </View>
           </View>
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             className="mt-10 h-12 w-[350px] rounded-md bg-[#1960F2]"
             onPress={() => {
               router.push("/more/profile/edit");
@@ -57,7 +57,7 @@ export default function Page() {
             <H1 styling="text-xl tracking-wide text-white p-3 text-center">
               Edit Profile
             </H1>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
         <Pressable onPress={() => signOut()}>
           <H1 styling="text-xl tracking-wide text-[#FF2525] text-center mt-5">

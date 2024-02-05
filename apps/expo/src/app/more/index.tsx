@@ -12,21 +12,21 @@ export default function Page() {
   const router = useRouter();
   return (
     <SafeAreaProvider>
-      <SafeAreaView className="min-h-screen bg-white pl-5">
+      <SafeAreaView className="min-h-screen bg-white pl-5 mt-5">
         <Stack.Screen
           options={{
             headerShown: false,
           }}
         />
         <ScrollView>
-          <H1 styling="text-xl">My Account</H1>
-          <P style="text-lg pt-1 text-[#505050]">{user?.username}</P>
+          <H1 styling="text-xl md:text-2xl">My Account</H1>
+          <P style="text-lg pt-1 text-[#505050] md:text-2xl">{user?.username}</P>
 
-          <P style="text-lg  mt-5 uppercase tracking-wider text-[#505050]">
+          <P style="text-lg  mt-5 md:text-2xl  md:mt-10 uppercase tracking-wider text-[#505050]">
             account
           </P>
 
-          <View className="mt-2 flex  w-[80%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
+          <View className="mt-2  flex  w-[80%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
             <Pressable onPress={() => router.push("/more/profile")}>
               <View className="flex flex-row items-center ">
                 <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -40,11 +40,11 @@ export default function Page() {
                   />
                 </Svg>
 
-                <P style="text-[#505050] text-lg pl-[12px]">Your Profile</P>
+                <P style="text-[#505050] text-lg pl-[12px] ">Your Profile</P>
               </View>
             </Pressable>
 
-            <View className="mt-3 flex flex-row items-center">
+            {/* <View className="mt-3 flex flex-row items-center">
               <Svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <Path
                   d="M13.1933 2.81338C11.22 0.846712 8.02 0.846712 6.06 2.81338C4.68 4.18005 4.26667 6.14671 4.8 7.88005L1.66667 11.0134C1.44667 11.24 1.29333 11.6867 1.34 12.0067L1.54 13.46C1.61333 13.94 2.06 14.3934 2.54 14.46L3.99333 14.66C4.31333 14.7067 4.76 14.56 4.98667 14.3267L5.53333 13.78C5.66667 13.6534 5.66667 13.44 5.53333 13.3067L4.24 12.0134C4.04667 11.82 4.04667 11.5 4.24 11.3067C4.43333 11.1134 4.75333 11.1134 4.94667 11.3067L6.24667 12.6067C6.37333 12.7334 6.58667 12.7334 6.71333 12.6067L8.12667 11.2C9.85333 11.74 11.82 11.32 13.1933 9.95338C15.16 7.98671 15.16 4.78005 13.1933 2.81338ZM9.66667 8.00005C8.74667 8.00005 8 7.25338 8 6.33338C8 5.41338 8.74667 4.66671 9.66667 4.66671C10.5867 4.66671 11.3333 5.41338 11.3333 6.33338C11.3333 7.25338 10.5867 8.00005 9.66667 8.00005Z"
@@ -53,7 +53,7 @@ export default function Page() {
               </Svg>
 
               <P style="text-[#505050] text-lg pl-[12px]">Change Password</P>
-            </View>
+            </View> */}
 
             <View className="mt-3 flex flex-row items-center">
               <Svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -118,7 +118,7 @@ export default function Page() {
             others
           </P>
           <View className="mt-2 flex  w-[80%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
-            <Pressable onPress={() => router.push("/more/pricing")}>
+            {/* <Pressable onPress={() => router.push("/more/pricing")}>
               <View className="flex flex-row items-center ">
                 <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
                   <Path
@@ -129,7 +129,7 @@ export default function Page() {
 
                 <P style="text-[#505050] text-lg pl-[12px]">Pricing</P>
               </View>
-            </Pressable>
+            </Pressable> */}
 
             <View className="mt-3 flex flex-row items-center">
               <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">

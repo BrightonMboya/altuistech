@@ -28,7 +28,7 @@ export default function Page() {
             <FontAwesome name="long-arrow-left" size={30} />
             <H1 styling="text-xl pl-5 ">Need Help?</H1>
           </View>
-          <P style="text-base text-[#505050]">We’d love to hear from you.</P>
+          <P style="text-base text-[#505050] md:text-lg">We’d love to hear from you.</P>
         </TouchableOpacity>
 
         <View className="mt-2 flex  w-[90%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
@@ -80,7 +80,7 @@ export default function Page() {
               <P style="text-[#505050] text-lg pl-[12px]">Email</P>
             </View>
 
-            <View className="flex flex-row items-center justify-between">
+            <View className="flex flex-row items-center justify-between mt">
               <View className=" items-cente flex w-[200px] flex-row rounded-xl">
                 <P style="bg-[#E4EDFF] px-[8px] py-[4px] ">
                   support@altruhealth.com
