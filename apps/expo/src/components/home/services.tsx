@@ -1,4 +1,5 @@
-import { FlatList, Image, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
 
 import H1 from "../ui/Heading";
 import P from "../ui/Text";
@@ -31,7 +32,7 @@ const data = [
   {
     id: 1,
     title: "Resource Centers",
-    caption: "Take this 6 minute assessment to know your personality type.",
+    caption: "Engage in different resources",
     imgSrc:
       "https://images.unsplash.com/photo-1512236393941-3d6da97e56bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGJyaWdodCUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
@@ -59,13 +60,17 @@ const data = [
 ];
 
 export default function Services() {
+  const router = useRouter();
   return (
     <View className="mt-5">
       <H1 styling="text-2xl mt-5 md:pt-5">Services for You</H1>
 
       <View className="md:flex-row md:pt-5">
         <View className="flex flex-row gap-2 pt-5 md:pt-0">
-          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full  overflow-hidden rounded-md bg-[#FFF2EB] p-3">
+          <TouchableOpacity
+            className="h-[180px] w-[200px] overflow-hidden rounded-md  bg-[#FFF2EB] p-3 md:h-full md:w-[180px]"
+            onPress={() => router.push("/resources")}
+          >
             <Image
               source={require("../../../assets/imgs/emojis/file.png")}
               className="h-10 w-10 rounded-md object-cover"
@@ -74,12 +79,13 @@ export default function Services() {
               }}
             />
             <H1 styling="pt-2 text-lg">Resource Centers</H1>
-            <P style="pt-3">
-              Take this 6 minute assessment to know your personality type.
+            <P style="pt-2">
+              Engage in different resources to gauge the status of your mental
+              health
             </P>
-          </View>
+          </TouchableOpacity>
 
-          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#FFEFC6] p-3">
+          <View className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#FFEFC6] p-3 md:h-full md:w-[180px]">
             <Image
               source={require("../../../assets/imgs/emojis/avatar.png")}
               className="h-10 w-10 rounded-md object-cover"
@@ -87,15 +93,18 @@ export default function Services() {
                 resizeMode: "contain",
               }}
             />
-            <H1 styling="pt-2 text-lg">Help Groups</H1>
+            <H1 styling="pt-2 text-lg">Assistant</H1>
             <P style="pt-3 md:text-base">
-              Take this 6 minute assessment to know your personality type.
+             Reach out to us and we will assist you with your query
             </P>
           </View>
         </View>
 
-        <View className="flex flex-row gap-2 pt-3 md:pt-0 md:pl-3">
-          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#E4EDFF] p-3">
+        <View className="flex flex-row gap-2 pt-3 md:pl-3 md:pt-0">
+          <TouchableOpacity
+            className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#E4EDFF] p-3 md:h-full md:w-[180px]"
+            onPress={() => router.push("/tests")}
+          >
             <Image
               source={require("../../../assets/imgs/emojis/star.png")}
               className="h-10 w-10 rounded-md object-cover"
@@ -105,11 +114,14 @@ export default function Services() {
             />
             <H1 styling="pt-2 text-lg">Health Screening</H1>
             <P style="pt-3 md:text-base">
-              Take this 6 minute assessment to know your personality type.
+              See how you diagnose on different mental health status
             </P>
-          </View>
+          </TouchableOpacity>
 
-          <View className="h-[180px] w-[200px] md:w-[180px] md:h-full overflow-hidden rounded-md bg-[#F2E8FF] p-3">
+          <TouchableOpacity
+            className="h-[180px] w-[200px] overflow-hidden rounded-md bg-[#F2E8FF] p-3 md:h-full md:w-[180px]"
+            onPress={() => router.push("/sessions")}
+          >
             <Image
               source={require("../../../assets/imgs/emojis/message.png")}
               className="h-10 w-10 rounded-md object-cover"
@@ -119,9 +131,9 @@ export default function Services() {
             />
             <H1 styling="pt-2 text-lg">Consultations</H1>
             <P style="pt-3 md:text-base ">
-              Take this 6 minute assessment to know your personality type.
+              Self diagnose yourself on the different mental health issues
             </P>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

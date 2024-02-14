@@ -55,7 +55,7 @@ export default function Page() {
               <P style="text-[#505050] text-lg pl-[12px]">Change Password</P>
             </View> */}
 
-            <View className="mt-3 flex flex-row items-center">
+            {/* <View className="mt-3 flex flex-row items-center">
               <Svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <Path
                   d="M11.8733 3.66016V4.1535L9.51333 2.78683C8.62 2.2735 7.37333 2.2735 6.48667 2.78683L4.12667 4.16016V3.66016C4.12667 2.16016 4.94667 1.3335 6.44667 1.3335H9.55333C11.0533 1.3335 11.8733 2.16016 11.8733 3.66016Z"
@@ -68,7 +68,7 @@ export default function Page() {
               </Svg>
 
               <P style="text-[#505050] text-lg pl-[12px]">Leaderboard</P>
-            </View>
+            </View> */}
           </View>
 
           <P style="text-lg  mt-10 uppercase tracking-wider text-[#505050]">
@@ -131,7 +131,7 @@ export default function Page() {
               </View>
             </Pressable> */}
 
-            <View className="mt-3 flex flex-row items-center">
+            {/* <View className="mt-3 flex flex-row items-center">
               <Svg width="16" height="17" viewBox="0 0 16 17" fill="none">
                 <Path
                   d="M8 8.49967C9.84095 8.49967 11.3333 7.00729 11.3333 5.16634C11.3333 3.32539 9.84095 1.83301 8 1.83301C6.15905 1.83301 4.66667 3.32539 4.66667 5.16634C4.66667 7.00729 6.15905 8.49967 8 8.49967Z"
@@ -144,7 +144,7 @@ export default function Page() {
               </Svg>
 
               <P style="text-[#505050] text-lg pl-[12px]">Refer & Earn</P>
-            </View>
+            </View> */}
 
             <Pressable onPress={() => router.push("/more/contactUs")}>
               <View className="mt-3 flex flex-row items-center">

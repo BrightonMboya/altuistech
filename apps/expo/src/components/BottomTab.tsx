@@ -33,7 +33,7 @@ const BottomTab = () => {
             </P>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             router.push("/groups");
           }}
@@ -103,7 +103,7 @@ const BottomTab = () => {
               Groups
             </P>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
           onPress={() => {
             router.push("/tests");

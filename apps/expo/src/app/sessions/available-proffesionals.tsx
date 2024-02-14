@@ -3,43 +3,25 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
-
-
+import { A } from "@expo/html-elements";
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
-
 const data = [
   {
     id: 1,
-    name: "Guy Hawkins",
+    name: "Abdul Karim Jela",
     img: "https://images.unsplash.com/photo-1705250984940-02b32024d182?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8fA%3D%3D",
     occupation: "Mental Therapist",
+    calLink: "https://cal.com/abdul-karim-sesay",
   },
   {
     id: 2,
-    name: "Guy Hawkins",
+    name: "Gabriel Oke",
     img: "https://images.unsplash.com/photo-1705179910410-023d32f4613b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D",
-    occupation: "Mental Therapist",
-  },
-  {
-    id: 3,
-    name: "Guy Hawkins",
-    img: "https://images.unsplash.com/photo-1705250984940-02b32024d182?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8fA%3D%3D",
-    occupation: "Mental Therapist",
-  },
-  {
-    id: 4,
-    name: "Guy Hawkins",
-    img: "https://images.unsplash.com/photo-1705232497551-d0fbd6554801?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1M3x8fGVufDB8fHx8fA%3D%3D",
-    occupation: "Mental Therapist",
-  },
-  {
-    id: 5,
-    name: "Guy Hawkins",
-    img: "https://images.unsplash.com/photo-1705250984940-02b32024d182?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8fA%3D%3D",
-    occupation: "Mental Therapist",
+    occupation: "Mental Proffesional",
+    calLink: "https://cal.com/gabriel-oke-5uvurl",
   },
 ];
 
@@ -47,18 +29,23 @@ function Card({
   img,
   name,
   occupation,
+  calLink,
 }: {
   img: string;
   name: string;
   occupation: string;
+  calLink: string;
 }) {
   return (
-    <View className="mt-5 flex h-[100px] w-[335px] flex-row bg-[#f5f8fe] p-3 md:w-[700px] md:h-[150px]">
+    <A
+      className="mt-5 flex h-[100px] w-[335px] flex-row bg-[#f5f8fe] p-3 md:h-[150px] md:w-[700px]"
+      href={calLink}
+    >
       <Image
         source={{
           uri: img,
         }}
-        className="h-[80px] w-[80px] md:w-[120px] md:h-[120px] rounded-md object-cover"
+        className="h-[80px] w-[80px] rounded-md object-cover md:h-[120px] md:w-[120px]"
       />
 
       <View className="pl-5">
@@ -69,7 +56,7 @@ function Card({
           className="mt-2 md:h-[20px] md:w-[150px]"
         />
       </View>
-    </View>
+    </A>
   );
 }
 
@@ -106,6 +93,7 @@ const Index = () => {
                 img={proffesional.img}
                 name={proffesional.name}
                 occupation={proffesional.occupation}
+                calLink={proffesional.calLink}
               />
             </TouchableOpacity>
           ))}
