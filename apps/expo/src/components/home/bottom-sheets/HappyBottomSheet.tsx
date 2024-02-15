@@ -1,5 +1,6 @@
 import { Dimensions, Image, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
+import { A } from "@expo/html-elements";
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
@@ -41,16 +42,21 @@ export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
           <View className="md:flex md:flex-row">
             <TouchableOpacity
               className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
-              onPress={() => {
-                router.push("/");
-              }}
+              // onPress={() => {
+              //   router.push("/");
+              // }}
             >
-              <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
-                Watch a Video
-              </H1>
+              <A
+                href="https://www.youtube.com/watch?v=HT_ZvD94_kE"
+                className="mt-3"
+              >
+                <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
+                  Watch a Video
+                </H1>
+              </A>
             </TouchableOpacity>
             <TouchableOpacity
-              className="mt-5 h-12 w-[350px] md:ml-5 rounded-md border-[2px] border-[#1960F2]  bg-white "
+              className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2] bg-white  md:ml-5 "
               onPress={() => {
                 router.push("/");
               }}
@@ -62,11 +68,11 @@ export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
           </View>
 
           <View className="mt-5 flex flex-row items-center  ">
-            <View className="w-[150px] md:w-[340px] border-[1px] border-[#989898]"></View>
+            <View className="w-[150px] border-[1px] border-[#989898] md:w-[340px]"></View>
             <P style="px-2 text-[#989898] md:text-lg">or</P>
             <View className="w-[150px] border-[1px]  border-[#989898] md:w-[340px]"></View>
           </View>
-          <View className="mt-5  w-[350px] md:w-[700px] rounded-md bg-[#E4EDFF]">
+          <View className="mt-5  w-[350px] rounded-md bg-[#E4EDFF] md:w-[700px]">
             <P style="text-center px-4 py-5 text-base text-[#505050] md:text-xl">
               Spend time with loved ones, Do something you're passionate about,
               Practice gratitude, or go for a walk in nature.

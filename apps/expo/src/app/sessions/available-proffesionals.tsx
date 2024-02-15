@@ -81,21 +81,21 @@ const Index = () => {
             <H1 styling="text-xl pl-5 md:text-2xl">Available</H1>
           </View>
         </TouchableOpacity>
-        <View className="flex flex-col">
+        <View className="mt-10 flex flex-col">
           {data.map((proffesional) => (
-            <TouchableOpacity
-              onPress={() => {
-                router.push("/sessions/id");
-              }}
-              key={proffesional.id}
-            >
-              <Card
-                img={proffesional.img}
-                name={proffesional.name}
-                occupation={proffesional.occupation}
-                calLink={proffesional.calLink}
-              />
-            </TouchableOpacity>
+            // <TouchableOpacity
+            //   onPress={() => {
+            //     router.push("/sessions/id");
+            //   }}
+            //   key={proffesional.id}
+            // >
+            <Card
+              img={proffesional.img}
+              name={proffesional.name}
+              occupation={proffesional.occupation}
+              calLink={proffesional.calLink}
+            />
+            // </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
