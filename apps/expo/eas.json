@@ -16,6 +16,9 @@
       "ios": {
         "simulator": true,
         "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
       }
     },
     "production": {
@@ -27,7 +30,7 @@
   "submit": {
     "production": {
       "ios": {
-        "appleId": "jj.gaspary@gmail.com",
+        "appleId": "sesayabdulkarim35@gmail.com",
         "ascAppId": "6476977479",
         "appleTeamId": "89C2J6T7T4"
       }

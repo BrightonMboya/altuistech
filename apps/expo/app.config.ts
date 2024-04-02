@@ -19,7 +19,7 @@ const defineConfig = (): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.tonero.altuistech",
+    bundleIdentifier: "com.emotions.altuistech",
     buildNumber: "2"
   },
   android: {
