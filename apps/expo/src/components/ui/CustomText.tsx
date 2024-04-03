@@ -55,11 +55,13 @@ export const CustomText = React.forwardRef<TextComponent, CustomeTextProps>(
     // after the fonts are loaded we have to remove the splash screen
     const onLayoutRootView = useCallback(async () => {
       if (fontsLoaded) {
+        console.log("I have loaded the donts")
         await SplashScreen.hideAsync();
       }
     }, [fontsLoaded]);
 
     if (!fontsLoaded) {
+      console.log("Hey I am the issue")
       return null;
     }
     return (

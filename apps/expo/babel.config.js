@@ -30,7 +30,7 @@ module.exports = function (api) {
         },
       ],
       "react-native-reanimated/plugin",
-      "expo-router/babel",
+      // "expo-router/babel",
       ["module-resolver", { alias: { "~": "./src" } }],
     ],
   };
