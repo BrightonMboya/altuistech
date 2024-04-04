@@ -1,18 +1,39 @@
 {
   "cli": {
-    "version": ">= 3.13.3"
+    "version": ">= 3.3.0",
+    "promptToConfigurePushNotifications": false
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "ios": {
+        "simulator": true,
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
+      }
     },
-    "production": {}
+    "production": {
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "sesayabdulkarim35@gmail.com",
+        "ascAppId": "6480434888",
+        "appleTeamId": "3RF683R85U"
+      }
+    }
   }
 }

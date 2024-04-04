@@ -1,13 +1,18 @@
 import React, { useCallback } from "react";
-import { StyleSheet, TextComponent, TextProps, Text } from "react-native";
+import { StyleSheet, Text, TextComponent, TextProps } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import { Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold, Poppins_800ExtraBold, Poppins_900Black, useFonts } from "@expo-google-fonts/poppins";
+import {
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+  Poppins_800ExtraBold,
+  Poppins_900Black,
+  useFonts,
+} from "@expo-google-fonts/poppins";
 import { cva, type VariantProps } from "class-variance-authority";
 
-
-
 import { cn } from "~/utils";
-
 
 const customTextVariants = cva("", {
   variants: {
@@ -55,13 +60,11 @@ export const CustomText = React.forwardRef<TextComponent, CustomeTextProps>(
     // after the fonts are loaded we have to remove the splash screen
     const onLayoutRootView = useCallback(async () => {
       if (fontsLoaded) {
-        console.log("I have loaded the donts")
         await SplashScreen.hideAsync();
       }
     }, [fontsLoaded]);
 
     if (!fontsLoaded) {
-      console.log("Hey I am the issue")
       return null;
     }
     return (
@@ -69,7 +72,7 @@ export const CustomText = React.forwardRef<TextComponent, CustomeTextProps>(
         className={cn(customTextVariants({ variant, className }))}
         {...props}
         style={{
-            fontFamily: "regular"
+          fontFamily: "regular",
         }}
       >
         {props.children}
