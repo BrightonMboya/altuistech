@@ -10,23 +10,16 @@ import { TRPCError, initTRPC } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
 import { ZodError } from "zod";
-
-import { getServerSession, type Session } from "@repo/auth";
 import { prisma } from "@repo/db";
 
-import EventEmitter from "stream"
-import ws from "ws";
+;
 import { IncomingMessage } from "http";
 import { NodeHTTPCreateContextFnOptions } from "@trpc/server/dist/adapters/node-http";
 import { getSession } from "next-auth/react";
 
 
-import { type inferAsyncReturnType } from "@trpc/server";
 import { getAuth } from "@clerk/nextjs/server";
-import type {
-  SignedInAuthObject,
-  SignedOutAuthObject,
-} from "@clerk/nextjs/api";
+
 import { type NextApiRequest } from "next";
 
 
@@ -41,11 +34,9 @@ import { type NextApiRequest } from "next";
  *
  */
 type CreateContextOptions = {
-  session: Session | null | undefined;
-  auth: SignedInAuthObject | SignedOutAuthObject;
+ 
 };
 
-const eventEmitter = new EventEmitter();
 
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use
@@ -58,10 +49,9 @@ const eventEmitter = new EventEmitter();
  */
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
-    session: opts.session,
-    clerk: opts.auth,
+   
     prisma,
-    eventEmitter,
+    
   };
 };
 
@@ -71,7 +61,7 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * @link https://trpc.io/docs/context
  */
 export const createTRPCContext = async (
-  opts?: CreateNextContextOptions | NodeHTTPCreateContextFnOptions<IncomingMessage, ws>) => {
+  opts?: CreateNextContextOptions ) => {
   // const { req, res } = opts;
   const req = opts?.req;
   const res = opts?.res;
@@ -135,18 +125,7 @@ export const publicProcedure = t.procedure;
  * Reusable middleware that enforces users are logged in before running the
  * procedure
  */
-const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
-  if (!ctx.session?.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
-  }
-  return next({
-    ctx: {
-      // infers the `session` as non-nullable
-      session: { ...ctx.session, user: ctx.session.user },
-      auth: ctx.clerk
-    },
-  });
-});
+
 
 /**
  * Protected (authed) procedure
@@ -157,4 +136,3 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
  *
  * @see https://trpc.io/docs/procedures
  */
-export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);

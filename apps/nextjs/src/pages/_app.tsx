@@ -1,27 +1,43 @@
 import "../styles/globals.css";
 import type { AppType } from "next/app";
+import localFont from "next/font/local";
+
+
 
 import { api } from "~/utils/api";
-import { ClerkProvider } from "@clerk/nextjs";
 import RootLayout from "~/components/Layout";
 
-// const MyApp: AppType<{ session: Session | null }> = ({
-//   Component,
-//   pageProps: { session, ...pageProps },
-// }) => {
-//   return (
-//     <SessionProvider session={session}>
-//       <Component {...pageProps} />
-//     </SessionProvider>
-//   );
-// };
+
+const cashDisplay = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ClashDisplay-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-cash",
+});
+
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
-    // <ClerkProvider {...pageProps}>
-      <RootLayout>
+
+    <RootLayout>
+      <main className={`${cashDisplay.className} font-cash`}>
         <Component {...pageProps} />
-      </RootLayout>
-    // </ClerkProvider>
-     );
+      </main>
+    </RootLayout>
+   
+  );
 };
 export default api.withTRPC(MyApp);
