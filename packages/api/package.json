@@ -12,7 +12,6 @@
     "dev:ws": "ts-node-dev --project tsconfig.server.json --respawn --transpile-only src/wsServer.ts "
   },
   "dependencies": {
-    "@repo/auth": "^0.1.0",
     "@repo/db": "^0.1.0",
     "@trpc/client": "^10.32.0",
     "@trpc/server": "^10.32.0",

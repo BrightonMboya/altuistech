@@ -1,7 +1,3 @@
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({
   children,
 }: {
@@ -34,7 +30,7 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${inter.className} flex flex-col`}>
+      <body className="flex flex-col">
         <main className="flex-1">{children}</main>
       </body>
     </html>

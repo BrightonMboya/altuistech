@@ -1,11 +1,4 @@
-// import type { Config } from "tailwindcss";
 
-import baseConfig from "@repo/tailwind-config";
-
-// export default {
-//   content: ["./src/**/*.tsx"],
-//   presets: [baseConfig],
-// } satisfies Config;
 const { fontFamily } =
   // eslint-disable-next-line
   require("tailwindcss/defaultTheme") as typeof import("tailwindcss/defaultTheme");
@@ -13,14 +6,12 @@ const { fontFamily } =
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "src/**/*.{ts,tsx}",
-    "../../packages/{ui,monaco}/**/*.{ts,tsx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        yellow: "#F3AB33",
+      },
 
       fontFamily: {
         cash: ["var(--font-cash)", ...fontFamily.sans],
