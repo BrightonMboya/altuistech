@@ -7,7 +7,7 @@ import {
 
 export default function FAQ() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col lg:w-[80%] lg:mt-5">
       <Accordion type="single" collapsible className="mt-5">
         <AccordionItem value="item-1">
           <AccordionTrigger>

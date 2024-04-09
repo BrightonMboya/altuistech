@@ -27,6 +27,7 @@ const cashDisplay = localFont({
     },
   ],
   variable: "--font-cash",
+  // display: "swap"
 });
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
