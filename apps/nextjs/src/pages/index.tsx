@@ -9,17 +9,37 @@ export default function Index() {
   return (
     <>
       <main className="font-cash relative flex flex-col items-center justify-center">
-        <div className="">
-          <section className="flex min-h-screen flex-col items-center bg-gradient-to-b from-[#3372F2] via-[#0B41B0] to-[#164EC2] pt-[5rem] text-center md:flex-row md:justify-center md:pt-0 lg:space-x-10 lg:pt-0">
-            <div className="absolute left-5 top-5 lg:left-[7%]">
-              <Image
-                src="/imgs/logo.png"
-                className=""
-                alt=""
-                width={90}
-                height={80}
-              />
+        <div className="bg-gradient-to-b from-[#3372F2] via-[#0B41B0] to-[#164EC2]">
+          <div className="">
+            <div className="mx-10 flex items-center justify-between">
+              <div className="p-5">
+                <Image
+                  src="/imgs/logo.png"
+                  className=""
+                  alt=""
+                  width={90}
+                  height={80}
+                />
+              </div>
+
+              <div className="hidden items-center space-x-5 text-lg text-white lg:flex">
+                <Link href="#features">
+                  <p>Features</p>
+                </Link>
+
+                <Link href="#faq">
+                
+                <p>Faq</p>
+                </Link>
+
+                <Link href="#contact">
+                
+                <p>Contact us</p>
+                </Link>
+              </div>
             </div>
+          </div>
+          <section className="flex min-h-screen flex-col items-center  pt-[5rem] text-center md:flex-row md:justify-center md:pt-0 lg:space-x-10 lg:pt-0">
             <div className="lg:max-w-[60%]">
               <div className="  lg:text-left">
                 <h3 className="text-2xl font-medium text-white lg:max-w-[70%] lg:text-4xl">
@@ -81,7 +101,10 @@ export default function Index() {
         </section>
       </main>
 
-      <section className="bg-[#f5f8fe] lg:mt-10 lg:flex lg:items-center lg:justify-center">
+      <section
+        className="bg-[#f5f8fe] lg:mt-10 lg:flex lg:items-center lg:justify-center"
+        id="features"
+      >
         <div className="flex flex-col items-center  lg:mt-10 lg:grid lg:grid-cols-2 lg:gap-5">
           <div className="mt-5 h-[400px] w-[300px] overflow-hidden rounded-md bg-yellow pl-5 lg:relative lg:h-[500px] lg:w-[600px]">
             <Image

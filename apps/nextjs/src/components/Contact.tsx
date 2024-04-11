@@ -8,7 +8,7 @@ export default function Contact() {
   const [fullNames, setFullNames] = useState("");
 
   return (
-    <div className="mx-auto mt-10">
+    <div className="mx-auto mt-10" id="contact">
       <div className="text-center ">
         <p className="mx-auto mb-10 mt-3 max-w-4xl px-4 text-xl ">
           We'd love to hear from you. Simply fill in the form below or reach out
