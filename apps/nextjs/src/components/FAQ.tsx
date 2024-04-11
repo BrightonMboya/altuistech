@@ -53,7 +53,7 @@ export default function FAQ() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-3">
+        <AccordionItem value="item-4">
           <AccordionTrigger>Is Emotions free to use?</AccordionTrigger>
           <AccordionContent>
             We have a freemium (free) model with limited access to resources and
@@ -63,7 +63,7 @@ export default function FAQ() {
             journaling, and a virtual relaxation room.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3">
+        <AccordionItem value="item-5">
           <AccordionTrigger>
             Can I join multiple mental health groups on Emotions?
           </AccordionTrigger>

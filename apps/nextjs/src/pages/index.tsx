@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
+import Contact from "~/components/Contact";
 import FAQ from "~/components/FAQ";
 
 export default function Index() {
@@ -235,6 +236,7 @@ export default function Index() {
         <FAQ />
       </section>
 
+      <Contact />
       <footer className="bg-black py-5 pl-5 text-white ">
         <section className="flex flex-col gap-5 space-y-5 lg:flex-row lg:justify-around lg:space-y-0">
           <Image
