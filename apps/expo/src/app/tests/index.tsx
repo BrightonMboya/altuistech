@@ -1,13 +1,13 @@
 import React, { useCallback, useRef } from "react";
-import { ScrollView, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
-import H1 from "~/components/ui/Heading";
+
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import AlcoholBottomSheet from "~/components/home/bottom-sheets/alcohol-test";
 import PTSDSheet from "~/components/home/bottom-sheets/ptsd-sheet";
 import TestCard from "~/components/tests/test-card";
+import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 
 export default function Page() {
@@ -29,9 +29,7 @@ export default function Page() {
         }}
       />
       <ScrollView>
-        <H1 styling="text-xl md:text-2xl" >
-          Mental Health Test
-        </H1>
+        <H1 styling="text-xl md:text-2xl">Mental Health Test</H1>
         <P style="text-base pt-1 text-[#505050] w-[90%] md:text-lg">
           Pls select the type of mental health test you will like to take.
         </P>
@@ -49,26 +47,42 @@ export default function Page() {
             img={require("../../../assets/imgs/tests/depression.png")}
             backgroundColor="#FFEFC6"
           />
-          <TouchableOpacity onPress={() => bottomSheetHandler()}>
-            <TestCard
-              name="Alcohol/Non-Prescribed Drug Test"
-              href=""
-              img={require("../../../assets/imgs/tests/alcohol.png")}
-              backgroundColor="#E4EDFF"
-            />
+
+          <TouchableOpacity
+            onPress={() => {
+              bottomSheetHandler();
+            }}
+          >
+            <View
+              className={`mt-5 flex h-[88px] w-[90%] flex-row justify-between overflow-hidden rounded-md bg-[#E4EDFF] p-5 md:h-[150px] md:pr-0  `}
+            >
+              <H1 styling="w-[200px] text-base md:text-xl">
+                Alcohol/Non-Prescribed Drug Test
+              </H1>
+              <Image
+                source={require("../../../assets/imgs/tests/alcohol.png")}
+                className="h-[80px] translate-y-[-15px] md:h-[150px]"
+              />
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => ptsdSheetHandler()}>
-            <TestCard
-              name="Post-traumatic disorder Test"
-              href=""
-              img={require("../../../assets/imgs/tests/ptsd.png")}
-              backgroundColor="#F2E8FF"
-            />
+            <View
+              className={`mt-5 flex h-[88px] w-[90%] flex-row justify-between overflow-hidden rounded-md bg-[#F2E8FF] p-5 md:h-[150px] md:pr-0  `}
+            >
+              <H1 styling="w-[200px] text-base md:text-xl">
+                Post-traumatic disorder Test
+              </H1>
+              <Image
+                source={require("../../../assets/imgs/tests/ptsd.png")}
+                className="h-[80px] translate-y-[-15px] md:h-[150px]"
+              />
+            </View>
           </TouchableOpacity>
         </View>
       </ScrollView>
       <AlcoholBottomSheet bottomRef={bottomSheetRef} />
+
       <PTSDSheet bottomRef={ptsdSheetRef} />
     </SafeAreaView>
   );

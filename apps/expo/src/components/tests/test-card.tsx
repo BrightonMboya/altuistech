@@ -10,6 +10,7 @@ export default function TestCard({ backgroundColor, name, img, href }: any) {
     <TouchableOpacity
       onPress={() => {
         href && router.push(href);
+        console.log("I got triggered here as well")
       }}
     >
       <View

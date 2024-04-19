@@ -7,6 +7,7 @@ import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheet from "./BottomSheet";
 
+
 export default function Component({ bottomRef }: { bottomRef: any }) {
   const router = useRouter();
 
