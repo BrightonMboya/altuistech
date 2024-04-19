@@ -531,6 +531,38 @@ export const alcoholTest = [
       },
     ],
   },
+  {
+    id: 7,
+    shortTitle: "Select an answer",
+    question: "What substance or addiction are you concerned about",
+    answers: [
+      {
+        id: 1,
+        ans: "Alcohol",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Marijuana / Cocaine",
+        value: 0,
+      },
+      {
+        id: 3,
+        ans: "Heroin / Prescription Opioids",
+        value: 0,
+      },
+      {
+        id: 4,
+        ans: "Other (Gambling, sex, internet, etc)",
+        value: 0,
+      },
+      {
+        id: 5,
+        ans: "Self Harm/ Tobacco / Stimulants",
+        value: 0,
+      },
+    ],
+  },
 ];
 
 export const ptsdTest = [

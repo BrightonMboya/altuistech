@@ -34,7 +34,7 @@ export default function Component({ bottomRef }: { bottomRef: any }) {
           Do you take Alcohol Or Any Non-Prescribed Drug Substance?{" "}
         </H1>
 
-        <View className="mt-5 flex w-[90%] flex-row items-start rounded-md bg-[#FFF2EB] p-4">
+        <View className="mt-5 flex w-[90%] flex-row items-start rounded-md bg-[#FFF2EB] py-4 pl-1">
           <Svg width="30" height="30" viewBox="0 0 16 16" fill="none">
             <Path
               d="M8.00016 15.1667C4.04683 15.1667 0.833496 11.9533 0.833496 8C0.833496 4.04667 4.04683 0.833333 8.00016 0.833333C11.9535 0.833333 15.1668 4.04667 15.1668 8C15.1668 11.9533 11.9535 15.1667 8.00016 15.1667ZM8.00016 1.83333C4.60016 1.83333 1.8335 4.6 1.8335 8C1.8335 11.4 4.60016 14.1667 8.00016 14.1667C11.4002 14.1667 14.1668 11.4 14.1668 8C14.1668 4.6 11.4002 1.83333 8.00016 1.83333Z"
