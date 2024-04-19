@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text, TextComponent, TextProps } from "react-native";
-import * as SplashScreen from "expo-splash-screen";
+// import * as SplashScreen from "expo-splash-screen";
+import { SplashScreen } from "expo-router";
 import {
   Poppins_400Regular,
   Poppins_500Medium,

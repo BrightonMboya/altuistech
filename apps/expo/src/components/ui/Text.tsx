@@ -1,15 +1,9 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text } from "react-native";
+import { useFonts } from "expo-font";
+// import { SplashScreen } from "expo-router";
+
 import * as SplashScreen from "expo-splash-screen";
-import {
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_700Bold,
-  Poppins_800ExtraBold,
-  Poppins_900Black,
-  useFonts,
-} from "@expo-google-fonts/poppins";
 
 //prevents splash screen from auto hiding fonts
 SplashScreen.preventAutoHideAsync();
@@ -31,49 +25,36 @@ const P = ({ children, style, textType }: Props) => {
   let textStyle: {};
   switch (textType) {
     case "regular":
-      textStyle = styles.regular;
-      break;
-    case "bold":
-      textStyle = styles.bold;
+      textStyle = styles.heading;
       break;
 
     case "heading":
       textStyle = styles.heading;
       break;
-    case "light":
-      textStyle = styles.light;
-      break;
-    case "medium":
-      textStyle = styles.medium;
-      break;
-    case "semiBold":
-      textStyle = styles.semiBold;
+
     default:
       textStyle = styles.regular;
       break;
   }
-  const [fontsLoaded] = useFonts({
-    regular: Poppins_400Regular,
-    medium: Poppins_500Medium,
-    "clashDisplay-Bold": require("../../../assets/fonts/ClashDisplay-Bold.otf"),
-    Poppins_600SemiBold,
-    Poppins_700Bold,
-    Poppins_800ExtraBold,
-    Poppins_900Black,
+  const [fontsLoaded, fontError] = useFonts({
+    "ClashDisplay-Bold": require("../../../assets/fonts/ClashDisplay-Bold.otf"),
+    "ClashDisplay-Regular": require("../../../assets/fonts/ClashDisplay-Regular.otf"),
   });
 
   // after the fonts are loaded we have to remove the splash screen
   const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
+    if (fontsLoaded || fontError) {
+      console.log("fonts loaded");
       await SplashScreen.hideAsync();
     }
-  }, [fontsLoaded]);
+  }, [fontsLoaded, fontError]);
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded && !fontError) {
+    console.log("No fonts loaded, on txt componet");
     return null;
   }
   return (
-    <Text className={`${style}`} style={textStyle}>
+    <Text className={`${style}`} style={textStyle} onLayout={onLayoutRootView}>
       {children}
     </Text>
   );
@@ -82,22 +63,10 @@ const P = ({ children, style, textType }: Props) => {
 export default P;
 
 const styles = StyleSheet.create({
-  regular: {
-    fontFamily: "regular",
-  },
-  bold: {
-    fontFamily: "Bold",
-  },
-  semiBold: {
-    fontFamily: "Poppins_600SemiBold",
-  },
-  light: {
-    fontFamily: "Light",
-  },
-  medium: {
-    fontFamily: "medium",
-  },
   heading: {
     fontFamily: "ClashDisplay-Bold",
+  },
+  regular: {
+    fontFamily: "ClashDisplay-Regular",
   },
 });

@@ -2,7 +2,6 @@ import "react-native-gesture-handler";
 import "text-encoding-polyfill";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Constants from "expo-constants";
 import {
   // This example uses a basic Layout component, but you can use any Layout.
   Slot,

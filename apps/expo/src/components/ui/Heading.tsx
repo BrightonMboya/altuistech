@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
+// import { SplashScreen } from "expo-router";
 import { useFonts } from "@expo-google-fonts/poppins";
 
 //prevents splash screen from auto hiding fonts
@@ -24,12 +25,14 @@ const H1 = ({ children, styling }: Props) => {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
+    console.log("failed to load fonts on the heading")
     return null;
   }
   return (
     <Text
       className={`${styling} `}
       style={{ fontFamily: "clashDisplay-Medium" }}
+      onLayout={onLayoutRootView}
     >
       {/* @ts-ignore */}
       {children}

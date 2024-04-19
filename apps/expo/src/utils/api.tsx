@@ -9,6 +9,10 @@ import { createWSClient, wsLink } from "@trpc/client/links/wsLink";
 import { createTRPCReact } from "@trpc/react-query";
 import superjson from "superjson";
 
+
+
+
+
 /**
  * Extend this function when going to production by
  * setting the baseUrl to your production API URL.
@@ -22,9 +26,9 @@ const getBaseUrl = () => {
    * **NOTE**: This is only for development. In production, you'll want to set the
    * baseUrl to your production API URL.
    */
-  const debuggerHost =
-    Constants.manifest?.debuggerHost ??
-    Constants.manifest2?.extra?.expoGo?.debuggerHost;
+
+
+  const debuggerHost = Constants.expoConfig?.hostUri;
   const localhost = debuggerHost?.split(":")[0];
   if (!localhost) {
     return ` https://nane-nane.vercel.app/`;
@@ -57,7 +61,7 @@ function getEndingLink() {
  * A set of typesafe hooks for consuming your API.
  */
 export const api = createTRPCReact<AppRouter>();
-export { type RouterInputs, type RouterOutputs } from "@acme/api";
+export { type RouterInputs, type RouterOutputs } from "@repo/api";
 
 /**
  * A wrapper for your app that provides the TRPC context.

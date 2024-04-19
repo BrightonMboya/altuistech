@@ -1,5 +1,9 @@
 import type { ExpoConfig } from "@expo/config";
 
+
+
+
+
 const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
@@ -20,7 +24,7 @@ const defineConfig = (): ExpoConfig => ({
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.emotions.altuistech",
-    buildNumber: "3"
+    buildNumber: "3",
   },
   android: {
     package: "com.mboya.altuistech",
@@ -36,7 +40,15 @@ const defineConfig = (): ExpoConfig => ({
       clerkPublishableKey: process.env.CLERK_PUBLISHABLE_KEY,
     },
   },
-  plugins: ["./expo-plugins/with-modify-gradle.js"],
+  plugins: [
+    "./expo-plugins/with-modify-gradle.js",
+    // [
+    //   "expo-font",
+    //   {
+    //     fonts: ["./assets/fonts/*"],
+    //   },
+    // ],
+  ],
 });
 
 export default defineConfig;
