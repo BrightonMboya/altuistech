@@ -675,4 +675,36 @@ export const ptsdTest = [
       },
     ],
   },
+  {
+    id: 7,
+    shortTitle: "Select an answer",
+    question: "Which of these events or incidents you have faced?",
+    answers: [
+      {
+        id: 1,
+        ans: "Fire / Human Accident",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Physical assault / sexual abuse",
+        value: 0,
+      },
+      {
+        id: 3,
+        ans: "Earthquake / flood",
+        value: 0,
+      },
+      {
+        id: 4,
+        ans: "A war",
+        value: 0,
+      },
+      {
+        id: 5,
+        ans: "Seeing someone being killed or commiting suicide",
+        value: 0,
+      },
+    ],
+  },
 ];
