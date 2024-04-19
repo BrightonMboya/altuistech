@@ -55,8 +55,7 @@ export default function Page() {
       </TouchableOpacity>
 
       <H1 styling="text-white text-xl pt-3 md:text-2xl">{`Question ${questionIndex}/${anxietyTest.length}`}</H1>
-      <H1 styling="text-white text-xl pt-3 md:text-2xl">{`current score ${currentScore}`}</H1>
-      <H1 styling="text-white text-xl pt-3 md:text-2xl">{`Question Inx ${questionIndex}`}</H1>
+      
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         <View>
           <P style="text-[#505050] md:text-lg" textType="medium">

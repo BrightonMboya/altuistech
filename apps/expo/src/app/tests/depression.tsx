@@ -4,11 +4,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useRouter } from "expo-router";
 
+
+
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import TestBottomSheet from "~/components/home/bottom-sheets/test-bottom-sheet";
 import { depressionTest } from "~/components/tests/data";
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
+
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -26,26 +29,20 @@ export default function Page() {
 
   const router = useRouter();
 
-  const handleNextQuestion = () => {
-    if (questionIndex === depressionTest.length - 1) {
-      router.push({
-        pathname: "/tests/results",
-        params: { test: "depression", score: currentScore, showWarning: true },
-      });
-    }
-    if (currentScore <= 3 && questionIndex === 2) {
-      router.push({
-        pathname: "/tests/results",
-        params: { test: "depression", score: currentScore },
-      });
-    }
-    if (currentScore > 3 && questionIndex === 2) {
-      bottomSheetHandler();
-      setQuestionIndex(questionIndex + 1);
-    } else {
-      setQuestionIndex(questionIndex + 1);
-    }
-  };
+   const handleNextQuestion = () => {
+     setQuestionIndex(questionIndex + 1);
+     if (currentScore < 3 && questionIndex === 1) {
+       router.push("/resources");
+     }
+
+     if (questionIndex === depressionTest.length - 1) {
+       if (currentScore < 7) {
+         router.push("/resources");
+       } else {
+         router.push("/sessions/available-proffesionals");
+       }
+     }
+   };
   return (
     <SafeAreaView className="min-h-screen bg-blue  p-5">
       <Stack.Screen
@@ -103,12 +100,12 @@ export default function Page() {
           ))}
         </View>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
           onPress={handleNextQuestion}
         >
           <H1 styling="text-xl tracking-wide text-white p-3 text-center md:text-2xl">Next</H1>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <TestBottomSheet
         bottomRef={bottomSheetRef}
