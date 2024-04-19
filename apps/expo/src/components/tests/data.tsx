@@ -245,12 +245,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -273,12 +273,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -300,12 +300,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -327,12 +327,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -354,12 +354,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -382,12 +382,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },
@@ -410,12 +410,12 @@ export const anxietyTest = [
       {
         id: 3,
         ans: "More than half a day",
-        value: 1.5,
+        value: 2,
       },
       {
         id: 4,
         ans: "Nearly everyday",
-        value: 2,
+        value: 3,
       },
     ],
   },

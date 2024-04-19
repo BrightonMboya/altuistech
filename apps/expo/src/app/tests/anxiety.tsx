@@ -26,23 +26,17 @@ export default function Page() {
   const router = useRouter();
 
   const handleNextQuestion = () => {
+    setQuestionIndex(questionIndex + 1);
+    if (currentScore < 3 && questionIndex === 1) {
+      router.push("/resources");
+    }
+
     if (questionIndex === anxietyTest.length - 1) {
-      router.push({
-        pathname: "/tests/results",
-        params: { test: "anxiety", score: currentScore, showWarning: true },
-      });
-    }
-    if (currentScore <= 3 && questionIndex === 2) {
-      router.push({
-        pathname: "/tests/results",
-        params: { test: "anxiety", score: currentScore },
-      });
-    }
-    if (currentScore > 3 && questionIndex === 2) {
-      bottomSheetHandler();
-      setQuestionIndex(questionIndex + 1);
-    } else {
-      setQuestionIndex(questionIndex + 1);
+      if (currentScore <= 8) {
+        router.push("/resources");
+      } else {
+        router.push("/sessions/available-proffesionals");
+      }
     }
   };
   return (
@@ -61,13 +55,16 @@ export default function Page() {
       </TouchableOpacity>
 
       <H1 styling="text-white text-xl pt-3 md:text-2xl">{`Question ${questionIndex}/${anxietyTest.length}`}</H1>
-
+      <H1 styling="text-white text-xl pt-3 md:text-2xl">{`current score ${currentScore}`}</H1>
+      <H1 styling="text-white text-xl pt-3 md:text-2xl">{`Question Inx ${questionIndex}`}</H1>
       <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
         <View>
           <P style="text-[#505050] md:text-lg" textType="medium">
             {currentQuestion?.shortTitle}
           </P>
-          <H1 styling="text-base pt-2 md:text-xl">{currentQuestion?.question}</H1>
+          <H1 styling="text-base pt-2 md:text-xl">
+            {currentQuestion?.question}
+          </H1>
 
           {currentQuestion?.answers.map((ans) => (
             <Pressable
@@ -100,14 +97,14 @@ export default function Page() {
           ))}
         </View>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           className="mt-5 rounded-md bg-blue"
           onPress={handleNextQuestion}
         >
           <H1 styling="text-xl tracking-wide text-white p-3 text-center md:text-2xl">
             Next
           </H1>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <TestBottomSheet
         bottomRef={bottomSheetRef}
