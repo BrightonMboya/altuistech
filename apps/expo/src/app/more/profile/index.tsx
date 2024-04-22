@@ -1,7 +1,6 @@
 import { Image, Pressable, ScrollView, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 import { useAuth, useUser } from "@clerk/clerk-expo";
 
 import H1 from "~/components/ui/Heading";
@@ -9,10 +8,9 @@ import P from "~/components/ui/Text";
 
 export default function Page() {
   const { user } = useUser();
-  const router = useRouter();
   const { signOut } = useAuth();
   return (
-    <SafeAreaView className="min-h-screen bg-white md:pt-10">
+    <SafeAreaView className="min-h-screen bg-white pt-10">
       <Stack.Screen
         options={{
           title: "",
@@ -34,12 +32,12 @@ export default function Page() {
 
           <View className="mt-10 min-h-[100px] w-[90%] bg-[#f9f9f9]">
             <View className="gap-5 px-[20px] py-[24px]">
-              <View className="flex flex-row items-center justify-between">
+              <View className="flex flex-col">
                 <P style="text-base">User Name</P>
                 <H1 styling="text-lg">{user?.username}</H1>
               </View>
 
-              <View className="flex flex-row items-center justify-between">
+              <View className="flex flex-col">
                 <P style="text-base">Email</P>
                 <H1 styling="text-lg">
                   {user?.emailAddresses[0]?.emailAddress}
@@ -59,7 +57,9 @@ export default function Page() {
             </H1>
           </TouchableOpacity> */}
         </View>
-        <Pressable onPress={() => signOut()}>
+        <Pressable onPress={() => signOut()}
+        // className="bg-red-500"
+        >
           <H1 styling="text-xl tracking-wide text-[#FF2525] text-center mt-5">
             Log Out
           </H1>

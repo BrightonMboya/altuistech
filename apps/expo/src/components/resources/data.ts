@@ -1,21 +1,21 @@
 export const motivationalVideos = [
   {
     id: 1,
-    link: "https://www.youtube.com/watch?v=ZebSXPUCPFc ",
+    link: "https://www.youtube.com/watch?v=ZebSXPUCPFc",
     thumbNail:
       "https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdGl2YXRpb258ZW58MHx8MHx8fDA%3D",
     label: "If you're feeling depressed, anxious, sad, or angry",
   },
   {
     id: 2,
-    link: "https://www.youtube.com/watch?v=YuNLNeIorJw ",
+    link: "https://www.youtube.com/watch?v=YuNLNeIorJw",
     thumbNail:
       "https://images.unsplash.com/photo-1552508744-1696d4464960?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG1vdGl2YXRpb258ZW58MHx8MHx8fDA%3D",
     label: "Positive Morning Motivation",
   },
   {
     id: 3,
-    link: "https://www.youtube.com/watch?v=k25QB3D9Uss ",
+    link: "https://www.youtube.com/watch?v=k25QB3D9Uss",
     thumbNail:
       "https://images.unsplash.com/photo-1508558936510-0af1e3cccbab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdGl2YXRpb258ZW58MHx8MHx8fDA%3D",
     label: "If you're feeling lonely, depressed, sad, or anxious",

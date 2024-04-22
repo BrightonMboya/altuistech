@@ -21,13 +21,13 @@ export default function Page() {
             headerShown: false,
           }}
         />
-        <TextInput
+        {/* <TextInput
           className="h-[50px] w-[90%] rounded-lg border-[1px] border-[#b8b8b8]  px-5 "
           placeholder="Search Resources"
           onChangeText={(text) => setSearchItem(text)}
           defaultValue={searchItem}
-        />
-        <View className="flex flex-col space-y-5">
+        /> */}
+        <View className="flex flex-col space-y-5 pb-10">
           <ResourceGrid title="Meditation Videos" data={meditationVideos} />
           <ResourceGrid title="Motivation Videos" data={motivationalVideos} />
           <ResourceGrid
