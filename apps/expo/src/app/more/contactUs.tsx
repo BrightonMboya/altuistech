@@ -28,9 +28,7 @@ export default function Page() {
             <FontAwesome name="long-arrow-left" size={30} />
             <H1 styling="text-xl pl-5 ">Need Help?</H1>
           </View>
-          <P style="text-base text-[#505050] md:text-lg">
-            We’d love to hear from you.
-          </P>
+          <P style="text-base text-[#505050] md:text-lg">We’d love to hear from you.</P>
         </TouchableOpacity>
 
         <View className="mt-2 flex  w-[90%] flex-col rounded-md border-2 border-[#f9f9f9] bg-[#f9f9f9] p-5">
@@ -59,7 +57,7 @@ export default function Page() {
 
               <TouchableOpacity
                 className="h-12 w-[100px] rounded-md bg-[#1960F2]"
-                onPress={() => Linking.openURL("sms:+250786468892")}
+                onPress={() => Linking.openURL("tel:+250786468892")}
               >
                 <H1 styling="text-white text-center pt-2 text-lg">Call Now</H1>
               </TouchableOpacity>
@@ -82,7 +80,7 @@ export default function Page() {
               <P style="text-[#505050] text-lg pl-[12px]">Email</P>
             </View>
 
-            <View className="mt flex flex-row items-center justify-between">
+            <View className="flex flex-row items-center justify-between mt">
               <View className=" items-cente flex w-[200px] flex-row rounded-xl">
                 <P style="bg-[#E4EDFF] px-[8px] py-[4px] ">
                   support@altruhealth.com
@@ -91,7 +89,7 @@ export default function Page() {
 
               <TouchableOpacity
                 className="h-12 w-[100px] rounded-md bg-blue"
-                onPress={() => Linking.openURL("mailto:support@expo.dev")}
+                onPress={() => Linking.openURL("mailto:Info@altruistechinnovations.com")}
               >
                 <H1 styling="text-white text-center pt-2 text-lg">Email Us</H1>
               </TouchableOpacity>

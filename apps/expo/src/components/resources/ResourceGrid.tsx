@@ -25,7 +25,7 @@ interface Props {
 function VideoCard({ link, label }: Props) {
   return (
     <View className="mt-5 ">
-       <P style="text-lg ">{label}</P>
+      <P style="text-lg ">{label}</P>
       <View className="h-[200px] w-[100%] pr-5">
         <WebView
           javaScriptEnabled={true}
@@ -34,7 +34,6 @@ function VideoCard({ link, label }: Props) {
           }}
         />
       </View>
-     
     </View>
   );
 }
@@ -51,8 +50,11 @@ export default function ResourceGrid({
   return (
     <View className="mt-10">
       <H1 styling="text-xl tracking-[0.32px]">{title}</H1>
+      {data.map((data) => (
+        <VideoCard {...data} key={data.link} />
+      ))}
 
-      <FlatList
+      {/* <FlatList
         data={data}
         renderItem={({ item }) => <VideoCard {...item} />}
         keyExtractor={(_, index) => index.toString()}
@@ -62,7 +64,7 @@ export default function ResourceGrid({
           // marginTop: 10,
         }}
         // horizontal={true}
-      />
+      /> */}
     </View>
   );
 }
