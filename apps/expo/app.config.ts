@@ -1,21 +1,17 @@
 import type { ExpoConfig } from "@expo/config";
 
-
-
-
-
 const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
   scheme: "expo",
   version: "1.0.2",
   orientation: "portrait",
-  icon: "./assets/icon.png",
+  icon: "./assets/adaptive-icon.png",
   userInterfaceStyle: "light",
   splash: {
     image: "./assets/icon.png",
     resizeMode: "contain",
-    backgroundColor: "#f6f6f6",
+    backgroundColor: "#ffffff",
   },
   updates: {
     fallbackToCacheTimeout: 0,
@@ -30,8 +26,8 @@ const defineConfig = (): ExpoConfig => ({
     package: "com.mboya.altuistech",
     versionCode: 1,
     adaptiveIcon: {
-      foregroundImage: "./assets/icon.png",
-      backgroundColor: "#f6f6f6",
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#ffffff",
     },
   },
   extra: {
