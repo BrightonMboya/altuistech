@@ -4,7 +4,7 @@ const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
   scheme: "expo",
-  version: "1.0.2",
+  version: "1.0.3",
   orientation: "portrait",
   icon: "./assets/adaptive-icon.png",
   userInterfaceStyle: "light",
@@ -24,7 +24,7 @@ const defineConfig = (): ExpoConfig => ({
   },
   android: {
     package: "com.mboya.altuistech",
-    versionCode: 1,
+    versionCode: 2,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",

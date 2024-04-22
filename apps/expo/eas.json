@@ -33,6 +33,9 @@
         "appleId": "sesayabdulkarim35@gmail.com",
         "ascAppId": "6480434888",
         "appleTeamId": "3RF683R85U"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./assets/service-key.json"
       }
     }
   }
