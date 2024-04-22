@@ -1,5 +1,6 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useSignUp } from "@clerk/clerk-expo";
 
 import H1 from "~/components/ui/Heading";
@@ -48,11 +49,18 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
       setError(err.errors[0].longMessage);
     }
   };
+
   return (
     <View>
-      <H1 styling=" text-xl pt-[60px]">Create an Account</H1>
+      {/* <TouchableOpacity onPress={() => {}}>
+        <View className="flex flex-row items-center">
+          <FontAwesome name="long-arrow-left" size={25} />
+          <H1 styling="text-lg pl-2 ">Back</H1>
+        </View>
+      </TouchableOpacity> */}
+      <H1 styling=" text-xl pt-[30px]">Create an Account</H1>
 
-      <View className="gap-5 pt-10">
+      <View className="gap-5 pt-5">
         <View>
           <H1 styling="text-lg">User Name</H1>
           <TextInput
@@ -89,7 +97,7 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
           />
         </View>
 
-        <H1 styling="text-red-500">{error}</H1>
+        <H1 styling="text-red-500 pl-5 mt-5">{error}</H1>
         <TouchableOpacity
           className="mt-10 h-12  rounded-md bg-[#1960F2]"
           onPress={() => onSignUpPress()}

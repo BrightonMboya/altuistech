@@ -1,32 +1,41 @@
-import { useRef } from "react";
-import { FlatList, Image, View } from "react-native";
-import { A } from "@expo/html-elements";
+import { useRef, useState } from "react";
+import { FlatList, View } from "react-native";
+import WebView from "react-native-webview";
 
-import { Card, data } from "~/components/home/Resources";
 import H1 from "../ui/Heading";
 import P from "../ui/Text";
 
+export const getYoutubeVideoId = (url: any) => {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length == 11 ? match[2] : "error";
+};
+
+export const createEmbedYoutubeUrl = (youtubeUrl: string) => {
+  const youtubeVideoId = getYoutubeVideoId(youtubeUrl);
+  return `https://www.youtube.com/embed/${youtubeVideoId}?  modestbranding=1`;
+};
+
 interface Props {
-  id: number;
   link: string;
-  thumbNail: string;
   label: string;
 }
 
-function VideoCard({ link, thumbNail, label }: Props) {
+function VideoCard({ link, label }: Props) {
   return (
-
-    <A href={link} className="h-[150px] w-[120px] md:h-[270px] md:w-[350px] ">
-      <View className="mt-1 h-[150px] w-[120px] overflow-hidden md:h-[270px] md:w-[350px]   ">
-        <Image
+    <View className="mt-5 ">
+       <P style="text-lg ">{label}</P>
+      <View className="h-[200px] w-[100%] pr-5">
+        <WebView
+          javaScriptEnabled={true}
           source={{
-            uri: thumbNail,
+            uri: createEmbedYoutubeUrl(link),
           }}
-          className="h-[120px] w-[120px] rounded-md md:h-[200px] md:w-[350px]"
         />
-        <H1 styling="md:text-xl mt-2">{label}</H1>
       </View>
-    </A>
+     
+    </View>
   );
 }
 
@@ -37,9 +46,12 @@ export default function ResourceGrid({
   data: Props[];
   title: string;
 }) {
+  const video = useRef(null);
+  const [status, setStatus] = useState({});
   return (
-    <View className="mt-5 max-h-[270px] md:max-h-[300px] ">
+    <View className="mt-10">
       <H1 styling="text-xl tracking-[0.32px]">{title}</H1>
+
       <FlatList
         data={data}
         renderItem={({ item }) => <VideoCard {...item} />}
@@ -49,7 +61,7 @@ export default function ResourceGrid({
           gap: 5,
           // marginTop: 10,
         }}
-        horizontal={true}
+        // horizontal={true}
       />
     </View>
   );

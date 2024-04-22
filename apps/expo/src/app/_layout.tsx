@@ -41,31 +41,30 @@ const tokenCache = {
 // It wraps your pages with the providers they need
 const RootLayout = () => {
   return (
-    <ClerkProvider
-      publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
-      tokenCache={tokenCache}
-    >
-      <TRPCProvider>
-        <GestureHandlerRootView style={{ flex: 1, backgroundColor: "red"}}
-        className="bg-red-500"
-        >
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ClerkProvider
+        publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
+        tokenCache={tokenCache}
+      >
+        <TRPCProvider>
           <SignedIn>
             <SafeAreaProvider className="relative">
               {/*
-          The Stack component displays the current page.
-          It also allows you to configure your screens 
-        */}
+                The Stack component displays the current page.
+                It also allows you to configure your screens 
+              */}
               <Stack />
               <StatusBar />
               <BottomTab />
             </SafeAreaProvider>
           </SignedIn>
-        </GestureHandlerRootView>
-        <SignedOut>
-          <OnboardingScreen />
-        </SignedOut>
-      </TRPCProvider>
-    </ClerkProvider>
+
+          <SignedOut>
+            <OnboardingScreen />
+          </SignedOut>
+        </TRPCProvider>
+      </ClerkProvider>
+    </GestureHandlerRootView>
   );
 };
 
