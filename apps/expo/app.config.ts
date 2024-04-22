@@ -38,12 +38,7 @@ const defineConfig = (): ExpoConfig => ({
   },
   plugins: [
     "./expo-plugins/with-modify-gradle.js",
-    // [
-    //   "expo-font",
-    //   {
-    //     fonts: ["./assets/fonts/*"],
-    //   },
-    // ],
+   
   ],
 });
 

@@ -44,13 +44,11 @@ const P = ({ children, style, textType }: Props) => {
   // after the fonts are loaded we have to remove the splash screen
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded || fontError) {
-      console.log("fonts loaded");
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
-    console.log("No fonts loaded, on txt componet");
     return null;
   }
   return (
