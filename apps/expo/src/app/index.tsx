@@ -5,7 +5,6 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
 import ProfileCard from "~/components/home/ProfileCard";
-import Resources from "~/components/home/Resources";
 import BookSession from "~/components/home/book-session";
 import {
   AngryBottomSheet,
@@ -17,6 +16,8 @@ import {
 import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
 import Feelings from "~/components/home/feelings";
 import Services from "~/components/home/services";
+import ResourceGrid from "~/components/resources/ResourceGrid";
+import { motivationalVideos } from "~/components/resources/data";
 
 const BottomSheetScreenScroll = () => {
   const happyBottomSheetRef = useRef<BottomSheetMethods>(null);
@@ -52,7 +53,7 @@ const BottomSheetScreenScroll = () => {
               headerShown: false,
             }}
           />
-          <ScrollView>
+          <ScrollView className="mb-[50px]">
             <ProfileCard />
             <BookSession />
             <Feelings
@@ -63,7 +64,7 @@ const BottomSheetScreenScroll = () => {
               sadHandler={sadBottomSheetHandler}
             />
             <Services />
-            <Resources />
+            <ResourceGrid data={motivationalVideos} title="Resources for You" />
           </ScrollView>
         </SafeAreaView>
         <HappyBottomSheet happyBottomRef={happyBottomSheetRef} />
