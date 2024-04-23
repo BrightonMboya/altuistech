@@ -25,8 +25,8 @@ interface Props {
 function VideoCard({ link, label }: Props) {
   return (
     <View className="mt-5 ">
-      <P style="text-lg ">{label}</P>
-      <View className="h-[200px] w-[100%] pr-5">
+      <P style="text-lg md:text-2xl">{label}</P>
+      <View className="h-[200px] w-[100%] md:w-[840px] md:h-[400px] pr-5">
         <WebView
           javaScriptEnabled={true}
           source={{
@@ -49,7 +49,7 @@ export default function ResourceGrid({
   const [status, setStatus] = useState({});
   return (
     <View className="mt-10">
-      <H1 styling="text-xl tracking-[0.32px]">{title}</H1>
+      <H1 styling="text-xl tracking-[0.32px] md:text-3xl">{title}</H1>
       {data.map((data) => (
         <VideoCard {...data} key={data.link} />
       ))}
