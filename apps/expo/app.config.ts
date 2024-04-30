@@ -4,7 +4,7 @@ const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
   scheme: "expo",
-  version: "1.0.3",
+  version: "1.0.4",
   orientation: "portrait",
   icon: "./assets/adaptive-icon.png",
   userInterfaceStyle: "light",
@@ -36,10 +36,7 @@ const defineConfig = (): ExpoConfig => ({
       clerkPublishableKey: process.env.CLERK_PUBLISHABLE_KEY,
     },
   },
-  plugins: [
-    "./expo-plugins/with-modify-gradle.js",
-   
-  ],
+  plugins: ["./expo-plugins/with-modify-gradle.js"],
 });
 
 export default defineConfig;
