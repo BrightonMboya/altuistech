@@ -3,7 +3,9 @@
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 This repo uses `pnpm` to manage dependencies and the monorepo.
-Install the dependencies with `pnpm install`. Make sure you have `node` and `pnpm` installed in your pc.
+Install the dependencies with `pnpm install` at the root of the monorepo. Make sure you have `node` and `pnpm` installed in your pc.
+
+
 
 create the local .env file based off the content from `.env.example`
 ```bash
