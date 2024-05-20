@@ -28,7 +28,7 @@ const RenderItem = ({ item, setShowOnboarding, setShowLogin }: Props) => {
           backgroundColor: item.backgroundColor,
         },
       ]}
-      className="h-[500px] pt-10 "
+      className="h-[500px] pt-10 bg-[#fffbf9]"
     >
       <View className=" w-[90%]">
         <View className="flex h-[48px] flex-row items-center">
@@ -51,7 +51,7 @@ const RenderItem = ({ item, setShowOnboarding, setShowLogin }: Props) => {
 
       <Image
         source={item.image}
-        className="mt-[60px]  w-[300px] object-cover"
+        className="mt-[60px]  "
       />
     </View>
   );
