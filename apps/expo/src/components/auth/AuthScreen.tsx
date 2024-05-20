@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 import H1 from "../ui/Heading";
 import CreateAccountScreen from "./CreatingAccount/CreateAccountScreen";
-import LoginScreen from "./CreatingAccount/LoginScreen";;
+import LoginScreen from "./CreatingAccount/LoginScreen";
 import OnboardingScreen from "./onboarding-screen/OnboardingScreen";
 
 export default function AuthScreen() {
@@ -27,7 +27,13 @@ export default function AuthScreen() {
           setSignWithEmail={setSignWithEmail}
         />
       ) : null}
-      {showLogin ? <LoginScreen /> : null}
+      {showLogin ? (
+        <LoginScreen
+          setShowLogin={setShowLogin}
+          setShowOnboarding={setShowOnboarding}
+          setSignWithEmail={setSignWithEmail}
+        />
+      ) : null}
     </View>
   );
 

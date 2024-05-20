@@ -58,15 +58,16 @@ export default function CreateAccountForm(props: Props) {
           source={require("../../../../assets/adaptive-icon.png")}
           className="h-[40px] w-[200px] object-cover"
         />
-        <H1 styling=" text-xl pt-[24px]">Create an account to get started</H1>
+        <H1 styling=" text-xl pt-[20px]">Create an account to get started</H1>
         <TouchableOpacity
           onPress={() => {
             props.setShowLogin(true);
             props.setShowOnboarding(false);
             props.setSignWithEmail(false);
           }}
+          className=" my-3"
         >
-          <View className="flex flex-row pt-[8px]">
+          <View className="flex flex-row ">
             <CustomText styling="">Already have an </CustomText>
             <CustomText styling="text-[#505050]" textFontStyle="heading">
               emotions

@@ -20,7 +20,7 @@ export default function CreateAccountScreen(props: AuthScreenProps) {
               setPendingVerification={setPendingVerification}
             />
           )}
-          {showSignIn && <LoginScreen />}
+          {/* {showSignIn && <LoginScreen />} */}
           {pendingVerification && <EmailVerification />}
         </ScrollView>
       </SafeAreaView>
