@@ -46,7 +46,7 @@ const Dot = ({ index, x }: Props) => {
     const backgroundColor = interpolateColor(
       x.value,
       [0, SCREEN_WIDTH, 2 * SCREEN_WIDTH],
-      ["#B8B8B8", "#F3AB33", "#8E3AFF"],
+      ["#F3AB33", "#F3AB33", "#F3AB33", "#B8B8B8"],
     );
 
     return {

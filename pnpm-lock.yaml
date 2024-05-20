@@ -75,10 +75,7 @@ importers:
       '@clerk/clerk-expo':
         specifier: ^0.17.6
         version: 0.17.8(@types/react@18.2.74)(expo-auth-session@5.4.0)(expo-web-browser@12.8.2)(react-dom@18.2.0)(react-native@0.73.6)(react@18.2.0)
-      '@expo-google-fonts/inter':
-        specifier: ^0.2.3
-        version: 0.2.3
-      '@expo-google-fonts/poppins':
+      '@expo-google-fonts/dm-sans':
         specifier: ^0.2.3
         version: 0.2.3
       '@expo/html-elements':
@@ -2350,12 +2347,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@expo-google-fonts/inter@0.2.3:
-    resolution: {integrity: sha512-iHK9FI+dnE45X5c2Z5hSFwNH4zUWethizpbv3XUn0FIGw5jwvzriENz0a6wCdkI4/d+1QkurnHo5XHti7TbNJA==}
-    dev: false
-
-  /@expo-google-fonts/poppins@0.2.3:
-    resolution: {integrity: sha512-PXkur1ZY/puy1PwVFYPJx8qiI3dtBzC2ig1bo53swCt7/sI7krCGYRO6hLBNp15M0kcNh2J4cCR9ZQyFxsving==}
+  /@expo-google-fonts/dm-sans@0.2.3:
+    resolution: {integrity: sha512-sMrW6bc3ZWg5tyasDe6GB56N1/q/wY5zjMFp1vnA61MUX19mVd62ZiiubDaroSsQIhKEJvRW662NjDGUkqmEmg==}
     dev: false
 
   /@expo/bunyan@4.0.0:

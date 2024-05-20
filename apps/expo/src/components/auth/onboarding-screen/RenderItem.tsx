@@ -1,14 +1,11 @@
 import React, { type Dispatch, type SetStateAction } from "react";
-import { Image, StyleSheet, TouchableOpacity, View, useWindowDimensions } from "react-native";
+import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
 import { type SharedValue } from "react-native-reanimated";
 import { useRouter } from "expo-router";
 
-
-
+import CustomText from "~/components/ui/CustomText";
 import H1 from "../../ui/Heading";
-import P from "../../ui/Text";
 import { OnboardingData } from "./data";
-
 
 type Props = {
   item: OnboardingData;
@@ -21,45 +18,41 @@ type Props = {
 const RenderItem = ({ item, setShowOnboarding, setShowLogin }: Props) => {
   const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
   const router = useRouter();
+
   return (
     <View
       style={[
         styles.itemContainer,
         {
           width: SCREEN_WIDTH,
-          height: SCREEN_HEIGHT,
           backgroundColor: item.backgroundColor,
         },
       ]}
-      className="pt-10"
+      className="h-[500px] pt-10 "
     >
       <View className=" w-[90%]">
-        <H1 styling="text-xl ">{item.text}</H1>
-        <P style="text-base pt-3 ">{item.caption}</P>
+        <View className="flex h-[48px] flex-row items-center">
+          {item.text.map((text, index) => (
+            <View className="flex flex-row items-center" key={index}>
+              <H1
+                styling={`text-[18px] flex-wrap ${
+                  text.type === "accent" && "text-[#1960F2]"
+                }`}
+              >
+                {text.word}
+              </H1>
+            </View>
+          ))}
+        </View>
+        <CustomText styling="text-[16px] tracking-[0.14px] pt-[1px] leading-[18.9px] text-[#505050] ">
+          {item.caption}
+        </CustomText>
       </View>
 
-      <Image source={item.image} className="mt-10" />
-
-      <TouchableOpacity
-        className="mt-10 h-12 w-[350px] rounded-md bg-[#1960F2]"
-        onPress={() => {
-          setShowOnboarding(false);
-      
-        }}
-      >
-        <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
-          Create an Account
-        </H1>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => {
-          setShowLogin(true);
-          setShowOnboarding(false);
-        }}
-      >
-        <H1 styling="text-lg text-blue pt-5">I already have an account</H1>
-      </TouchableOpacity>
+      <Image
+        source={item.image}
+        className="mt-[60px]  w-[300px] object-cover"
+      />
     </View>
   );
 };
@@ -68,8 +61,8 @@ export default RenderItem;
 
 const styles = StyleSheet.create({
   itemContainer: {
-    flex: 1,
+    // flex: 1,
     alignItems: "center",
-    paddingTop: 40,
+    // paddingTop: 40,
   },
 });

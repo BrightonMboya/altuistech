@@ -1,101 +1,25 @@
-import React, { useCallback } from "react";
-import { StyleSheet, Text, TextComponent, TextProps } from "react-native";
-// import * as SplashScreen from "expo-splash-screen";
-import { SplashScreen } from "expo-router";
-import {
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_700Bold,
-  Poppins_800ExtraBold,
-  Poppins_900Black,
-  useFonts,
-} from "@expo-google-fonts/poppins";
-import { cva, type VariantProps } from "class-variance-authority";
+import React from "react";
+import { Text } from "react-native";
+import { DMSans_400Regular, useFonts } from "@expo-google-fonts/dm-sans";
 
-import { cn } from "~/utils";
+import { Props } from "./Heading";
 
-const customTextVariants = cva("", {
-  variants: {
-    variant: {
-      default: "",
-    },
-  },
-  defaultVariants: {},
-});
+export default function CustomText({ children, styling }: Props) {
+  let [fontsLoaded, fontError] = useFonts({
+    DMSans_400Regular,
+  });
 
-interface CustomeTextProps
-  extends TextProps,
-    VariantProps<typeof customTextVariants> {
-  asChild?: boolean;
-  textType?: "regular" | "medium" | "semiBold" | "bold" | "extraBold" | "light";
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+  return (
+    <Text
+      className={`${styling}`}
+      style={{
+        fontFamily: "DMSans_400Regular",
+      }}
+    >
+      {children}
+    </Text>
+  );
 }
-export const CustomText = React.forwardRef<TextComponent, CustomeTextProps>(
-  ({ className, variant, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Text : "Text";
-    let textStyle: {};
-    switch (props.textType) {
-      case "regular":
-        textStyle = styles.regular;
-        break;
-      case "bold":
-        textStyle = styles.bold;
-        break;
-      case "light":
-        textStyle = styles.light;
-        break;
-      default:
-        textStyle = styles.regular;
-        break;
-    }
-
-    const [fontsLoaded] = useFonts({
-      regular: Poppins_400Regular,
-      medium: Poppins_500Medium,
-      Poppins_600SemiBold,
-      Poppins_700Bold,
-      Poppins_800ExtraBold,
-      Poppins_900Black,
-    });
-
-    // after the fonts are loaded we have to remove the splash screen
-    const onLayoutRootView = useCallback(async () => {
-      if (fontsLoaded) {
-        await SplashScreen.hideAsync();
-      }
-    }, [fontsLoaded]);
-
-    if (!fontsLoaded) {
-      return null;
-    }
-    return (
-      <Text
-        className={cn(customTextVariants({ variant, className }))}
-        {...props}
-        style={{
-          fontFamily: "regular",
-        }}
-      >
-        {props.children}
-      </Text>
-    );
-  },
-);
-
-const styles = StyleSheet.create({
-  regular: {
-    fontFamily: "regular",
-  },
-  bold: {
-    fontFamily: "Bold",
-  },
-  semiBold: {
-    fontFamily: "Poppins_600SemiBold",
-  },
-  light: {
-    fontFamily: "Light",
-  },
-  medium: {
-    fontFamily: "medium",
-  },
-});

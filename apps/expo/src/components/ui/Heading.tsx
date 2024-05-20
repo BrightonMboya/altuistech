@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import { StyleSheet, Text } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import { useFonts } from "@expo-google-fonts/poppins";
+import { useFonts } from "expo-font";
 
 //prevents splash screen from auto hiding fonts
 SplashScreen.preventAutoHideAsync();
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   styling?: string;
 }
