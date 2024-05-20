@@ -9,6 +9,7 @@ SplashScreen.preventAutoHideAsync();
 export interface Props {
   children: React.ReactNode;
   styling?: string;
+  textFontStyle?: "regular" | "heading";
 }
 
 const H1 = ({ children, styling }: Props) => {

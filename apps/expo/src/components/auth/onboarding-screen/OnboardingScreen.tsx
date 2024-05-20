@@ -1,29 +1,27 @@
 import React, { type Dispatch, type SetStateAction } from "react";
-import {
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  ViewToken,
-} from "react-native";
-import Animated, {
-  useAnimatedRef,
-  useAnimatedScrollHandler,
-  useSharedValue,
-} from "react-native-reanimated";
+import { FlatList, StyleSheet, TouchableOpacity, View, ViewToken } from "react-native";
+import Animated, { useAnimatedRef, useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
 import Svg, { Path } from "react-native-svg";
+
+
 
 import Pagination from "~/components/auth/onboarding-screen/Pagination";
 import RenderItem from "~/components/auth/onboarding-screen/RenderItem";
 import data, { OnboardingData } from "~/components/auth/onboarding-screen/data";
 import H1 from "~/components/ui/Heading";
 
-interface Props {
+
+export interface AuthScreenProps {
   setShowOnboarding: Dispatch<SetStateAction<boolean>>;
   setShowLogin: Dispatch<SetStateAction<boolean>>;
+  setSignWithEmail: Dispatch<SetStateAction<boolean>>;
 }
 
-const OnboardingScreen = ({ setShowOnboarding, setShowLogin }: Props) => {
+const OnboardingScreen = ({
+  setShowOnboarding,
+  setShowLogin,
+  setSignWithEmail,
+}: AuthScreenProps) => {
   const flatListRef = useAnimatedRef<FlatList<OnboardingData>>();
   const x = useSharedValue(0);
   const flatListIndex = useSharedValue(0);
@@ -85,7 +83,7 @@ const OnboardingScreen = ({ setShowOnboarding, setShowLogin }: Props) => {
           }}
         >
           <TouchableOpacity
-            className="mt-10 flex flex-row h-12 w-[350px] items-center justify-center rounded-md border-2 border-solid border-[#1960F2]"
+            className="mt-10 flex h-12 w-[350px] flex-row items-center justify-center rounded-md border-2 border-solid border-[#1960F2]"
             onPress={() => {
               setShowOnboarding(false);
             }}
@@ -117,6 +115,8 @@ const OnboardingScreen = ({ setShowOnboarding, setShowLogin }: Props) => {
             className="mt-5 flex h-12 w-[350px] flex-row items-center justify-center rounded-md bg-[#1960F2]"
             onPress={() => {
               setShowOnboarding(false);
+              setSignWithEmail(true);
+              setShowLogin(false);
             }}
           >
             <Svg width={24} height={24} viewBox="0 0 25 24" fill="none">

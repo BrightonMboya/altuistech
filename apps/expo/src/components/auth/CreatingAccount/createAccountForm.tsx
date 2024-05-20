@@ -1,16 +1,17 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
-import { TextInput, TouchableOpacity, View } from "react-native";
+import { Image, TextInput, TouchableOpacity, View } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useSignUp } from "@clerk/clerk-expo";
 
+import CustomText from "~/components/ui/CustomText";
 import H1 from "~/components/ui/Heading";
-import P from "~/components/ui/Text";
+import { AuthScreenProps } from "../onboarding-screen/OnboardingScreen";
 
-interface Props {
+interface Props extends AuthScreenProps {
   setPendingVerification: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function CreateAccountForm({ setPendingVerification }: Props) {
+export default function CreateAccountForm(props: Props) {
   const [userName, setUserName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +34,7 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
 
       // send the email.
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
-      setPendingVerification(true);
+      props.setPendingVerification(true);
       console.log("****** I am succccesful");
 
       // doing the phone number verification
@@ -51,65 +52,104 @@ export default function CreateAccountForm({ setPendingVerification }: Props) {
   };
 
   return (
-    <View>
-      {/* <TouchableOpacity onPress={() => {}}>
-        <View className="flex flex-row items-center">
-          <FontAwesome name="long-arrow-left" size={25} />
-          <H1 styling="text-lg pl-2 ">Back</H1>
-        </View>
-      </TouchableOpacity> */}
-      <H1 styling=" text-xl pt-[30px]">Create an Account</H1>
+    <View className="pt-5">
+      <View className="flex flex-col items-center justify-center">
+        <Image
+          source={require("../../../../assets/adaptive-icon.png")}
+          className="h-[40px] w-[200px] object-cover"
+        />
+        <H1 styling=" text-xl pt-[24px]">Create an account to get started</H1>
+        <TouchableOpacity
+          onPress={() => {
+            props.setShowLogin(true);
+            props.setShowOnboarding(false);
+            props.setSignWithEmail(false);
+          }}
+        >
+          <View className="flex flex-row pt-[8px]">
+            <CustomText styling="">Already have an </CustomText>
+            <CustomText styling="text-[#505050]" textFontStyle="heading">
+              emotions
+            </CustomText>
+            <CustomText> account? </CustomText>
 
-      <View className="gap-5 pt-5">
+            <CustomText styling="text-blue" textFontStyle="heading">
+              Log in
+            </CustomText>
+          </View>
+        </TouchableOpacity>
+      </View>
+
+      <View className="gap-5 pt-10">
         <View>
-          <H1 styling="text-lg">User Name</H1>
+          <H1 styling="text-[14px]">First Name</H1>
           <TextInput
             autoCapitalize="none"
             value={userName}
-            placeholder="John Doe"
+            placeholder="Enter your first name"
             placeholderTextColor="#989898"
-            className="mt-2 w-full rounded-md border-[1px] border-[#989898] p-2 text-[18px] text-[#505050]"
+            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setUserName(text)}
           />
         </View>
 
         <View>
-          <H1 styling="text-lg">Email</H1>
+          <H1 styling="text-[14px]">Last Name</H1>
+          <TextInput
+            autoCapitalize="none"
+            value={userName}
+            placeholder="Enter your last name"
+            placeholderTextColor="#989898"
+            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            onChangeText={(text) => setUserName(text)}
+          />
+        </View>
+
+        <View>
+          <H1 styling="text-[14px]">Email</H1>
           <TextInput
             autoCapitalize="none"
             value={emailAddress}
-            placeholder="john@gmail.com"
+            placeholder="Enter your email "
             placeholderTextColor="#989898"
-            className="mt-2 w-full rounded-md border-[1px] border-[#989898] p-2 text-[18px] text-[#505050]"
+            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setEmailAddress(text)}
           />
         </View>
 
         <View>
-          <H1 styling="text-lg">Password</H1>
+          <H1 styling="text-[14px]">Password</H1>
           <TextInput
             autoCapitalize="none"
             value={password}
-            placeholder="John Doe"
+            placeholder="Enter your password"
             placeholderTextColor="#989898"
-            className="mt-2 w-full rounded-md border-[1px] border-[#989898] p-2 text-[18px] text-[#505050]"
+            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setPassword(text)}
           />
         </View>
 
         <H1 styling="text-red-500 pl-5 mt-5">{error}</H1>
         <TouchableOpacity
-          className="mt-10 h-12  rounded-md bg-[#1960F2]"
+          className="mt-[30px] flex  h-[40px] items-center justify-center rounded-md bg-[#1960F2]"
           onPress={() => onSignUpPress()}
         >
-          <H1 styling="text-xl tracking-wide text-white pt-2 text-center">
+          <H1 styling="text-[16px] tracking-wide text-white ">
             Create an Account
           </H1>
         </TouchableOpacity>
       </View>
-      <P style=" pt-[40px] text-base">
-        By continuing, you agree to our Terms and Conditions and Privacy Policy.
-      </P>
+
+      <View className="flex flex-row flex-wrap pt-[12px] ">
+        <CustomText>By continuing, you agree to our </CustomText>
+        <CustomText styling="text-blue" textFontStyle="heading">
+          Terms and Conditions
+        </CustomText>
+        <CustomText>and </CustomText>
+        <CustomText styling="text-blue" textFontStyle="heading">
+          Privacy Policy.
+        </CustomText>
+      </View>
     </View>
   );
 }

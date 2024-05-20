@@ -17,7 +17,7 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { TRPCProvider } from "~/utils/api";
 import BottomTab from "~/components/BottomTab";
 import SignUpScreen from "~/components/Signup";
-import OnboardingScreen from "~/components/auth/AuthScreen";
+import AuthScreen from "~/components/auth/AuthScreen";
 
 // fn to secure the cache from clerk
 const tokenCache = {
@@ -60,7 +60,7 @@ const RootLayout = () => {
           </SignedIn>
 
           <SignedOut>
-            <OnboardingScreen />
+            <AuthScreen />
           </SignedOut>
         </TRPCProvider>
       </ClerkProvider>
