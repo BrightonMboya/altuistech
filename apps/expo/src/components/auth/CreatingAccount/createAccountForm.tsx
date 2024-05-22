@@ -81,7 +81,7 @@ export default function CreateAccountForm(props: Props) {
         </TouchableOpacity>
       </View>
 
-      <View className="gap-5 pt-10">
+      <View className="gap-5 pt-10 px-3 ">
         <View>
           <H1 styling="text-[14px]">First Name</H1>
           <TextInput
@@ -89,7 +89,7 @@ export default function CreateAccountForm(props: Props) {
             value={userName}
             placeholder="Enter your first name"
             placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            className="mt-2 w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setUserName(text)}
           />
         </View>
@@ -101,7 +101,7 @@ export default function CreateAccountForm(props: Props) {
             value={userName}
             placeholder="Enter your last name"
             placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setUserName(text)}
           />
         </View>
@@ -113,7 +113,7 @@ export default function CreateAccountForm(props: Props) {
             value={emailAddress}
             placeholder="Enter your email "
             placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setEmailAddress(text)}
           />
         </View>
@@ -125,7 +125,7 @@ export default function CreateAccountForm(props: Props) {
             value={password}
             placeholder="Enter your password"
             placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
             onChangeText={(text) => setPassword(text)}
           />
         </View>
@@ -141,7 +141,7 @@ export default function CreateAccountForm(props: Props) {
         </TouchableOpacity>
       </View>
 
-      <View className="flex flex-row flex-wrap pt-[12px] ">
+      <View className="flex flex-row flex-wrap pt-[12px] justify-center ">
         <CustomText>By continuing, you agree to our </CustomText>
         <CustomText styling="text-blue" textFontStyle="heading">
           Terms and Conditions

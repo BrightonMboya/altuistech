@@ -60,7 +60,16 @@ const RootLayout = () => {
           </SignedIn>
 
           <SignedOut>
-            <AuthScreen />
+              <SafeAreaProvider className="relative">
+              {/*
+                The Stack component displays the current page.
+                It also allows you to configure your screens 
+              */}
+              <Stack />
+              <StatusBar />
+              <BottomTab />
+            </SafeAreaProvider>
+            {/* <AuthScreen /> */}
           </SignedOut>
         </TRPCProvider>
       </ClerkProvider>

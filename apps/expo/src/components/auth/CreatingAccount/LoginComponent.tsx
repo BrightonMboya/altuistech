@@ -36,13 +36,13 @@ export default function LoginScreen(props: LoginComponentProps) {
     }
   };
   return (
-    <SafeAreaView className="pl-5">
+    <SafeAreaView className="">
       <View className="flex flex-col items-center justify-center">
         <Image
           source={require("../../../../assets/adaptive-icon.png")}
           className="h-[40px] w-[200px] object-cover"
         />
-        <H1 styling=" text-xl pt-[24px]">Create an account to get started</H1>
+        <H1 styling=" text-xl pt-[24px]">Log In to continue using the app</H1>
         <TouchableOpacity
           onPress={() => {
             props.setShowLogin(false);
@@ -65,66 +65,73 @@ export default function LoginScreen(props: LoginComponentProps) {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity className="mt-[32px] flex w-[300px] items-center justify-center rounded-[8px] border-[1px] border-blue py-[10px]">
-        <View className="flex flex-row">
-          <IconGoogle />
-          <H1 styling="text-blue text-[14px] tracking-[0.28px] leading-[19px] pl-3">
-            Log in with Google
-          </H1>
-        </View>
-      </TouchableOpacity>
-      <View className="flex flex-row items-center pt-[32px]  text-center  ">
-        <View className="h-[1px] w-[75px] bg-[#b8b8b8]" />
-        <CustomText styling="text-sm text-[#505050] w-[130px] border-2 mx-[5px] ">
-          or login with email
-        </CustomText>
-        <View className="h-[1px] w-[75px] bg-[#b8b8b8]" />
-      </View>
-
-      <View className="gap-5 pt-10">
-        <View>
-          <H1 styling="text-[14px]">Email</H1>
-          <TextInput
-            autoCapitalize="none"
-            value={emailAddress}
-            placeholder="Enter your email"
-            placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
-            onChangeText={(text) => setEmailAddress(text)}
-          />
-        </View>
-
-        <View>
-          <H1 styling="text-[14px]">Password</H1>
-          <TextInput
-            autoCapitalize="none"
-            value={password}
-            placeholder="Enter your password"
-            placeholderTextColor="#989898"
-            className="mt-2 w-[295px] rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
-            onChangeText={(text) => setPassword(text)}
-          />
-          <TouchableOpacity
-            onPress={() => {
-              props.setShowForgotPassword(true);
-              props.setShowLoginScreen(false);
-            }}
-          >
-            <H1 styling="text-blue pt-2">Forgot Password?</H1>
-          </TouchableOpacity>
-        </View>
-
-        {error && (
-          <View>
-            <H1 styling="mt-5 text-red-500">{error}</H1>
+      <View className="px-5">
+        <TouchableOpacity className="mt-[32px] flex  w-full items-center justify-center rounded-[8px] border-[1px] border-blue py-[10px]">
+          <View className="flex flex-row">
+            <IconGoogle />
+            <H1 styling="text-blue text-[14px] tracking-[0.28px] leading-[19px] pl-3">
+              Log in with Google
+            </H1>
           </View>
-        )}
-        <TouchableOpacity
-          className="mt-[30px] flex  h-[40px] w-[80%] items-center justify-center rounded-md bg-[#1960F2]"
-          onPress={() => onSignInPress()}
-        >
-          <H1 styling="text-[16px] tracking-wide text-white ">Log In</H1>
         </TouchableOpacity>
+
+        <View className="flex flex-row items-center justify-center text-center  ">
+          <View className="flex flex-row items-center pt-[32px]  text-center  ">
+            <View className="h-[1px] w-[30%] bg-[#b8b8b8]" />
+            <CustomText styling="text-sm text-[#505050] w-[130px] border-2 mx-[5px] ">
+              or login with email
+            </CustomText>
+            <View className="h-[1px] w-[30%] bg-[#b8b8b8]" />
+          </View>
+        </View>
+
+        <View className="gap-[16px] pt-10">
+          <View>
+            <H1 styling="text-[14px]">Email</H1>
+            <TextInput
+              autoCapitalize="none"
+              value={emailAddress}
+              placeholder="Enter your email"
+              placeholderTextColor="#989898"
+              className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+              onChangeText={(text) => setEmailAddress(text)}
+            />
+          </View>
+
+          <View>
+            <H1 styling="text-[14px]">Password</H1>
+            <TextInput
+              autoCapitalize="none"
+              value={password}
+              placeholder="Enter your password"
+              placeholderTextColor="#989898"
+              className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+              onChangeText={(text) => setPassword(text)}
+            />
+            <TouchableOpacity
+              onPress={() => {
+                props.setShowForgotPassword(true);
+                props.setShowLoginScreen(false);
+              }}
+            >
+              <H1 styling="text-blue pt-2">Forgot Password?</H1>
+            </TouchableOpacity>
+          </View>
+
+          {error && (
+            <View>
+              <H1 styling="mt-5 text-red-500">{error}</H1>
+            </View>
+          )}
+          <View className="flex flex-row items-center pt-[32px] text-center">
+            <TouchableOpacity
+              className="flex  h-[40px]  w-full items-center justify-center rounded-md bg-blue"
+              onPress={() => onSignInPress()}
+            >
+              <H1 styling="text-[16px] tracking-wide text-white ">Log In</H1>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -1,87 +1,38 @@
-import React, { useCallback, useRef } from "react";
-import { ScrollView, StyleSheet } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
+import { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import ProfileCard from "~/components/home/ProfileCard";
-import BookSession from "~/components/home/book-session";
-import {
-  AngryBottomSheet,
-  CalmBottomSheet,
-  HappyBottomSheet,
-  SadBottomSheet,
-  WorriedBottomSheet,
-} from "~/components/home/bottom-sheets";
-import { BottomSheetMethods } from "~/components/home/bottom-sheets/BottomSheet";
-import Feelings from "~/components/home/feelings";
-import Services from "~/components/home/services";
-import ResourceGrid from "~/components/resources/ResourceGrid";
-import { motivationalVideos } from "~/components/resources/data";
+import HomeScreen from "../components/home/HomePage";
+import Screen1 from "~/components/onboarding-screens/Screen1";
+async function storeOnboardedFlag() {
+  try {
+    const res = await AsyncStorage.setItem("onboarded", "true");
+    return res;
+  } catch (e) {
+    console.log(e);
+  }
+}
 
-const BottomSheetScreenScroll = () => {
-  const happyBottomSheetRef = useRef<BottomSheetMethods>(null);
-  const calmBottomSheetRef = useRef<BottomSheetMethods>(null);
-  const worriedBottomSheetRef = useRef<BottomSheetMethods>(null);
-  const angryBottomSheetRef = useRef<BottomSheetMethods>(null);
-  const sadBottomSheetRef = useRef<BottomSheetMethods>(null);
+async function getOnboardedFlag() {
+  try {
+    return await AsyncStorage.getItem("onboarded");
+  } catch (e) {
+    console.log(e);
+  }
+}
 
-  const happyBottomSheetHandler = useCallback(() => {
-    happyBottomSheetRef.current?.expand();
-  }, []);
-
-  const calmBottomSheetHandler = useCallback(() => {
-    calmBottomSheetRef.current?.expand();
-  }, []);
-
-  const worriedBottomSheetHandler = useCallback(() => {
-    worriedBottomSheetRef.current?.expand();
-  }, []);
-  const angryBottomSheetHandler = useCallback(() => {
-    angryBottomSheetRef.current?.expand();
-  }, []);
-  const sadBottomSheetHandler = useCallback(() => {
-    sadBottomSheetRef.current?.expand();
-  }, []);
+export default function Page() {
+  const [onboardedFlag, setOnboardedFlag] = useState("");
+  // const data = storeOnboardedFlag().then((res) => {
+  //   console.log(res, "reees");
+  //   // setOnboardedFlag(res);
+  // });
+  // console.log(onboardedFlag);
+  const onboarded = getOnboardedFlag().then((res) => {
+    setOnboardedFlag(res!);
+    // return res;
+  });
 
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaView style={styles.container} className=" pl-5 pt-5">
-          <Stack.Screen
-            options={{
-              headerShown: false,
-            }}
-          />
-          <ScrollView className="mb-[50px]">
-            <ProfileCard />
-            <BookSession />
-            <Feelings
-              happyHandler={happyBottomSheetHandler}
-              calmHandler={calmBottomSheetHandler}
-              worriedHandler={worriedBottomSheetHandler}
-              angryHandler={angryBottomSheetHandler}
-              sadHandler={sadBottomSheetHandler}
-            />
-            <Services />
-            <ResourceGrid data={motivationalVideos} title="Resources for You" />
-          </ScrollView>
-        </SafeAreaView>
-        <HappyBottomSheet happyBottomRef={happyBottomSheetRef} />
-        <CalmBottomSheet calmBottomRef={calmBottomSheetRef} />
-        <WorriedBottomSheet worriedBottomRef={worriedBottomSheetRef} />
-        <AngryBottomSheet angryBottomRef={angryBottomSheetRef} />
-        <SadBottomSheet sadBottomRef={sadBottomSheetRef} />
-      </GestureHandlerRootView>
-    </SafeAreaProvider>
+    <>{onboardedFlag != "true" ? <HomeScreen /> : <Screen1 />}</>
   );
-};
-
-export default BottomSheetScreenScroll;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-  },
-});
+}

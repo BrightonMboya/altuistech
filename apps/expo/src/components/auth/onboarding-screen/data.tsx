@@ -29,7 +29,7 @@ const data: OnboardingData[] = [
       },
       {
         id: 2,
-        word: "toolkit ",
+        word: "Toolkit ",
         type: "accent",
       },
       {
@@ -39,7 +39,7 @@ const data: OnboardingData[] = [
       },
       {
         id: 4,
-        word: "well-being.",
+        word: "Well-being.",
         type: "accent",
       },
     ],
