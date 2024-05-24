@@ -1,6 +1,5 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { Image, TextInput, TouchableOpacity, View } from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useSignUp } from "@clerk/clerk-expo";
 
 import CustomText from "~/components/ui/CustomText";
@@ -12,7 +11,8 @@ interface Props extends AuthScreenProps {
 }
 
 export default function CreateAccountForm(props: Props) {
-  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,20 +27,17 @@ export default function CreateAccountForm(props: Props) {
 
     try {
       await signUp.create({
+        firstName,
+        lastName,
+        username: `${firstName.toLowerCase()}_${lastName.toLowerCase()}`,
         emailAddress,
         password,
-        username: userName,
       });
 
       // send the email.
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       props.setPendingVerification(true);
-      console.log("****** I am succccesful");
 
-      // doing the phone number verification
-      //   await signUp.preparePhoneNumberVerification({
-      //     strategy: "phone_code",
-      //   });
     } catch (err: any) {
       console.error(
         "<<<<<<<<<<<",
@@ -81,16 +78,16 @@ export default function CreateAccountForm(props: Props) {
         </TouchableOpacity>
       </View>
 
-      <View className="gap-5 pt-10 px-3 ">
+      <View className="gap-5 px-3 pt-10 ">
         <View>
           <H1 styling="text-[14px]">First Name</H1>
           <TextInput
             autoCapitalize="none"
-            value={userName}
+            value={firstName}
             placeholder="Enter your first name"
             placeholderTextColor="#989898"
             className="mt-2 w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
-            onChangeText={(text) => setUserName(text)}
+            onChangeText={(text) => setFirstName(text)}
           />
         </View>
 
@@ -98,11 +95,11 @@ export default function CreateAccountForm(props: Props) {
           <H1 styling="text-[14px]">Last Name</H1>
           <TextInput
             autoCapitalize="none"
-            value={userName}
+            value={lastName}
             placeholder="Enter your last name"
             placeholderTextColor="#989898"
             className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
-            onChangeText={(text) => setUserName(text)}
+            onChangeText={(text) => setLastName(text)}
           />
         </View>
 
@@ -141,7 +138,7 @@ export default function CreateAccountForm(props: Props) {
         </TouchableOpacity>
       </View>
 
-      <View className="flex flex-row flex-wrap pt-[12px] justify-center ">
+      <View className="flex flex-row flex-wrap justify-center pt-[12px] ">
         <CustomText>By continuing, you agree to our </CustomText>
         <CustomText styling="text-blue" textFontStyle="heading">
           Terms and Conditions

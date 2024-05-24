@@ -3,6 +3,7 @@ import "text-encoding-polyfill";
 import React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import Constants from "expo-constants";
 import {
   // This example uses a basic Layout component, but you can use any Layout.
   Slot,
@@ -41,11 +42,12 @@ const tokenCache = {
 // It wraps your pages with the providers they need
 const RootLayout = () => {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <ClerkProvider
-        publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
-        tokenCache={tokenCache}
-      >
+    <ClerkProvider
+      // publishableKey={Constants?.expoConfig?.extra?.clerkPublishableKey}
+      publishableKey="pk_test_ZXhhY3Qtc3RvcmstNDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
+      tokenCache={tokenCache}
+    >
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <TRPCProvider>
           <SignedIn>
             <SafeAreaProvider className="relative">
@@ -58,22 +60,12 @@ const RootLayout = () => {
               <BottomTab />
             </SafeAreaProvider>
           </SignedIn>
-
           <SignedOut>
-              <SafeAreaProvider className="relative">
-              {/*
-                The Stack component displays the current page.
-                It also allows you to configure your screens 
-              */}
-              <Stack />
-              <StatusBar />
-              <BottomTab />
-            </SafeAreaProvider>
-            {/* <AuthScreen /> */}
+            <AuthScreen />
           </SignedOut>
         </TRPCProvider>
-      </ClerkProvider>
-    </GestureHandlerRootView>
+      </GestureHandlerRootView>
+    </ClerkProvider>
   );
 };
 

@@ -33,6 +33,6 @@ export default function Page() {
   });
 
   return (
-    <>{onboardedFlag != "true" ? <HomeScreen /> : <Screen1 />}</>
+    <>{onboardedFlag === "true" ? <HomeScreen /> : <Screen1 />}</>
   );
 }
