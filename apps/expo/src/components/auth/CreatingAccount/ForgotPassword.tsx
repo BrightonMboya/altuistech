@@ -52,6 +52,7 @@ export default function ForgotPassword({
           Enter the five digit code sent to the email associated with your
           account.
         </CustomText>
+        {/* @ts-ignore */}
         <CodeField
           ref={ref}
           {...props}

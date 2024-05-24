@@ -3,8 +3,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import CustomText from "../ui/CustomText";
 import H1 from "../ui/Heading";
+import { OnboardingScreenProps } from "./index";
 
-export default function Screen1() {
+export default function Screen1(props: OnboardingScreenProps) {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, backgroundColor: "#E4EDFF" }}>
@@ -32,7 +33,10 @@ export default function Screen1() {
               </H1>
             </View>
 
-            <TouchableOpacity className="mx-auto bg-blue w-[300px] h-[30px] flex justify-center rounded-lg mt-[40px]">
+            <TouchableOpacity
+              className="mx-auto mt-[40px] flex h-[30px] w-[300px] justify-center rounded-lg bg-blue"
+              onPress={() => props.setPage(2)}
+            >
               <H1 styling="text-white text-center text-[16px]">Continue</H1>
             </TouchableOpacity>
           </View>

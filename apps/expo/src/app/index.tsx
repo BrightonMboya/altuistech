@@ -1,8 +1,9 @@
 import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import OnboardingScreen from "~/components/onboarding-screens";
 import HomeScreen from "../components/home/HomePage";
-import Screen1 from "~/components/onboarding-screens/Screen1";
+
 async function storeOnboardedFlag() {
   try {
     const res = await AsyncStorage.setItem("onboarded", "true");
@@ -29,10 +30,9 @@ export default function Page() {
   // console.log(onboardedFlag);
   const onboarded = getOnboardedFlag().then((res) => {
     setOnboardedFlag(res!);
+    console.log(res, "reee");
     // return res;
   });
 
-  return (
-    <>{onboardedFlag === "true" ? <HomeScreen /> : <Screen1 />}</>
-  );
+  return <>{onboardedFlag != "true" ? <HomeScreen /> : <OnboardingScreen />}</>;
 }
