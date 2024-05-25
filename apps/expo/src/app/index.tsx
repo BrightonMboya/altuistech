@@ -21,18 +21,29 @@ async function getOnboardedFlag() {
   }
 }
 
+async function removeOnboardedFlag() {
+  try {
+    const res = await AsyncStorage.removeItem("onboarded");
+    return res;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 export default function Page() {
   const [onboardedFlag, setOnboardedFlag] = useState("");
+
   // const data = storeOnboardedFlag().then((res) => {
   //   console.log(res, "reees");
   //   // setOnboardedFlag(res);
   // });
   // console.log(onboardedFlag);
+  // const res = removeOnboardedFlag();
   const onboarded = getOnboardedFlag().then((res) => {
     setOnboardedFlag(res!);
     console.log(res, "reee");
     // return res;
   });
 
-  return <>{onboardedFlag != "true" ? <HomeScreen /> : <OnboardingScreen />}</>;
+  return <>{onboardedFlag === "true" ? <HomeScreen /> : <OnboardingScreen />}</>;
 }

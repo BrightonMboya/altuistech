@@ -13,7 +13,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
-import { useSignUp, useUser } from "@clerk/clerk-expo";
+import { useSignUp } from "@clerk/clerk-expo";
 
 import CustomText from "~/components/ui/CustomText";
 import H1 from "~/components/ui/Heading";
