@@ -30,12 +30,13 @@ export default function OTP() {
   });
   const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState("");
+  const [showNewPasswordForm, setShowNewPasswordForm] = useState(false);
 
   const resetPassword = async () => {
     if (!newPassword || !value) {
       return;
     }
-    const res =await signIn
+    const res = await signIn
       ?.attemptFirstFactor({
         strategy: "reset_password_email_code",
         code: value,
@@ -52,69 +53,88 @@ export default function OTP() {
       .catch((err) => {
         setError(err.errors[0].longMessage);
       });
-      console.log(JSON.stringify(res));
+    console.log(JSON.stringify(res));
   };
   return (
     <View>
-      <View className="flex flex-row pt-[24px]">
-        <TouchableOpacity>
-          <BackIcon />
-        </TouchableOpacity>
-        <H1 styling="text-xl pl-3">Forget Password</H1>
+      <View className="flex pt-[24px]">
+        {!showNewPasswordForm && (
+          <View className="">
+            <TouchableOpacity>
+              <BackIcon />
+            </TouchableOpacity>
+            <H1 styling="text-xl pl-3">Forget Password</H1>
+            <CustomText styling="pt-[8px]">
+              Enter the six digit code sent to your email.
+            </CustomText>
+            {/* @ts-ignore */}
+            <CodeField
+              ref={ref}
+              {...props}
+              // Use `caretHidden={false}` when users can't paste a text value, because context menu doesn't appear
+              value={value}
+              onChangeText={setValue}
+              cellCount={CELL_COUNT}
+              rootStyle={styles.codeFieldRoot}
+              keyboardType="number-pad"
+              textContentType="oneTimeCode"
+              autoComplete={Platform.select({
+                android: "sms-otp",
+                default: "one-time-code",
+              })}
+              testID="my-code-input"
+              renderCell={({ index, symbol, isFocused }) => (
+                <Text
+                  key={index}
+                  style={[styles.cell, isFocused && styles.focusCell]}
+                  onLayout={getCellOnLayoutHandler(index)}
+                >
+                  {symbol || (isFocused ? <Cursor /> : null)}
+                </Text>
+              )}
+            />
+            <TouchableOpacity
+              className="mt-[30px] flex  h-[40px]   items-center justify-center rounded-md bg-[#1960F2] "
+              onPress={() => {
+                setShowNewPasswordForm(true);
+              }}
+            >
+              <H1 styling="text-[16px] tracking-wide text-white ">
+                Verify OTP
+              </H1>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
 
-      <CustomText styling="pt-[8px]">
-        Enter the six digit code sent to the email associated with your account
-        together with your new password.
-      </CustomText>
-      {/* @ts-ignore */}
-      <CodeField
-        ref={ref}
-        {...props}
-        // Use `caretHidden={false}` when users can't paste a text value, because context menu doesn't appear
-        value={value}
-        onChangeText={setValue}
-        cellCount={CELL_COUNT}
-        rootStyle={styles.codeFieldRoot}
-        keyboardType="number-pad"
-        textContentType="oneTimeCode"
-        autoComplete={Platform.select({
-          android: "sms-otp",
-          default: "one-time-code",
-        })}
-        testID="my-code-input"
-        renderCell={({ index, symbol, isFocused }) => (
-          <Text
-            key={index}
-            style={[styles.cell, isFocused && styles.focusCell]}
-            onLayout={getCellOnLayoutHandler(index)}
+      {showNewPasswordForm && (
+        <View className="mt-[24px] pl-3">
+            <H1 styling="text-xl ">Create New Password</H1>
+            <CustomText styling="pt-[8px]">Set a strong password to keep secure your account.</CustomText>
+          <H1 styling="text-[14px] mt-[24px]">New Password</H1>
+          <TextInput
+            autoCapitalize="none"
+            value={newPassword}
+            placeholder="Enter your password"
+            placeholderTextColor="#989898"
+            className="mt-5  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
+            onChangeText={(text) => setNewPassword(text)}
+          />
+          <TouchableOpacity
+            className="mt-[30px] flex  h-[40px]   items-center justify-center rounded-md bg-[#1960F2] "
+            onPress={resetPassword}
           >
-            {symbol || (isFocused ? <Cursor /> : null)}
-          </Text>
-        )}
-      />
-      <View className="mt-[24px]">
-        <H1 styling="text-[14px]">New Password</H1>
-        <TextInput
-          autoCapitalize="none"
-          value={newPassword}
-          placeholder="Enter your password"
-          placeholderTextColor="#989898"
-          className="mt-2  w-full rounded-md border-[1px] border-[#989898] py-[10px] pl-[20px] text-[14px] text-[#505050]"
-          onChangeText={(text) => setNewPassword(text)}
-        />
-      </View>
+            <H1 styling="text-[16px] tracking-wide text-white ">
+              Reset Password
+            </H1>
+          </TouchableOpacity>
+        </View>
+      )}
       {error && (
         <View>
           <H1 styling="mt-5 text-red-500">{error}</H1>
         </View>
       )}
-      <TouchableOpacity
-        className="mt-[30px] flex  h-[40px]   items-center justify-center rounded-md bg-[#1960F2] "
-        onPress={resetPassword}
-      >
-        <H1 styling="text-[16px] tracking-wide text-white ">Reset Password</H1>
-      </TouchableOpacity>
     </View>
   );
 }
