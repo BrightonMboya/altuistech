@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import OnboardingScreen from "~/components/onboarding-screens";
 import HomeScreen from "../components/home/HomePage";
+import BottomTab from "~/components/BottomTab";
 
 async function storeOnboardedFlag() {
   try {
@@ -45,5 +46,10 @@ export default function Page() {
     // return res;
   });
 
-  return <>{onboardedFlag === "true" ? <HomeScreen /> : <OnboardingScreen />}</>;
+  return (
+    <>
+      {onboardedFlag === "true" ? <HomeScreen /> : <OnboardingScreen />}
+      <BottomTab />
+    </>
+  );
 }

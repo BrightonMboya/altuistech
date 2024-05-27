@@ -3,6 +3,7 @@ import { ScrollView, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
+import BottomTab from "~/components/BottomTab";
 import ResourceGrid from "~/components/resources/ResourceGrid";
 import {
   meditationVideos,
@@ -36,6 +37,7 @@ export default function Page() {
           />
         </View>
       </ScrollView>
+      <BottomTab />
     </SafeAreaView>
   );
 }

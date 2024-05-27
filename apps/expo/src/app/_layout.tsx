@@ -57,7 +57,7 @@ const RootLayout = () => {
               */}
               <Stack />
               <StatusBar />
-              <BottomTab />
+              {/* <BottomTab /> */}
             </SafeAreaProvider>
           </SignedIn>
           <SignedOut>

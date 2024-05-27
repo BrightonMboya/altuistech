@@ -75,11 +75,11 @@ export default function Page() {
               >
                 {ans.ans.toLowerCase() === "yes" ? (
                   <Image
-                    source={require(`../../../assets/imgs/emojis/yes.png`)}
+                    source={require(`../../../../assets/imgs/emojis/yes.png`)}
                   />
                 ) : (
                   <Image
-                    source={require(`../../../assets/imgs/emojis/no.png`)}
+                    source={require(`../../../../assets/imgs/emojis/no.png`)}
                   />
                 )}
 

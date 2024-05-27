@@ -226,6 +226,66 @@ export const depressionTest = [
   },
 ];
 
+export const mentalHealthQuestions = [
+  {
+    id: 1,
+    shortTitle: "For the past two weeks,",
+    question:
+      "How often have you been bothered by little interest or pleasure in doing things? ",
+    shortQuestion: "(e.g: visiting friends, exercising, going out)",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 2,
+    shortTitle: "For the past two weeks,",
+    question: "Have you been  feeling down, depressed, or hopeless?  ",
+    shortQuestion: "(ex: everything is not in your favor)",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+];
+
 export const anxietyTest = [
   {
     id: 1,
