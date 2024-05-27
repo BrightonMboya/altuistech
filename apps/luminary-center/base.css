@@ -1,0 +1,13 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Avenir';
+  src: url('/font/avenir_roman_12.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
