@@ -4,8 +4,26 @@ import { Path, Svg } from "react-native-svg";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 
+import CustomText from "~/components/ui/CustomText";
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
+import { LockIcon } from "~/components/ui/icons";
+
+const resultDetails = [
+  {
+    id: 1,
+    text: "That's great news! Your PHQ-2 score suggests you're currently experiencing minimal symptoms of depression. However, everyone experiences emotional ups and downs sometimes. If you'd like additional support, Emotions app offers a variety of resources to help you maintain your well-being",
+  },
+
+  {
+    id: 2,
+    text: "Your PHQ-2 score suggests you might be experiencing some symptoms of mild depression. It's important to remember you're not alone. Emotions app can connect you with resources and support to help you feel better.",
+  },
+  {
+    id: 3,
+    text: "Your PHQ-2 score suggests you might be experiencing symptoms of moderate or severe depression. We encourage you to seek professional support to help you manage these challenges.",
+  },
+];
 
 const Index = () => {
   const router = useRouter();
@@ -30,16 +48,16 @@ const Index = () => {
         >
           <View className="flex flex-row items-center">
             <FontAwesome name="long-arrow-left" size={30} color="white" />
-            <H1 styling="text-lg pl-5 text-white md:text-2xl">
-              Results
-            </H1>
+            <H1 styling="text-lg pl-5 text-white md:text-2xl">Results</H1>
           </View>
         </TouchableOpacity>
 
         <View className="mt-20 flex flex-col items-center justify-center ">
-          <H1 styling="text-center px-2 text-white text-lg md:text-2xl">{`Your ${params.test} test score is`}</H1>
+          <CustomText styling="text-center px-2 text-white text-[16px] md:text-2xl">
+            Your Mental Health Test rate is
+          </CustomText>
           <P
-            style="text-[#F3AB33] pt-1 text-2xl"
+            style="text-[#F3AB33] pt-[16px] text-2xl text-[28px]"
             textType="medium"
           >{`${params.score}%`}</P>
 
@@ -53,18 +71,18 @@ const Index = () => {
                 }}
               />
               <View className="pl-3">
-                <H1 styling="text-lg md:text-2xl ">
-                  Results
-                </H1>
-                <P style="pr-10 text-base md:text-xl">
-                  {`Your scores indicate elevated levels of ${params.test} and difficulty controlling worry. This suggests there might be a significant impact on your well-being. Seeking professional help from therapist or counselor is highly recommended.
-               `}
-                </P>
+                <H1 styling="text-lg md:text-2xl ">Result Detail</H1>
+                <CustomText styling="pr-10 text-[14px] text-[#505050] md:text-xl">
+                  {
+                    resultDetails[params.resultDetailIndex as unknown as number]
+                      ?.text
+                  }
+                </CustomText>
               </View>
             </View>
 
             {params.showWarning && (
-              <View className="flex flex-row items-start rounded-md bg-[#FFF2EB] p-4">
+              <View className="flex flex-row items-start rounded-md bg-[#FFF2EB] p-4 mt-[24px]">
                 <Svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <Path
                     d="M8.00016 15.1667C4.04683 15.1667 0.833496 11.9533 0.833496 8C0.833496 4.04667 4.04683 0.833333 8.00016 0.833333C11.9535 0.833333 15.1668 4.04667 15.1668 8C15.1668 11.9533 11.9535 15.1667 8.00016 15.1667ZM8.00016 1.83333C4.60016 1.83333 1.8335 4.6 1.8335 8C1.8335 11.4 4.60016 14.1667 8.00016 14.1667C11.4002 14.1667 14.1668 11.4 14.1668 8C14.1668 4.6 11.4002 1.83333 8.00016 1.83333Z"
@@ -79,34 +97,33 @@ const Index = () => {
                     fill="#FF2525"
                   />
                 </Svg>
-                <P style="text-[#505050] pl-[10px]">
+                <CustomText styling="text-[#505050] pl-[10px]">
                   Book appointment with a mental health professional as soon as
                   possible.
-                </P>
+                </CustomText>
               </View>
             )}
           </View>
           <TouchableOpacity
-            className="mt-20 h-12 w-[350px] rounded-md bg-[#1960F2]"
+            className="mt-[48px] flex flex-row h-12 w-[350px] items-center justify-center rounded-md bg-[#1960F2]"
             onPress={() => {
               router.push("/sessions/available-proffesionals");
             }}
           >
-            <H1 styling="text-xl tracking-wide text-white p-3 md:pt-2 text-center md:text-2xl">
-              Book Appointment
+            <LockIcon />
+
+            <H1 styling="text-[18px] tracking-wide text-white  pl-[10px] text-center md:text-2xl">
+              Book a call
             </H1>
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2]   bg-white "
+            className="mt-5 flex h-12 w-[350px] items-center justify-center   rounded-md border-[1px] border-[#1960F2] bg-white"
             onPress={() => {
               router.push("/resources");
             }}
           >
-            <H1
-              styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center md:text-2xl md:pt-1"
-             
-            >
+            <H1 styling="text-lg tracking-wide text-[#1960F2]  text-center md:text-2xl md:pt-1">
               Visit Resource Center
             </H1>
           </TouchableOpacity>
