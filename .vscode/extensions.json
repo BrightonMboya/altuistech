@@ -4,6 +4,11 @@
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
     "Prisma.prisma",
-    "yoavbls.pretty-ts-errors"
-  ]
+    "yoavbls.pretty-ts-errors",
+    "astro-build.astro-vscode"
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
