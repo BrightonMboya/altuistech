@@ -6,6 +6,7 @@ interface Props extends HTMLAttributes<"section"> {
     title: string;
     firstText: string;
     secondText: string;
+	textWhite?: boolean;
 }
 const {...props} = Astro.props;
 const {headingNo, title, firstText, secondText} = Astro.props;
@@ -13,9 +14,9 @@ const {headingNo, title, firstText, secondText} = Astro.props;
 
 <section class:list={["flex flex-col items-center mt-[20px]", Astro.props.class]}>
 		<div class="text-white h-[29px] w-[25px] bg-blue-2 rounded-full text-center text-[21px]">{headingNo}</div>
-		<h3 class="text-[28px] font-medium text-center max-w-[293px]">{title} </h3>
+		<h3 class="text-[28px] font-medium text-center max-w-[293px] md:max-w-[90%]">{title} </h3>
 		<div class="w-[122px] h-[6px] bg-orange my-[15px]"/>
-		<Text class="text-black text-center max-w-[350px]">{firstText}</Text>
-		<Text class="text-black text-center pt-5 max-w-[350px]">{secondText} </Text>
-		<button class="w-[154px] h-[48px] border-[1px] border-black rounded-[3px] mt-[14px]">Click to know more</button>	
+		<Text class={`text-black text-center max-w-[350px] md:max-w-[90%] md:text-[16px] ${Astro.props.textWhite ? "lg:text-white" : ""}`}>{firstText} </Text>
+		<Text class={`text-black text-center pt-5 max-w-[350px] md:max-w-[90%] md:text-[16px] ${Astro.props.textWhite ? "lg:text-white" : ""}`}>{secondText} </Text>
+		<button class={`w-[154px] h-[48px] border-[1px] border-black rounded-[3px] mt-[14px] ${Astro.props.textWhite ? "lg:text-white lg:border-white" : ""}`}>Click to know more</button>	
 </section>
