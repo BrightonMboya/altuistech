@@ -6,14 +6,13 @@ import Programs from '../components/home/Programs.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Luminary Center">
 	<main class="bg-cream">
 		<section class="flex flex-col items-center  h-[600px] lg:h-screen bg-[url('/imgs/bg/home-bg-phone.png')] md:bg-[url('/imgs/bg/home-bg-md.png')] bg-cover bg-center ">
 			<div class="flex flex-col items-center pt-[140px] md:pt-[70px] lg:pt-[220px] md:pl-[330px] lg:pl-[700px] ">
 				<h3 class="text-white text-[25px] text-center md:max-w-[588px] lg:w-[600px] md:text-[35px] font-bold">Illuminating Young  Minds, Transforming Futures</h3>
 				<Text class="text-white pt-[30px] text-center w-[243px] md:text-[18px] lg:text-[24px] md:w-[300px] lg:w-[600px] font-light">Welcome to Altruistech Luminary Center. We shine the light of creativity at every dark corner and on every young person in Sierra Leone</Text>
 				<Button  class="mt-[30px]">Donate Today</Button>
-			
 			</div>
 		</section>
 
@@ -64,6 +63,7 @@ import Footer from '../components/Footer.astro';
 				firstText="This is specifically designed for children aged 5-9 in Sierra Leone, aiming to lay a strong foundation in STEM education from an early age."
 				secondText="Through interactive and engaging teaching methods, this program introduces young learners to concepts of basic science, technology, engineering, and mathematics. "
 				class="lg:w-[590px]"
+				programsPage='programs/primary-education'
 				/>
 	
 				<Programs
@@ -72,6 +72,7 @@ import Footer from '../components/Footer.astro';
 				firstText="The Tertiary Education Programs at Altruistech Luminary Center are designed to support university students in Sierra Leone, enhancing their academic and professional prospects in STEM fields. "
 				secondText="This program aims to bridge the gap between university curricula and the evolving demands of the global tech and science sectors."
 				class="mt-[60px] lg:mt-0 lg:w-[590px]"
+				programsPage='programs/tertiary-education'
 				/>
 			</div>
 
@@ -83,6 +84,7 @@ import Footer from '../components/Footer.astro';
 				secondText="This project aims to inspire youth and young people to inhabit a scientific and critical thinking mindset through experimentation in robot design, production, real-life problem solving, and programming in the context of a global STEM learning and robotics program."
 				class="mt-[60px] lg:mt-0 lg:text-white lg:w-[590px]"
 				textWhite
+				programsPage='programs/secondary-education'
 				/>
 				<Programs
 				headingNo="4"
@@ -91,6 +93,7 @@ import Footer from '../components/Footer.astro';
 				secondText="This program specifically aims to reach the most marginalized groups, including refugees and members of local communities whom conventional educational systems have traditionally underserved."
 				class="mt-[60px] lg:mt-0 lg:text-white lg:w-[590px] "
 				textWhite
+				programsPage='programs/refugee'
 				/>
 			</div>
 
@@ -101,6 +104,7 @@ import Footer from '../components/Footer.astro';
 				firstText='Together with Coderina Education Technology Foundation, Sierra Leone Ministry of Education, Ministry Of ICT, The First Global brand, and the National Commission for Children Sierra Leone, we are the first and only authorized innovation center that organizes the First Lego League championships in Sierra Leone.'
 				secondText=''
 				class="mt-[60px] lg:w-[790px]"
+				programsPage='programs/first-lego-league'
 				/>
 			</div>
 		</section>
@@ -154,7 +158,7 @@ import Footer from '../components/Footer.astro';
 		</div>
 	</section>
 	</main>
-	<Footer/>
+	
 </Layout>
 
 <style>
