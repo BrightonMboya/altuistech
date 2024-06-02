@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { teamMembers } from '../components/team-members';
+import Text from '../components/ui/Text.astro';
+---
+
+<Layout title="Team Members">
+    <section class="pt-5 lg:flex lg:items-center lg:justify-center">
+        <img
+        class="object-cover "
+        alt="hero-img"
+        src="/imgs/team.png"
+        />
+    </section>
+    <section class="flex flex-col items-center justify-center pt-[80px]">
+        <h3 class="text-center font-medium w-[390px] md:w-[450px] lg:w-[1000px] lg:text-[19px]">At Altruistech Luminary Center, our mission's strength lies in our people's diversity and passion.</h3>
+        <Text class="text-center pt-5 w-[300px] md:w-[500px] lg:w-[1000px] lg:text-[18px]">Here, you'll meet the dedicated team of educators, innovators, and leaders who drive our initiatives forward. Each member brings a unique blend of expertise, creativity, and a deep commitment to empowering the youth of Sierra Leone through STEM education and environmental stewardship.</Text>
+        <Text class="text-center pt-5 w-[300px] md:w-[500px] lg:w-[1000px] lg:text-[18px]">From our visionary founders to our dynamic staff and supportive volunteers, discover the faces and stories behind our efforts to illuminate young minds and foster sustainable communities. </Text>
+        <Text class="text-center pt-5 w-[300px] md:w-[500px] lg:w-[1000px] lg:text-[18px]">Join us in celebrating the individuals who are not just part of our team but are true champions of change, working tirelessly to create a brighter future for all.</Text>
+    </section>
+
+<section class="flex flex-col items-center justify-center pt-[100px]">
+    <div class="flex flex-col items-center justify-center space-y-[40px] md:space-y-0 md:grid md:grid-cols-2  lg:grid-cols-3 md:gap-10">
+        {
+        teamMembers.map((member) => (
+        <div class="w-[271px] flex flex-col items-center h-[394px]">
+            <img
+            src={`/imgs/${member.image}`}
+            class="object-cover w-[271px] h-[286px]"
+            alt="team member"
+            />
+            <p class="font-medium text-xl pt-5 text-center">{member.name}</p>
+            <Text class="text-center">{member.position}</Text>
+        </div>
+         ))
+        }
+    </div>
+</section>
+</Layout>
