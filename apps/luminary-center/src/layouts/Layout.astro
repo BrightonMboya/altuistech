@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
+import Nav from '../components/home/Nav';
 
 interface Props {
 	title: string;
@@ -18,7 +19,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-cream">
+		<Nav client:load/>
 		<slot />
 	</body>
 	<Footer/>
