@@ -63,6 +63,6 @@ export const teamMembers = [
     id: 11,
     name: "Baimba Kamara",
     image: "/people/baimba.png",
-    position: "Social Media Coordinator and STEM Tutor",
+    position: "Partnership and Grant Lead",
   },
 ];
