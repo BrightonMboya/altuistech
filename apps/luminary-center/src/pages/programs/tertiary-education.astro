@@ -1,40 +1,73 @@
 ---
-import Text from '../../components/ui/Text.astro';
-import Layout from '../../layouts/Layout.astro';
+import Text from "../../components/ui/Text.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Primary Education Programs">
+  <main class="bg-cream">
+    <div
+      class="h-[600px] lg:h-[450px] bg-[url('/imgs/bg/tert-bg1.png')] lg:bg-[url('/imgs/bg/tert-bg2.png')] bg-cover bg-center"
+    >
+      <h3
+        class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[240px] lg:pt-[210px] lg:pl-[250px]"
+      >
+        Tertiary Education Programs (Universities)
+      </h3>
+    </div>
 
-    <main class="bg-cream">
-        <div class="  h-[600px] lg:h-[450px] bg-[url('/imgs/bg/tert-bg1.png')] lg:bg-[url('/imgs/bg/tert-bg2.png')]  bg-cover bg-center"> 
-           
-                    <h3 class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[240px] lg:pt-[210px]  lg:pl-[250px]">Tertiary Education Programs (Universities)</h3> 
-            </div>
+    <div class="flex flex-col items-center">
+      <Text
+        class="text-black text-center pt-[67px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >Focusing on advanced science, technology, engineering, and mathematics
+        topics, the program provides workshops, seminars, and hands-on projects
+        that align with cutting-edge research and industry practices. University
+        students are encouraged to engage in collaborative projects that involve
+        critical thinking, innovation, and real-world problem-solving, often
+        focusing on local challenges such as sustainable development, renewable
+        energy solutions, and advanced computing technologies.</Text
+      >
+      <div class="bg-blue w-[205px] h-[2px] mt-[48px]"></div>
+      <Text
+        class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >In addition to technical skills, the program strongly emphasizes
+        entrepreneurship and leadership training, helping students become
+        job-ready and prepare them to launch their ventures. This is crucial for
+        fostering a self-sustaining economy driven by home-grown innovations and
+        businesses.</Text
+      >
+    </div>
 
-            <div class="flex flex-col items-center">
-                <Text class="text-black text-center pt-[67px]  w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">Focusing on advanced science, technology, engineering, and mathematics topics, the program provides workshops, seminars, and hands-on projects that align with cutting-edge research and industry practices. University students are encouraged to engage in collaborative projects that involve critical thinking, innovation, and real-world problem-solving, often focusing on local challenges such as sustainable development, renewable energy solutions, and advanced computing technologies.</Text>
-            <div class="bg-blue w-[205px] h-[2px] mt-[48px]"/>
-                <Text class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">In addition to technical skills, the program strongly emphasizes entrepreneurship and leadership training, helping students become job-ready and prepare them to launch their ventures. This is crucial for fostering a self-sustaining economy driven by home-grown innovations and businesses.</Text>
-            </div>
+    <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
+      <img
+        src="/imgs/programs/tert-img1.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
+      />
+      <img
+        src="/imgs/programs/tert-img2.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
+      />
+    </div>
 
-            <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
-                <img
-                src="/imgs/programs/tert-img1.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
-                />
-                <img
-                src="/imgs/programs/tert-img2.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
-                />
-            </div>
-
-
-            <div class="flex flex-col items-center justify-center pb-[120px]">
-                <Text class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">Collaboration is a key component of the tertiary programs, with partnerships established between universities, industry leaders, and international tech companies. These relationships provide students mentorship opportunities, internships, and access to professional networks that can open doors to local and international career opportunities.</Text>
-                <Text class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]">Ultimately, Altruistech Luminary Center's tertiary education programs aim to produce graduates proficient in their technical fields capable of leading and innovating within their communities, contributing to the national and global economy through high-level skills and a deep understanding of their fields.</Text>
-            </div>
-    </main>
-
+    <div class="flex flex-col items-center justify-center pb-[120px]">
+      <Text
+        class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >Collaboration is a key component of the tertiary programs, with
+        partnerships established between universities, industry leaders, and
+        international tech companies. These relationships provide students
+        mentorship opportunities, internships, and access to professional
+        networks that can open doors to local and international career
+        opportunities.</Text
+      >
+      <Text
+        class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]"
+        >Ultimately, Altruistech Luminary Center's tertiary education programs
+        aim to produce graduates proficient in their technical fields capable of
+        leading and innovating within their communities, contributing to the
+        national and global economy through high-level skills and a deep
+        understanding of their fields.</Text
+      >
+    </div>
+  </main>
 </Layout>

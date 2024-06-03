@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@clerk/clerk-expo':
         specifier: ^0.17.6
-        version: 0.17.8(@types/react@18.2.74)(expo-auth-session@5.4.0)(expo-web-browser@12.8.2)(react-dom@18.2.0)(react-native@0.73.6)(react@18.2.0)
+        version: 0.17.8(expo-auth-session@5.4.0)(expo-web-browser@12.8.2)(react-dom@18.3.1)(react-native@0.73.6)(react@18.3.1)
       '@clerk/nextjs':
         specifier: ^4.21.8
-        version: 4.29.10(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.29.10(next@13.5.6)(react-dom@18.3.1)(react@18.3.1)
       '@expo/config-plugins':
         specifier: ~6.0.0
         version: 6.0.2
@@ -31,7 +31,7 @@ importers:
         version: link:packages/config/eslint
       '@tanstack/react-query-devtools':
         specifier: ^4.29.15
-        version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.3.1)(react@18.3.1)
       '@types/prettier':
         specifier: ^2.7.2
         version: 2.7.3
@@ -273,7 +273,7 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.7.0
-        version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@2.8.8)(typescript@5.4.5)
+        version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.0)(typescript@5.4.5)
       '@astrojs/react':
         specifier: ^3.4.0
         version: 3.4.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)(vite@5.2.11)
@@ -309,8 +309,8 @@ importers:
         version: 5.4.5
     devDependencies:
       prettier:
-        specifier: ^2.8.8
-        version: 2.8.8
+        specifier: ^3.3.0
+        version: 3.3.0
       prettier-plugin-astro:
         specifier: ^0.14.0
         version: 0.14.0
@@ -498,13 +498,13 @@ packages:
       leven: 3.1.0
     dev: false
 
-  /@astrojs/check@0.7.0(prettier-plugin-astro@0.14.0)(prettier@2.8.8)(typescript@5.4.5):
+  /@astrojs/check@0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.0)(typescript@5.4.5):
     resolution: {integrity: sha512-UTqwOeKNu9IYZmJXEeWnQuTdSd/pX58Hl4TUARsMlT97SVDL//kLBE4T/ctxRz6J573N87oE5ddtW/uOOnQTug==}
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
-      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.14.0)(prettier@2.8.8)(typescript@5.4.5)
+      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.0)(typescript@5.4.5)
       chokidar: 3.6.0
       fast-glob: 3.3.2
       kleur: 4.1.5
@@ -526,7 +526,7 @@ packages:
     resolution: {integrity: sha512-6B13lz5n6BrbTqCTwhXjJXuR1sqiX/H6rTxzlXx+lN1NnV4jgnq/KJldCQaUWJzPL5SiWahQyinxAbxQtwgPHA==}
     dev: false
 
-  /@astrojs/language-server@2.10.0(prettier-plugin-astro@0.14.0)(prettier@2.8.8)(typescript@5.4.5):
+  /@astrojs/language-server@2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.0)(typescript@5.4.5):
     resolution: {integrity: sha512-crHXpqYfA5qWioiuZnZFpTsNItgBlF1f0S9MzDYS7/pfCALkHNJ7K3w9U/j0uMKymsT4hC7BfMaX0DYlfdSzHg==}
     hasBin: true
     peerDependencies:
@@ -546,12 +546,12 @@ packages:
       '@volar/language-service': 2.2.5
       '@volar/typescript': 2.2.5
       fast-glob: 3.3.2
-      prettier: 2.8.8
+      prettier: 3.3.0
       prettier-plugin-astro: 0.14.0
       volar-service-css: 0.0.45(@volar/language-service@2.2.5)
       volar-service-emmet: 0.0.45(@volar/language-service@2.2.5)
       volar-service-html: 0.0.45(@volar/language-service@2.2.5)
-      volar-service-prettier: 0.0.45(@volar/language-service@2.2.5)(prettier@2.8.8)
+      volar-service-prettier: 0.0.45(@volar/language-service@2.2.5)(prettier@3.3.0)
       volar-service-typescript: 0.0.45(@volar/language-service@2.2.5)
       volar-service-typescript-twoslash-queries: 0.0.45(@volar/language-service@2.2.5)
       vscode-html-languageservice: 5.2.0
@@ -2304,11 +2304,11 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@clerk/backend@0.38.4(react@18.2.0):
+  /@clerk/backend@0.38.4(react@18.3.1):
     resolution: {integrity: sha512-Cp/vcuFqo3VsoBXWEWONhlzK5gXB3RDBImc5XgA4hvTSDAq7vvn+WYh/ya1eeVZ8g1LMaRx2Wl2OFml3zjGWJA==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/shared': 1.4.0(react@18.3.1)
       '@clerk/types': 3.63.0
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
@@ -2342,6 +2342,27 @@ packages:
       - react-native
     dev: false
 
+  /@clerk/clerk-expo@0.17.8(expo-auth-session@5.4.0)(expo-web-browser@12.8.2)(react-dom@18.3.1)(react-native@0.73.6)(react@18.3.1):
+    resolution: {integrity: sha512-fNHDZekW9f8i6GF0WDNCz3bp11Som3Cp/nyv2yRzKV2+3DEU+/V2bjmq3vhH+Cy5DwJym4+yrJc0ZaqPhJ1LKw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      expo-auth-session: '>=4'
+      expo-web-browser: '>=12'
+      react: '>=16'
+    dependencies:
+      '@clerk/clerk-js': 4.71.1(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/clerk-react': 4.30.8(react@18.3.1)
+      base-64: 1.0.0
+      expo-auth-session: 5.4.0(expo@50.0.17)
+      expo-web-browser: 12.8.2(expo@50.0.17)
+      react: 18.3.1
+      react-native-url-polyfill: 1.3.0(react-native@0.73.6)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - react-native
+    dev: false
+
   /@clerk/clerk-js@4.71.1(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-MrHFt1MXss34SayKWf7RIxx76oWDnbKUyi14ci691BzL+JGEfgHVECDWnjLwRoaf1RJhAqelLnPa/a3Ddh4siw==}
     peerDependencies:
@@ -2368,6 +2389,32 @@ packages:
       - react-dom
     dev: false
 
+  /@clerk/clerk-js@4.71.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-MrHFt1MXss34SayKWf7RIxx76oWDnbKUyi14ci691BzL+JGEfgHVECDWnjLwRoaf1RJhAqelLnPa/a3Ddh4siw==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@clerk/localizations': 1.28.0(react@18.3.1)
+      '@clerk/shared': 1.4.0(react@18.3.1)
+      '@clerk/types': 3.63.0
+      '@emotion/cache': 11.11.0
+      '@emotion/react': 11.11.1(react@18.3.1)
+      '@floating-ui/react': 0.25.4(react-dom@18.3.1)(react@18.3.1)
+      '@zxcvbn-ts/core': 3.0.4
+      '@zxcvbn-ts/language-common': 3.0.4
+      browser-tabs-lock: 1.2.15
+      copy-to-clipboard: 3.3.3
+      core-js: 3.26.1
+      dequal: 2.0.3
+      qrcode.react: 3.1.0(react@18.3.1)
+      qs: 6.11.0
+      react: 18.3.1
+      regenerator-runtime: 0.13.11
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+    dev: false
+
   /@clerk/clerk-react@4.30.8(react@18.2.0):
     resolution: {integrity: sha512-MehccfniWs2v7WSx4qGjJYxL+jtnsK6sETrzBuWctb7rLbvv4jDqjalhXbCm8YTV4qG19jHZl/WNsHOXSzBc7Q==}
     engines: {node: '>=14'}
@@ -2380,12 +2427,24 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-sdk-node@4.13.12(react@18.2.0):
+  /@clerk/clerk-react@4.30.8(react@18.3.1):
+    resolution: {integrity: sha512-MehccfniWs2v7WSx4qGjJYxL+jtnsK6sETrzBuWctb7rLbvv4jDqjalhXbCm8YTV4qG19jHZl/WNsHOXSzBc7Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@clerk/shared': 1.4.0(react@18.3.1)
+      '@clerk/types': 3.63.0
+      react: 18.3.1
+      tslib: 2.4.1
+    dev: false
+
+  /@clerk/clerk-sdk-node@4.13.12(react@18.3.1):
     resolution: {integrity: sha512-6OluVdh13OwOVk5m+Zgfwph1B/1Zz3AzBepuZubdPmI2r0c1YVOuo/09WJiBRZdglkoIcS0868ZRBsZMrPJDLQ==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/backend': 0.38.4(react@18.2.0)
-      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/backend': 0.38.4(react@18.3.1)
+      '@clerk/shared': 1.4.0(react@18.3.1)
       '@clerk/types': 3.63.0
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
@@ -2407,7 +2466,17 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@clerk/nextjs@4.29.10(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
+  /@clerk/localizations@1.28.0(react@18.3.1):
+    resolution: {integrity: sha512-XLSZLd76kcECC8GGtBGs0a34gWm32XiGki+aKALb9urIIe52i8L/qNrsHZTHtLQVt81emLR+sE0pjHMqD6jRoQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@clerk/types': 3.63.0
+      react: 18.3.1
+    dev: false
+
+  /@clerk/nextjs@4.29.10(next@13.5.6)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-nu8tIzZxxwqFYupBp66BSYSp+qAEUvGUFJ1eAqvgQjOUWh+rElQTfOMI0sm3hOX85sZv04WKA9hiAT93qLILsg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2415,15 +2484,15 @@ packages:
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@clerk/backend': 0.38.4(react@18.2.0)
-      '@clerk/clerk-react': 4.30.8(react@18.2.0)
-      '@clerk/clerk-sdk-node': 4.13.12(react@18.2.0)
-      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/backend': 0.38.4(react@18.3.1)
+      '@clerk/clerk-react': 4.30.8(react@18.3.1)
+      '@clerk/clerk-sdk-node': 4.13.12(react@18.3.1)
+      '@clerk/shared': 1.4.0(react@18.3.1)
       '@clerk/types': 3.63.0
-      next: 13.5.6(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.5.6(@babel/core@7.24.3)(react-dom@18.3.1)(react@18.3.1)
       path-to-regexp: 6.2.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
     dev: false
 
@@ -2439,6 +2508,20 @@ packages:
       js-cookie: 3.0.1
       react: 18.2.0
       swr: 2.2.0(react@18.2.0)
+    dev: false
+
+  /@clerk/shared@1.4.0(react@18.3.1):
+    resolution: {integrity: sha512-LANWfdw3n7lCN90oY+myuCN74CfGgBQE/T11ry/bTSNVqUxXiYaUlfu5Fkp0GsR4icYiA6NRyROFmYdYZfBMAA==}
+    peerDependencies:
+      react: '>=16'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.1
+      react: 18.3.1
+      swr: 2.2.0(react@18.3.1)
     dev: false
 
   /@clerk/types@3.63.0:
@@ -2562,6 +2645,26 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@emotion/react@11.11.1(react@18.3.1):
+    resolution: {integrity: sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==}
+    peerDependencies:
+      '@types/react': '*'
+      react: '>=16.8.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.24.1
+      '@emotion/babel-plugin': 11.11.0
+      '@emotion/cache': 11.11.0
+      '@emotion/serialize': 1.1.4
+      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.3.1)
+      '@emotion/utils': 1.2.1
+      '@emotion/weak-memoize': 0.3.1
+      hoist-non-react-statics: 3.3.2
+      react: 18.3.1
+    dev: false
+
   /@emotion/serialize@1.1.4:
     resolution: {integrity: sha512-RIN04MBT8g+FnDwgvIUi8czvr1LU1alUMI05LekWB5DGyTm8cCBMCRpq3GqaiyEDRptEXOyXnvZ58GZYu4kBxQ==}
     dependencies:
@@ -2586,6 +2689,14 @@ packages:
       react: '>=16.8.0'
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.3.1):
+    resolution: {integrity: sha512-jT/qyKZ9rzLErtrjGgdkMBn2OP8wl0G3sQlBb3YPryvKHsjvINUhVaPFfP+fpBcOkmrVOVEEHQFJ7nbj2TH2gw==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /@emotion/utils@1.2.1:
@@ -3652,6 +3763,17 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@floating-ui/react-dom@2.0.8(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-HOdqOt3R3OGeTKidaLvJKcgg75S6tibQ3Tif4eyd91QnIJWr0NLvoXFpJA/j8HqkFSL68GDca9AuyWEHlhyClw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@floating-ui/dom': 1.6.3
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /@floating-ui/react@0.25.4(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-lWRQ/UiTvSIBxohn0/2HFHEmnmOVRjl7j6XcRJuLH0ls6f/9AyHMWVzkAJFuwx0n9gaEeCmg9VccCSCJzbEJig==}
     peerDependencies:
@@ -3662,6 +3784,19 @@ packages:
       '@floating-ui/utils': 0.1.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      tabbable: 6.2.0
+    dev: false
+
+  /@floating-ui/react@0.25.4(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-lWRQ/UiTvSIBxohn0/2HFHEmnmOVRjl7j6XcRJuLH0ls6f/9AyHMWVzkAJFuwx0n9gaEeCmg9VccCSCJzbEJig==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@floating-ui/react-dom': 2.0.8(react-dom@18.3.1)(react@18.3.1)
+      '@floating-ui/utils': 0.1.6
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       tabbable: 6.2.0
     dev: false
 
@@ -4869,7 +5004,7 @@ packages:
     dependencies:
       invariant: 2.2.4
       nullthrows: 1.1.1
-      react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.2.0)
+      react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.3.1)
     dev: false
 
   /@react-navigation/bottom-tabs@6.5.20(@react-navigation/native@6.1.17)(react-native-safe-area-context@4.8.2)(react-native-screens@3.29.0)(react-native@0.73.6)(react@18.2.0):
@@ -5448,7 +5583,7 @@ packages:
     resolution: {integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==}
     dev: false
 
-  /@tanstack/react-query-devtools@4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0):
+  /@tanstack/react-query-devtools@4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-WYku83CKP3OevnYSG8Y/QO9g0rT75v1om5IvcWUwiUZJ4LanYGLVCZ8TdFG5jfsq4Ej/lu2wwDAULEUnRIMBSw==}
     peerDependencies:
       '@tanstack/react-query': ^4.36.1
@@ -5456,11 +5591,11 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@tanstack/match-sorter-utils': 8.15.1
-      '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react-native@0.73.6)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      '@tanstack/react-query': 4.36.1(react-dom@18.3.1)(react-native@0.73.6)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       superjson: 1.13.3
-      use-sync-external-store: 1.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.3.1)
     dev: false
 
   /@tanstack/react-query@4.36.1(react-dom@18.2.0)(react-native@0.73.6)(react@18.2.0):
@@ -5480,6 +5615,25 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-query@4.36.1(react-dom@18.3.1)(react-native@0.73.6)(react@18.3.1):
+    resolution: {integrity: sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.36.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.3.1)
+      use-sync-external-store: 1.2.0(react@18.3.1)
     dev: false
 
   /@tanstack/react-virtual@3.2.0(react-dom@18.2.0)(react@18.2.0):
@@ -12313,7 +12467,7 @@ packages:
       - webpack
     dev: false
 
-  /next@13.5.6(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0):
+  /next@13.5.6(@babel/core@7.24.3)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==}
     engines: {node: '>=16.14.0'}
     hasBin: true
@@ -12333,9 +12487,9 @@ packages:
       busboy: 1.6.0
       caniuse-lite: 1.0.30001605
       postcss: 8.4.31
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(@babel/core@7.24.3)(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      styled-jsx: 5.1.1(@babel/core@7.24.3)(react@18.3.1)
       watchpack: 2.4.0
     optionalDependencies:
       '@next/swc-darwin-arm64': 13.5.6
@@ -13232,7 +13386,7 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       '@astrojs/compiler': 1.8.2
-      prettier: 3.2.5
+      prettier: 3.3.0
       sass-formatter: 0.7.9
 
   /prettier-plugin-tailwindcss@0.2.8(@ianvs/prettier-plugin-sort-imports@3.7.2)(prettier@2.8.8):
@@ -13292,9 +13446,10 @@ packages:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
+    dev: false
 
-  /prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  /prettier@3.3.0:
+    resolution: {integrity: sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -13430,6 +13585,14 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /qrcode.react@3.1.0(react@18.3.1):
+    resolution: {integrity: sha512-oyF+Urr3oAMUG/OiOuONL3HXM+53wvuH3mtIWQrYmsXoAq0DkvZp2RYUWFSMFtbdOpuS++9v+WAkzNVkMlNW6Q==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /qs@2.3.3:
@@ -13753,7 +13916,7 @@ packages:
     peerDependencies:
       react-native: '*'
     dependencies:
-      react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.2.0)
+      react-native: 0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.3.1)
       whatwg-url-without-unicode: 8.0.0-3
     dev: false
 
@@ -13882,6 +14045,60 @@ packages:
       - utf-8-validate
     dev: false
 
+  /react-native@0.73.6(@babel/core@7.24.3)(@babel/preset-env@7.24.3)(react@18.3.1):
+    resolution: {integrity: sha512-oqmZe8D2/VolIzSPZw+oUd6j/bEmeRHwsLn1xLA5wllEYsZ5zNuMsDus235ONOnCRwexqof/J3aztyQswSmiaA==}
+    engines: {node: '>=18'}
+    hasBin: true
+    peerDependencies:
+      react: 18.2.0
+    dependencies:
+      '@jest/create-cache-key-function': 29.7.0
+      '@react-native-community/cli': 12.3.6
+      '@react-native-community/cli-platform-android': 12.3.6
+      '@react-native-community/cli-platform-ios': 12.3.6
+      '@react-native/assets-registry': 0.73.1
+      '@react-native/codegen': 0.73.3(@babel/preset-env@7.24.3)
+      '@react-native/community-cli-plugin': 0.73.17(@babel/core@7.24.3)(@babel/preset-env@7.24.3)
+      '@react-native/gradle-plugin': 0.73.4
+      '@react-native/js-polyfills': 0.73.1
+      '@react-native/normalize-colors': 0.73.2
+      '@react-native/virtualized-lists': 0.73.4(react-native@0.73.6)
+      abort-controller: 3.0.0
+      anser: 1.4.10
+      ansi-regex: 5.0.1
+      base64-js: 1.5.1
+      chalk: 4.1.2
+      deprecated-react-native-prop-types: 5.0.0
+      event-target-shim: 5.0.1
+      flow-enums-runtime: 0.0.6
+      invariant: 2.2.4
+      jest-environment-node: 29.7.0
+      jsc-android: 250231.0.0
+      memoize-one: 5.2.1
+      metro-runtime: 0.80.8
+      metro-source-map: 0.80.8
+      mkdirp: 0.5.6
+      nullthrows: 1.1.1
+      pretty-format: 26.6.2
+      promise: 8.3.0
+      react: 18.3.1
+      react-devtools-core: 4.28.5
+      react-refresh: 0.14.0
+      react-shallow-renderer: 16.15.0(react@18.3.1)
+      regenerator-runtime: 0.13.11
+      scheduler: 0.24.0-canary-efb381bbf-20230505
+      stacktrace-parser: 0.1.10
+      whatwg-fetch: 3.6.20
+      ws: 6.2.2
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@babel/preset-env'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
   /react-reconciler@0.27.0(react@18.2.0):
     resolution: {integrity: sha512-HmMDKciQjYmBRGuuhIaKA1ba/7a+UsM5FzOZsMO2JYHt9Jh8reCb7j1eDC95NOyUlKM9KRyvdx0flBuDvYSBoA==}
     engines: {node: '>=0.10.0'}
@@ -13910,6 +14127,16 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 18.2.0
+      react-is: 18.2.0
+    dev: false
+
+  /react-shallow-renderer@16.15.0(react@18.3.1):
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      object-assign: 4.1.1
+      react: 18.3.1
       react-is: 18.2.0
     dev: false
 
@@ -15205,7 +15432,7 @@ packages:
     resolution: {integrity: sha512-0MP/Cxx5SzeeZ10p/bZI0S6MpgD+yxAhi1BOQ34jgnMXsCq3j1t6tQnZu+KdlL7dvJTLT3g9xN8tl10TqgFMcg==}
     dev: false
 
-  /styled-jsx@5.1.1(@babel/core@7.24.3)(react@18.2.0):
+  /styled-jsx@5.1.1(@babel/core@7.24.3)(react@18.3.1):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -15220,7 +15447,7 @@ packages:
     dependencies:
       '@babel/core': 7.24.3
       client-only: 0.0.1
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /styled-jsx@5.1.1(@babel/core@7.24.6)(react@18.2.0):
@@ -15366,6 +15593,15 @@ packages:
     dependencies:
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /swr@2.2.0(react@18.3.1):
+    resolution: {integrity: sha512-AjqHOv2lAhkuUdIiBu9xbuettzAzWXmCEcLONNKJRba87WAefz8Ca9d6ds/SzrPc235n1IxWYdhJ2zF3MNUaoQ==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+      use-sync-external-store: 1.2.0(react@18.3.1)
     dev: false
 
   /tabbable@6.2.0:
@@ -16266,6 +16502,14 @@ packages:
       react: 18.2.0
     dev: false
 
+  /use-sync-external-store@1.2.0(react@18.3.1):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -16455,7 +16699,7 @@ packages:
       vscode-uri: 3.0.8
     dev: false
 
-  /volar-service-prettier@0.0.45(@volar/language-service@2.2.5)(prettier@2.8.8):
+  /volar-service-prettier@0.0.45(@volar/language-service@2.2.5)(prettier@3.3.0):
     resolution: {integrity: sha512-+mBS2EsDgp/kunKEBnHvhBwIQm5v2ahw4NKpKdg4sTpXy3UxqHt+Fq/wRYQ7Z8LlNVNRVfp75ThjM+w2zaZBAw==}
     peerDependencies:
       '@volar/language-service': ~2.2.3
@@ -16467,7 +16711,7 @@ packages:
         optional: true
     dependencies:
       '@volar/language-service': 2.2.5
-      prettier: 2.8.8
+      prettier: 3.3.0
       vscode-uri: 3.0.8
     dev: false
 

@@ -1,84 +1,126 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Text  from '../components/ui/Text.astro';
+import Layout from "../layouts/Layout.astro";
+import Text from "../components/ui/Text.astro";
 ---
 
 <Layout title="About Us">
+  <main class="lg:mb-[150px]">
     <section>
-         <div class="h-[600px]  bg-blue md:flex md:flex-row-reverse lg:items-center lg:justify-center"> 
-               <img
-               class="object-cover lg:h-[750px] lg:w-[700px]"
-               alt="hero-img"
-               src="/imgs/people/kids.png"
-               />
-               <div class="pl-[30px]">
-
-                   <h3 class="text-white text-[30px] md:pt-[200px] lg:text-[35px]">About Us</h3>
-                   <p class="text-white hidden md:block text-[20px] lg:text-[25px]"> Altruistech Luminary Center</p>
-               </div>
-        </div>
-    </section>
-
-    <section class="lg:flex lg:items-center lg:justify-center">
-
-        <div class="text-center flex flex-col items-center pt-[50px] lg:flex-row lg:text-left lg:space-x-[80px]">
-            <div>
-    
-                <h3 class="font-medium text-[18px] md:text-[20px]"> Mission</h3>
-                <Text class="w-[340px] md:w-[700px] md:text-[18px] lg:w-[500px]">Our mission is to light up every dark corner with the power of creativity and knowledge, empowering every young person in Sierra Leone to unlock their potential and make impactful changes in their communities and beyond.</Text>
-            </div>
-       
-       <div class="py-[50px]">
-     <img
-      class="lg:w-[800px] lg:h-[326px] object-cover"
-      alt="about us img"
-      src="/imgs/about-us-1.png" 
-      />
-      <img
-      class="lg:w-[800px] lg:h-[326px] object-cover"
-      alt="about us img"
-      src="/imgs/about-us-3.png" 
-      />
-       </div>
-    
-        </div>
-    </section>
-
-
-    <section class="lg:flex lg:items-center lg:justify-center">
-        <div class="text-center flex flex-col items-center lg:flex-row-reverse lg:text-left lg:gap-[80px]">
-            <div class="lg:w-[750px]">
-    
-                <h3 class="font-medium text-[16px] md:text-[20px]">Our Commitment</h3>
-                <Text class="w-[340px] pt-[30px] md:w-[700px] md:text-[18px] lg:w-[500px]">We believe that access to quality education can drive social change and help solve some of the world's most pressing challenges, including climate change and gender inequality. </Text>
-                <Text class="w-[340px] pt-[30px] md:w-[700px] md:text-[18px] lg:w-[500px]">We are committed to providing inclusive, hands-on learning experiences that foster critical thinking and problem-solving skills and cultivate a sense of global citizenship and responsibility.</Text>
-            </div>
-       <img
-      class="py-[50px] lg:py-0 lg:w-[565px] lg:h-[622px] lg:object-cover lg:translate-y-[-80px]"
-      alt="about us img"
-      src="/imgs/about-us-2.png" 
-      />
-        </div>
-
-    </section>
-
-    <section class="bg-blue h-[622px] mb-[40px] lg:pb-[80px] lg:mt-[60px] lg:flex lg:items-center lg:justify-center lg:space-x-[80px]">
-        <div class=" flex flex-col items-center lg:items-start space-y-[40px]">
-
-            <p class="text-center text-white text-[24px] pt-[40px] font-bold lg:text-left">Our programs Structure</p>
-            <Text class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left">Our programs are designed to inspire and challenge students by integrating cutting-edge technology with real-world problem-solving. Through partnerships with local and international organizations, we give our students the resources and opportunities they need to grow into leaders and innovators. </Text>
-            <Text class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left">
-                By focusing on underserved communities' needs, especially encouraging girls' participation in STEM fields, Altruistech Luminary Center is not just educating a new generation of scientists and engineers but also champions of sustainability and equality.
-            </Text>
-            <Text class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left">
-                We are more than just an educational hub; we are a movement towards a brighter, more sustainable future for Sierra Leone and the world. Join us as we shine the light of creativity on every young person in our nation.
-            </Text>
-        </div>
-
+      <div
+        class="h-[600px] bg-blue md:flex md:flex-row-reverse lg:items-center lg:justify-center"
+      >
         <img
+          class="object-cover lg:h-[750px] lg:w-[700px]"
+          alt="hero-img"
+          src="/imgs/people/kids.png"
+        />
+        <div class="pl-[30px]">
+          <h3 class="text-white text-[30px] md:pt-[200px] lg:text-[35px]">
+            About Us
+          </h3>
+          <p class="text-white hidden md:block text-[20px] lg:text-[25px]">
+            Altruistech Luminary Center
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lg:flex lg:items-center lg:justify-center">
+      <div
+        class="text-center flex flex-col items-center pt-[50px] lg:flex-row lg:text-left lg:space-x-[80px]"
+      >
+        <div>
+          <h3 class="font-medium text-[18px] md:text-[20px]">Mission</h3>
+          <Text class="w-[340px] md:w-[700px] md:text-[18px] lg:w-[500px]"
+            >Our mission is to light up every dark corner with the power of
+            creativity and knowledge, empowering every young person in Sierra
+            Leone to unlock their potential and make impactful changes in their
+            communities and beyond.</Text
+          >
+        </div>
+
+        <div class="py-[50px]">
+          <img
+            class="lg:w-[800px] lg:h-[326px] object-cover"
+            alt="about us img"
+            src="/imgs/about-us-1.png"
+          />
+          <img
+            class="lg:w-[800px] lg:h-[326px] object-cover"
+            alt="about us img"
+            src="/imgs/about-us-3.png"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="lg:flex lg:items-center lg:justify-center">
+      <div
+        class="text-center flex flex-col items-center lg:flex-row-reverse lg:text-left lg:gap-[80px]"
+      >
+        <div class="lg:w-[750px]">
+          <h3 class="font-medium text-[16px] md:text-[20px]">Our Commitment</h3>
+          <Text
+            class="w-[340px] pt-[30px] md:w-[700px] md:text-[18px] lg:w-[500px]"
+            >We believe that access to quality education can drive social change
+            and help solve some of the world's most pressing challenges,
+            including climate change and gender inequality.
+          </Text>
+          <Text
+            class="w-[340px] pt-[30px] md:w-[700px] md:text-[18px] lg:w-[500px]"
+            >We are committed to providing inclusive, hands-on learning
+            experiences that foster critical thinking and problem-solving skills
+            and cultivate a sense of global citizenship and responsibility.</Text
+          >
+        </div>
+        <img
+          class="py-[50px] lg:py-0 lg:w-[565px] lg:h-[622px] lg:object-cover lg:translate-y-[-80px]"
+          alt="about us img"
+          src="/imgs/about-us-2.png"
+        />
+      </div>
+    </section>
+
+    <section
+      class="bg-blue h-[622px] mb-[40px] lg:pb-[80px] lg:mt-[60px] lg:flex lg:items-center lg:justify-center lg:space-x-[80px]"
+    >
+      <div class="flex flex-col items-center lg:items-start space-y-[40px]">
+        <p
+          class="text-center text-white text-[24px] pt-[40px] font-bold lg:text-left"
+        >
+          Our programs Structure
+        </p>
+        <Text
+          class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left"
+          >Our programs are designed to inspire and challenge students by
+          integrating cutting-edge technology with real-world problem-solving.
+          Through partnerships with local and international organizations, we
+          give our students the resources and opportunities they need to grow
+          into leaders and innovators.
+        </Text>
+        <Text
+          class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left"
+        >
+          By focusing on underserved communities' needs, especially encouraging
+          girls' participation in STEM fields, Altruistech Luminary Center is
+          not just educating a new generation of scientists and engineers but
+          also champions of sustainability and equality.
+        </Text>
+        <Text
+          class="text-white text-center w-[322px] md:w-[500px] md:text-[16px] lg:text-left"
+        >
+          We are more than just an educational hub; we are a movement towards a
+          brighter, more sustainable future for Sierra Leone and the world. Join
+          us as we shine the light of creativity on every young person in our
+          nation.
+        </Text>
+      </div>
+
+      <img
         class="hidden lg:block w-[665px] h-[722px] object-cover"
         alt="about us img"
         src="/imgs/people/kids-smiling.png"
-        />
+      />
     </section>
+  </main>
 </Layout>

@@ -1,52 +1,100 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Button from '../components/ui/Button.astro';
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/ui/Button.astro";
 ---
 
 <Layout title="Get Involved">
-    <main class="bg-cream">
-        <section>
-            <div>
-                <p>DONATE TODAY! Start changing lives. </p>
-                <p>Together, we can change Africa's history by empowering people through STEM education.</p>
-            </div>
-        </section>
-        <section class="pb-[50px]">
-            <form class="mt-[15px] space-y-[37px] items-center flex flex-col">
-                <h3 class="text-[28px] text-center text-blue font-medium w-[320px]">Partner with us / Sponsor any of our initiatives</h3>
-				<div class="flex flex-col">
-					<label for="first_name" class="text-blue text-[15px]">First Name</label>
-					<input type="text" id="first_name" name="first_name" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
-                <div class="flex flex-col">
-					<label for="last_name" class="text-blue text-[15px]">Last Name</label>
-					<input type="text" id="last_name" name="last_name" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
-                <div class="flex flex-col">
-					<label for="country" class="text-blue text-[15px]">Country</label>
-					<input type="text" id="country" name="country" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
-                <div class="flex flex-col">
-					<label for="organization_name" class="text-blue text-[15px]">Organization Name</label>
-					<input type="text" id="organization_name" name="organization_name" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
+  <main class="bg-cream">
+    <section>
+      <div>
+        <p>DONATE TODAY! Start changing lives.</p>
+        <p>
+          Together, we can change Africa's history by empowering people through
+          STEM education.
+        </p>
+      </div>
+    </section>
+    <section class="pb-[50px]">
+      <form class="mt-[15px] space-y-[37px] items-center flex flex-col">
+        <h3 class="text-[28px] text-center text-blue font-medium w-[320px]">
+          Partner with us / Sponsor any of our initiatives
+        </h3>
+        <div class="flex flex-col">
+          <label for="first_name" class="text-blue text-[15px]"
+            >First Name</label
+          >
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="last_name" class="text-blue text-[15px]">Last Name</label>
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="country" class="text-blue text-[15px]">Country</label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="organization_name" class="text-blue text-[15px]"
+            >Organization Name</label
+          >
+          <input
+            type="text"
+            id="organization_name"
+            name="organization_name"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
 
-                 <div class="flex flex-col">
-					<label for="organization_address" class="text-blue text-[15px]">Organization Address</label>
-					<input type="text" id="organization_address" name="organization_address" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
-                
-                 <div class="flex flex-col">
-					<label for="organization_number" class="text-blue text-[15px]">Organization Number</label>
-					<input type="text" id="organization_number" name="organization_number" class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
+        <div class="flex flex-col">
+          <label for="organization_address" class="text-blue text-[15px]"
+            >Organization Address</label
+          >
+          <input
+            type="text"
+            id="organization_address"
+            name="organization_address"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
 
-                 <div class="flex flex-col">
-					<label for="comments" class="text-blue text-[15px]">Comments</label>
-					<textarea  id="comments" name="comments" rows={10} class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue" />
-				</div>
-<Button>Send</Button>
-            </form>
-        </section>
-    </main>
+        <div class="flex flex-col">
+          <label for="organization_number" class="text-blue text-[15px]"
+            >Organization Number</label
+          >
+          <input
+            type="text"
+            id="organization_number"
+            name="organization_number"
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label for="comments" class="text-blue text-[15px]">Comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows={10}
+            class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
+          ></textarea>
+        </div>
+        <Button>Send</Button>
+      </form>
+    </section>
+  </main>
 </Layout>

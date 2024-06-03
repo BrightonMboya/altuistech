@@ -1,39 +1,70 @@
 ---
-import Text from '../../components/ui/Text.astro';
-import Layout from '../../layouts/Layout.astro';
+import Text from "../../components/ui/Text.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Primary Education Programs">
+  <main class="bg-cream">
+    <div
+      class="h-[600px] lg:h-[450px] bg-[url('/imgs/bg/primary-ed-phone-bg.png')] lg:bg-[url('/imgs/bg/prim-ed-bg-2.png')] bg-cover bg-center"
+    >
+      <h3
+        class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[210px] lg:pl-[50%]"
+      >
+        Primary Education
+      </h3>
+    </div>
 
-    <main class="bg-cream">
-        <div class="  h-[600px] lg:h-[450px] bg-[url('/imgs/bg/primary-ed-phone-bg.png')] lg:bg-[url('/imgs/bg/prim-ed-bg-2.png')]  bg-cover bg-center">   
-                  <h3 class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[210px] lg:pl-[50%]">Primary Education</h3> 
-            </div>
+    <div class="flex flex-col items-center">
+      <Text
+        class="text-black text-center pt-[67px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >The curriculum is crafted to spark curiosity and foster a love for
+        learning by incorporating hands-on activities that make learning fun and
+        accessible. Key components include simple robotics, basic computer
+        programming, environmental science projects, and math games that
+        encourage problem-solving skills and logical thinking.</Text
+      >
+      <div class="bg-blue w-[205px] h-[2px] mt-[48px]"></div>
+      <Text
+        class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >Understanding the importance of early childhood education in shaping
+        future learning paths, the program also emphasizes the development of
+        critical thinking and collaboration skills. Children learn to work
+        together, share ideas, and develop social skills through group projects
+        and cooperative learning.</Text
+      >
+    </div>
 
-            <div class="flex flex-col items-center">
-                <Text class="text-black text-center pt-[67px]  w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">The curriculum is crafted to spark curiosity and foster a love for learning by incorporating hands-on activities that make learning fun and accessible. Key components include simple robotics, basic computer programming, environmental science projects, and math games that encourage problem-solving skills and logical thinking.</Text>
-            <div class="bg-blue w-[205px] h-[2px] mt-[48px]"/>
-                <Text class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">Understanding the importance of early childhood education in shaping future learning paths, the program also emphasizes the development of critical thinking and collaboration skills. Children learn to work together, share ideas, and develop social skills through group projects and cooperative learning.</Text>
-            </div>
+    <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
+      <img
+        src="/imgs/programs/prim-ed-img-1.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
+      />
+      <img
+        src="/imgs/programs/prim-ed-img2.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
+      />
+    </div>
 
-            <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
-                <img
-                src="/imgs/programs/prim-ed-img-1.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
-                />
-                <img
-                src="/imgs/programs/prim-ed-img2.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
-                />
-            </div>
-
-
-            <div class="flex flex-col items-center justify-center pb-[120px]">
-                <Text class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">Additionally, the program integrates themes of sustainability and conservation to instill a sense of responsibility towards the environment from a young age. Altruistech Luminary Center aims to cultivate future technologically proficient and environmentally conscious leaders by teaching children about preserving their natural surroundings.</Text>
-                <Text class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]">Overall, the Primary Education Program empowers the youngest learners by providing them with the tools and knowledge to succeed in the rapidly evolving world while instilling core values that promote a sustainable future.</Text>
-            </div>
-    </main>
-
+    <div class="flex flex-col items-center justify-center pb-[120px]">
+      <Text
+        class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >Additionally, the program integrates themes of sustainability and
+        conservation to instill a sense of responsibility towards the
+        environment from a young age. Altruistech Luminary Center aims to
+        cultivate future technologically proficient and environmentally
+        conscious leaders by teaching children about preserving their natural
+        surroundings.</Text
+      >
+      <Text
+        class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]"
+        >Overall, the Primary Education Program empowers the youngest learners
+        by providing them with the tools and knowledge to succeed in the rapidly
+        evolving world while instilling core values that promote a sustainable
+        future.</Text
+      >
+    </div>
+  </main>
 </Layout>

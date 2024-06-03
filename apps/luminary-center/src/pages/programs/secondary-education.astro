@@ -1,40 +1,74 @@
 ---
-import Text from '../../components/ui/Text.astro';
-import Layout from '../../layouts/Layout.astro';
+import Text from "../../components/ui/Text.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Primary Education Programs">
+  <main class="bg-cream">
+    <div
+      class="h-[600px] lg:h-[450px] bg-[url('/imgs/bg/sec-bg1.png')] lg:bg-[url('/imgs/bg/sec-bg2.png')] bg-cover bg-center"
+    >
+      <h3
+        class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[240px] lg:pl-[50%]"
+      >
+        Secondary Education
+      </h3>
+    </div>
 
-    <main class="bg-cream">
-        <div class="  h-[600px] lg:h-[450px] bg-[url('/imgs/bg/sec-bg1.png')] lg:bg-[url('/imgs/bg/sec-bg2.png')]  bg-cover bg-center"> 
-           
-                    <h3 class="text-white pl-5 font-medium text-[51px] w-[320px] md:w-full md:pl-[30px] pt-[240px] lg:pl-[50%]">Secondary Education</h3> 
-            </div>
+    <div class="flex flex-col items-center">
+      <Text
+        class="text-black text-center pt-[67px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >This project aims to inspire youth and young people to inhabit a
+        scientific and critical thinking mindset through experimentation in
+        robot design, production, real-life problem solving, and programming in
+        the context of a global STEM learning and robotics program. In these
+        school clubs, students undertake various projects that challenge them to
+        apply design thinking methodologies to real-world problems.</Text
+      >
+      <div class="bg-blue w-[205px] h-[2px] mt-[48px]"></div>
+      <Text
+        class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >This project aims to inspire youth and young people to inhabit a
+        scientific and critical thinking mindset through experimentation in
+        robot design, production, real-life problem solving, and programming in
+        the context of a global STEM learning and robotics program. In these
+        school clubs, students undertake various projects that challenge them to
+        apply design thinking methodologies to real-world problems.</Text
+      >
+    </div>
 
-            <div class="flex flex-col items-center">
-                <Text class="text-black text-center pt-[67px]  w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">This project aims to inspire youth and young people to inhabit a scientific and critical thinking mindset through experimentation in robot design, production, real-life problem solving, and programming in the context of a global STEM learning and robotics program. In these school clubs, students undertake various projects that challenge them to apply design thinking methodologies to real-world problems.</Text>
-            <div class="bg-blue w-[205px] h-[2px] mt-[48px]"/>
-                <Text class="text-black text-center pt-[48px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">This project aims to inspire youth and young people to inhabit a scientific and critical thinking mindset through experimentation in robot design, production, real-life problem solving, and programming in the context of a global STEM learning and robotics program. In these school clubs, students undertake various projects that challenge them to apply design thinking methodologies to real-world problems.</Text>
-            </div>
+    <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
+      <img
+        src="/imgs/programs/sec-ed-img1.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
+      />
+      <img
+        src="/imgs/programs/sec-ed-img2.png"
+        alt="primary-ed-img-1"
+        class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
+      />
+    </div>
 
-            <div class="py-[54px] lg:flex lg:items-center lg:justify-center">
-                <img
-                src="/imgs/programs/sec-ed-img1.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen lg:w-[791px] lg:h-[593px]"
-                />
-                <img
-                src="/imgs/programs/sec-ed-img2.png"
-                alt="primary-ed-img-1"
-                class="object-cover w-screen hidden lg:block lg:w-[569px] lg:h-[593px]"
-                />
-            </div>
-
-
-            <div class="flex flex-col items-center justify-center pb-[120px]">
-                <Text class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]">The curriculum emphasizes technical skills and integrates soft skills development, such as teamwork, leadership, and communication, preparing students for future academic and career opportunities. By participating in these clubs, students gain hands-on experience with the latest technologies and engineering principles, positioning them as future leaders in STEM fields.</Text>
-                <Text class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]">Through the STEM Innovation and Design Thinking Project, Altruistech Luminary Center aims to cultivate a generation of problem solvers and innovators equipped to tackle environmental and societal challenges. This program not only enhances students' educational outcomes but also contributes to their personal growth and development, making a lasting impact on their lives and their communities.</Text>
-            </div>
-    </main>
-
+    <div class="flex flex-col items-center justify-center pb-[120px]">
+      <Text
+        class="text-center text-black w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px]"
+        >The curriculum emphasizes technical skills and integrates soft skills
+        development, such as teamwork, leadership, and communication, preparing
+        students for future academic and career opportunities. By participating
+        in these clubs, students gain hands-on experience with the latest
+        technologies and engineering principles, positioning them as future
+        leaders in STEM fields.</Text
+      >
+      <Text
+        class="text-center text-black pt-[10px] w-[340px] md:w-[700px] md:text-[16px] lg:w-[1100px] lg:text-[20px] lg:pt-[40px]"
+        >Through the STEM Innovation and Design Thinking Project, Altruistech
+        Luminary Center aims to cultivate a generation of problem solvers and
+        innovators equipped to tackle environmental and societal challenges.
+        This program not only enhances students' educational outcomes but also
+        contributes to their personal growth and development, making a lasting
+        impact on their lives and their communities.</Text
+      >
+    </div>
+  </main>
 </Layout>

@@ -16,7 +16,7 @@ export default {
         green: "#22B02E",
         sunny: "#FFD965",
         marina: "#A6D4FF",
-        cream: "#fbf9f2"
+        cream: "#fbf9f2",
       },
     },
   },

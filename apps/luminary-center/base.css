@@ -5,7 +5,7 @@
 
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
-  font-family: 'Avenir';
+  font-family: "Avenir";
   src: url("./public/font/avenir_roman_12.otf");
   font-weight: normal;
   font-style: normal;
