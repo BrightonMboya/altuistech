@@ -93,7 +93,9 @@ import Programs from "../components/home/Programs.astro";
     </div>
 
     <section class="lg:mt-[120px]">
-      <div class="lg:flex lg:items-center lg:justify-center lg:gap-[150px]">
+      <div
+        class="lg:flex lg:items-center lg:justify-center lg:gap-[150px] relative"
+      >
         <Programs
           title="Primary Education Programs"
           headingNo="1"
@@ -110,6 +112,18 @@ import Programs from "../components/home/Programs.astro";
           secondText="This program aims to bridge the gap between university curricula and the evolving demands of the global tech and science sectors."
           class="mt-[60px] lg:mt-0 lg:w-[590px]"
           programsPage="programs/tertiary-education"
+        />
+
+        <img
+          class="hidden object-cover lg:block lg:absolute lg:left-[-100px] lg:top-[500px]"
+          src="/imgs/bulb.png"
+          alt="altruistech"
+        />
+
+        <img
+          class="hidden object-cover lg:block lg:absolute lg:right-[-200px] lg:top-[-500px]"
+          src="/imgs/bulb.png"
+          alt="altruistech"
         />
       </div>
 
@@ -136,7 +150,7 @@ import Programs from "../components/home/Programs.astro";
         />
       </div>
 
-      <div class="lg:flex lg:justify-center">
+      <div class="lg:flex lg:justify-center relative">
         <Programs
           headingNo="5"
           title="First Lego League - Sierra Leone"
