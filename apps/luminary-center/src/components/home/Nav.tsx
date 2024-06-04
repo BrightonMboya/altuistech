@@ -34,7 +34,7 @@ export default function Nav() {
 
       <div className="hidden md:items-center lg:flex lg:justify-between lg:px-[40px] lg:py-[20px] ">
         <a href="/">
-          <img alt="logo" src="/imgs/logo-2.png" className="object-cover" />
+          <img alt="logo" src="/imgs/logo-2.png" className="object-cover w-[300px] h-[100px]" />
         </a>
 
         <div className="">
@@ -47,7 +47,7 @@ export default function Nav() {
               <li>Our Team</li>
             </a>
 
-            <a href="#">
+            <a href="/media">
               <li>Media</li>
             </a>
 
@@ -57,9 +57,11 @@ export default function Nav() {
           </ul>
         </div>
 
+        <a href="/404">
         <button className="h-[47px] w-[150px] rounded-[4px] bg-black text-[15px]  text-white lg:h-[70px] lg:w-[200px] lg:py-[20px] lg:text-[20px]">
           Get Involved
         </button>
+        </a>
       </div>
     </nav>
   );
@@ -102,7 +104,7 @@ function MobileNav({
           <li>Our Team</li>
         </a>
 
-        <a href="#">
+        <a href="/media">
           <li>Media</li>
         </a>
 
@@ -110,7 +112,7 @@ function MobileNav({
           <li>Our Values and Inspiration</li>
         </a>
 
-        <a href="/get-involved">
+        <a href="/404">
           <li>
             <button className="h-[47px] w-[150px] rounded-[4px] bg-orange text-[15px]  text-white lg:h-[81px] lg:w-[261px] lg:py-[26px] lg:text-[26px]">
               Get Involved

@@ -66,3 +66,30 @@ export const teamMembers = [
     position: "Partnership and Grant Lead",
   },
 ];
+
+export const media = [
+  {
+    id: 1,
+    title: "Altruist just won the COP 28 Award",
+    date: "11/23/2090",
+    image: "/imgs/media/cop-28.png",
+  },
+  {
+    id: 2,
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    date: "11/23/2090",
+    image: "/imgs/media/karim-alu.png",
+  },
+  {
+    id: 3,
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    date: "11/23/2090",
+    image: "/imgs/media/arduino-robot.png",
+  },
+  {
+    id: 4,
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    date: "11/23/2090",
+    image: "/imgs/media/karim-robots.png",
+  },
+];

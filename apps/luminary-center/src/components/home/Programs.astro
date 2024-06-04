@@ -33,15 +33,11 @@ const { headingNo, title, firstText, secondText, programsPage } = Astro.props;
     class={`text-black text-center pt-5 max-w-[350px] md:max-w-[90%] md:text-[16px] ${Astro.props.textWhite ? "lg:text-white" : ""}`}
     >{secondText}
   </Text>
-  <a 
- href={`/${programsPage}`}
-class="z-[999]"
-  >
+  <a href={`/${programsPage}`} class="z-[999]">
     <button
       class={`w-[154px] h-[48px] border-[1px] border-black rounded-[3px] mt-[14px] ${Astro.props.textWhite ? "lg:text-white lg:border-white" : ""}`}
-      >
-   Click to know more
-      </button
     >
+      Click to know more
+    </button>
   </a>
 </section>

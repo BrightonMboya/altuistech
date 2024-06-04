@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Text from "../components/ui/Text.astro";
+import { Image } from "astro:assets";
+import { media } from "../components/data";
+---
+
+<Layout title="Media">
+  <main>
+    <div
+      class="h-[600px] lg:h-[600px] bg-blue md:flex md:flex-row-reverse lg:items-center lg:justify-center"
+    >
+      <img
+        class="object-cover lg:h-[600px] lg:w-[700px]"
+        alt="hero-img"
+        src="/imgs/robot.png"
+        loading="lazy"
+      />
+      <div class="pl-[30px]">
+        <h3 class="text-white text-[40px] md:pt-[200px]">Media</h3>
+      </div>
+    </div>
+
+    <section class="flex items-center justify-center">
+      <section
+        class="flex flex-col items-center justify-center pt-[80px] space-y-[60px] pb-[100px] md:grid md:grid-cols-2 md:space-y-0 md:gap-[40px]"
+      >
+        {
+          media.map((media) => (
+            <div class="flex flex-col items-start">
+              <img
+                loading="lazy"
+                class="object-cover w-[347px] h-[210px] lg:w-[600px] lg:h-[400px]"
+                src={media.image}
+                alt="media"
+              />
+              <p class="text-[18px]">{media.title}</p>
+              <p class="">{media.date}</p>
+            </div>
+          ))
+        }
+      </section>
+    </section>
+  </main>
+</Layout>

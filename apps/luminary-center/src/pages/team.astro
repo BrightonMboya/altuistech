@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { teamMembers } from "../components/team-members";
+import { teamMembers } from "../components/data";
 import Text from "../components/ui/Text.astro";
+import TeamMember from "../components/home/TeamMember";
+import Modal from "@/components/home/Modal.astro";
+import {DrawerDemo} from "../components/home/Drawer";
 ---
 
 <Layout title="Team Members">
+  <body>
   <section class="pt-5 lg:flex lg:items-center lg:justify-center">
     <img class="object-cover" alt="hero-img" src="/imgs/team.png" />
   </section>
+  
   <section class="flex flex-col items-center justify-center pt-[80px]">
     <h3
       class="text-center font-medium w-[390px] md:w-[450px] lg:w-[1000px] lg:text-[19px]"
@@ -37,6 +42,9 @@ import Text from "../components/ui/Text.astro";
     >
   </section>
 
+<DrawerDemo client:idle />
+
+  
   <section class="flex flex-col items-center justify-center pt-[100px]">
     <div
       class="flex flex-col items-center justify-center space-y-[40px] md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10"
@@ -48,6 +56,7 @@ import Text from "../components/ui/Text.astro";
               src={`/imgs/${member.image}`}
               class="object-cover w-[271px] h-[286px]"
               alt="team member"
+              loading="lazy"
             />
             <p class="font-medium text-xl pt-5 text-center">{member.name}</p>
             <Text class="text-center">{member.position}</Text>
@@ -56,4 +65,5 @@ import Text from "../components/ui/Text.astro";
       }
     </div>
   </section>
+    </body>
 </Layout>
