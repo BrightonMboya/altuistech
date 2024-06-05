@@ -2,9 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { teamMembers } from "../components/data";
 import Text from "../components/ui/Text.astro";
-import TeamMember from "../components/home/TeamMember";
-import Modal from "@/components/home/Modal.astro";
-import {DrawerDemo} from "../components/home/Drawer";
+
 ---
 
 <Layout title="Team Members">
@@ -41,8 +39,6 @@ import {DrawerDemo} from "../components/home/Drawer";
       future for all.</Text
     >
   </section>
-
-<DrawerDemo client:idle />
 
   
   <section class="flex flex-col items-center justify-center pt-[100px]">
