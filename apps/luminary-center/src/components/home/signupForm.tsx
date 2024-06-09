@@ -1,7 +1,4 @@
-
-
 export default function SignUpForm() {
- 
   return (
     <section className="mt-[150px] flex flex-col items-center bg-cover bg-center md:bg-[url('/imgs/bg/bg-3.png')]">
       <div className="bg-cream md:my-[60px] md:flex md:h-[700px] md:w-[560px] md:flex-col md:items-center md:px-[50px] md:py-[24px] lg:ml-[800px]">
@@ -15,7 +12,7 @@ export default function SignUpForm() {
 
         <form
           className="mt-[15px] flex flex-col items-center space-y-[37px]"
-          action="https://formsubmit.co/brighton.mboya.io@gmail.com"
+          action="https://formsubmit.co/contact@altruistechluminarycenter.org"
           method="POST"
         >
           <div className="flex flex-col">

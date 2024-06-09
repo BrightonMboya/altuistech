@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { teamMembers } from "../components/data";
 import Text from "../components/ui/Text.astro";
+import TeamBio from "../components/home/TeamBio.tsx";
 ---
 
 <Layout title="Team Members">
@@ -54,6 +55,8 @@ import Text from "../components/ui/Text.astro";
               />
               <p class="font-medium text-xl pt-5 text-center">{member.name}</p>
               <Text class="text-center">{member.position}</Text>
+              <TeamBio client:only="react" member={member} />
+            
             </div>
           ))
         }
