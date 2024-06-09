@@ -34,7 +34,11 @@ export default function Nav() {
 
       <div className="hidden md:items-center lg:flex lg:justify-between lg:px-[40px] lg:py-[20px] ">
         <a href="/">
-          <img alt="logo" src="/imgs/logo-2.png" className="object-cover w-[300px] h-[100px]" />
+          <img
+            alt="logo"
+            src="/imgs/logo-2.png"
+            className="h-[100px] w-[300px] object-cover"
+          />
         </a>
 
         <div className="">
@@ -58,9 +62,9 @@ export default function Nav() {
         </div>
 
         <a href="/404">
-        <button className="h-[47px] w-[150px] rounded-[4px] bg-black text-[15px]  text-white lg:h-[70px] lg:w-[200px] lg:py-[20px] lg:text-[20px]">
-          Get Involved
-        </button>
+          <button className="h-[47px] w-[150px] rounded-[4px] bg-black text-[15px]  text-white lg:h-[70px] lg:w-[200px] lg:py-[20px] lg:text-[20px]">
+            Get Involved
+          </button>
         </a>
       </div>
     </nav>

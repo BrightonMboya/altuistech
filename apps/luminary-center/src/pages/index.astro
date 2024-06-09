@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/ui/Button.astro";
 import Text from "../components/ui/Text.astro";
 import Programs from "../components/home/Programs.astro";
+import SignUpForm from "../components/home/signupForm";
 ---
 
 <Layout title="Luminary Center">
@@ -162,61 +163,8 @@ import Programs from "../components/home/Programs.astro";
       </div>
     </section>
 
-    <section
-      class="mt-[150px] flex flex-col items-center md:bg-[url('/imgs/bg/bg-3.png')] bg-cover bg-center"
-    >
-      <div
-        class="bg-cream md:px-[50px] md:py-[24px] md:h-[700px] md:my-[60px] md:w-[560px] md:flex md:items-center md:flex-col lg:ml-[800px]"
-      >
-        <h3 class="text-[28px] text-blue font-medium">Sign up your school</h3>
-        <p
-          class="max-w-[274px] md:max-w-[400px] text-center text-blue my-[7px]"
-        >
-          If you would like to take part in one of our programs, please enter
-          your contact details.
-        </p>
-
-        <form class="mt-[15px] space-y-[37px] items-center flex flex-col">
-          <div class="flex flex-col">
-            <label for="name" class="text-blue text-[15px]">Your name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
-            />
-          </div>
-          <div class="flex flex-col">
-            <label class="text-blue text-[15px]">School Name</label>
-            <input
-              type="text"
-              id="school-name"
-              class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
-            />
-          </div>
-
-          <div class="flex flex-col">
-            <label class="text-blue text-[15px]">Email</label>
-            <input
-              type="text"
-              id="email"
-              class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
-            />
-          </div>
-
-          <div class="flex flex-col">
-            <label class="text-blue text-[15px]">Phone Number</label>
-            <input
-              type="text"
-              id="phone number"
-              class="bg-white rounded-[3px] border-[0.17px] border-black w-[314px] md:w-[400px] h-[40px] focus-visible:outline-none pl-3 focus-visible:ring-[1px] focus-visible:ring-blue"
-            />
-          </div>
-
-          <Button>Send</Button>
-        </form>
-      </div>
-    </section>
+    <SignUpForm client:only="react"/>
+  
 
     <section class="mt-[182px] flex items-center flex-col pb-[130px]">
       <h3 class="text-[28px] text-center max-w-[300px] md:max-w-none font-bold">
@@ -245,34 +193,32 @@ import Programs from "../components/home/Programs.astro";
       </div>
     </section>
 
-    <section class=" pb-[80px] ">
-      <p class="text-center font-bold text-2xl">Our impact so far </p>
+    <section class="pb-[80px]">
+      <p class="text-center font-bold text-2xl">Our impact so far</p>
 
-      <div class="flex flex-col items-center gap-[70px] pt-[50px] lg:flex-row lg:justify-center">
-
+      <div
+        class="flex flex-col items-center gap-[70px] pt-[50px] lg:flex-row lg:justify-center"
+      >
         <div class="flex flex-col items-center">
           <p class="text-blue font-bold text-5xl">800+</p>
           <Text>Young people trained</Text>
         </div>
-  
+
         <div class="flex flex-col items-center">
           <p class="text-blue-2 font-bold text-5xl">4+</p>
           <p>Schools reached</p>
         </div>
-  
+
         <div class="flex flex-col items-center">
           <p class="text-orange font-bold text-5xl">+3</p>
           <p>Local/slum communities reached</p>
         </div>
-  
+
         <div class="flex flex-col items-center">
           <p class="text-orange-2 font-bold text-5xl">+1</p>
           <p>Refugee camp reached</p>
         </div>
       </div>
-
     </section>
   </main>
 </Layout>
-
-
