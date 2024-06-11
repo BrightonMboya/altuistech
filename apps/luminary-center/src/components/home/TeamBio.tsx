@@ -10,23 +10,26 @@ import {
 } from "@/components/ui/dialog";
 import { ChevronRight } from "lucide-react";
 
-
-export default function TeamBio({member}:any) {
+export default function TeamBio({ member }: any) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="flex items-center">Read Bio <span className="text-orange"><ChevronRight /></span></button> 
+        <button className="flex items-center">
+          Read Bio{" "}
+          <span className="text-orange">
+            <ChevronRight />
+          </span>
+        </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-white">
+      <DialogContent className="bg-white sm:max-w-md">
         <DialogHeader className="flex flex-col items-center">
           <img
-           src={`/imgs/${member.image}`}
-          alt="team member"
-          className="object-cover w-[271px] h-[286px]"
+            src={`/imgs/${member.image}`}
+            alt="team member"
+            className="h-[286px] w-[271px] object-cover"
           />
           <DialogTitle>{member.name}</DialogTitle>
           <p>{member.position}</p>
-         
         </DialogHeader>
         <div className="flex items-center space-x-2">
           <p className="text-balance text-justify">{member.bio}</p>

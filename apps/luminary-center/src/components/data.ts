@@ -18,7 +18,7 @@ export const teamMembers = [
     name: "Susan Kargbo ",
     image: "/people/susan.png",
     position: "Advisor",
-    bio: " Outreach Child welfare officer at the National Commission For Children - Sierra Leone and the team mentor of First Global Team Sierra Leone."
+    bio: " Outreach Child welfare officer at the National Commission For Children - Sierra Leone and the team mentor of First Global Team Sierra Leone.",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ export const teamMembers = [
     name: "John James Bundu ",
     image: "/people/john.png",
     position: "STEM Tutor and Robotics Trainer",
-    bio: "An awaiting WASSCE student, a motivated self-starter with a passion for engineering. He is interested in technology, innovation, and robotics engineering."
+    bio: "An awaiting WASSCE student, a motivated self-starter with a passion for engineering. He is interested in technology, innovation, and robotics engineering.",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ export const teamMembers = [
     name: "Alusine Swaray",
     image: "/people/alusine.png",
     position: "STEM Tutor and Robotics Trainer",
-    bio: "An ambitious Engineering student fueled by a passion for continuous learning and self-improvement. With a keen eye for development opportunities, He navigates the vast expanse of the internet to enhance his skills and knowledge base. Armed with strong communication abilities and a collaborative mindset, He excels as a team player, seamlessly tackling challenges and driving toward solutions."
+    bio: "An ambitious Engineering student fueled by a passion for continuous learning and self-improvement. With a keen eye for development opportunities, He navigates the vast expanse of the internet to enhance his skills and knowledge base. Armed with strong communication abilities and a collaborative mindset, He excels as a team player, seamlessly tackling challenges and driving toward solutions.",
   },
   {
     id: 10,

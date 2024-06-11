@@ -56,7 +56,6 @@ import TeamBio from "../components/home/TeamBio.tsx";
               <p class="font-medium text-xl pt-5 text-center">{member.name}</p>
               <Text class="text-center">{member.position}</Text>
               <TeamBio client:only="react" member={member} />
-            
             </div>
           ))
         }
