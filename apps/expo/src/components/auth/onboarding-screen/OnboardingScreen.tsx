@@ -17,6 +17,7 @@ import RenderItem from "~/components/auth/onboarding-screen/RenderItem";
 import data, { OnboardingData } from "~/components/auth/onboarding-screen/data";
 import H1 from "~/components/ui/Heading";
 import { IconGoogle, MailIcon } from "~/components/ui/icons";
+import SignUpWithGoogle from "./Sign-up-with-google";
 
 export interface AuthScreenProps {
   setShowOnboarding: Dispatch<SetStateAction<boolean>>;
@@ -89,18 +90,7 @@ const OnboardingScreen = ({
             alignItems: "center",
           }}
         >
-          <TouchableOpacity
-            className="mt-10 flex h-12 w-[350px] flex-row items-center justify-center rounded-md border-2 border-solid border-[#1960F2]"
-            onPress={() => {
-              setShowOnboarding(false);
-            }}
-          >
-            <IconGoogle />
-
-            <H1 styling="text-lg tracking-wide text-[#1960F2]  text-center pl-2">
-              Sign Up with Google
-            </H1>
-          </TouchableOpacity>
+         {/* <SignUpWithGoogle/> */}
           <TouchableOpacity
             className="mt-5 flex h-12 w-[350px] flex-row items-center justify-center rounded-md bg-[#1960F2]"
             onPress={() => {

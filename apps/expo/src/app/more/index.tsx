@@ -6,6 +6,7 @@ import { useUser } from "@clerk/clerk-expo";
 
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
+import BottomTab from "~/components/BottomTab";
 
 export default function Page() {
   const { user } = useUser();
@@ -179,6 +180,7 @@ export default function Page() {
           </View> */}
         </ScrollView>
       </SafeAreaView>
+      <BottomTab/>
     </SafeAreaProvider>
   );
 }
