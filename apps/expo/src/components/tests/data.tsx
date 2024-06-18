@@ -768,3 +768,527 @@ export const ptsdTest = [
     ],
   },
 ];
+
+
+export const panasTest = [
+  {
+    id: 1,
+    qn: "interested?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 2,
+    qn: "distressed?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 3,
+    qn: "Excited?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 4,
+    qn: "upset?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 5,
+    qn: "strong?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 6,
+    qn: "guilty?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 7,
+    qn: "scared?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 8,
+    qn: "hostile?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 9,
+    qn: "enthusiastic?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 10,
+    qn: "Proud?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 11,
+    qn: "irritable?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 12,
+    qn: "Alert?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 13,
+    qn: "Ashamed?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+  {
+    id: 14,
+    qn: "inspired?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 15,
+    qn: "nervous?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 16,
+    qn: "Determined?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 17,
+    qn: "Attentive?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 18,
+    qn: "Jittery?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 19,
+    qn: "Active?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  },
+   {
+    id: 20,
+    qn: "Afraid?",
+    answers: [
+      {
+        id: 1,
+        ans: "Not at all",
+        value: 0,
+      },
+      {
+        id: 2,
+        ans: "Several Days",
+        value: 1,
+      },
+      {
+        id: 3,
+        ans: "More than half a day",
+        value: 2,
+      },
+      {
+        id: 4,
+        ans: "Nearly everyday",
+        value: 3,
+      },
+    ],
+  }
+]

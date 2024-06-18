@@ -5,6 +5,7 @@ import { A } from "@expo/html-elements";
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheetScrollView from "./BottomSheetScrollView";
+import ActionButton from "./ActionButton";
 
 export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
   const router = useRouter();
@@ -39,33 +40,7 @@ export default function Component({ happyBottomRef }: { happyBottomRef: any }) {
           <P style="text-lg mt-5 text-[#505050] md:text-xl">
             Here are some ideas:
           </P>
-          <View className="md:flex md:flex-row">
-            <TouchableOpacity
-              className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
-              // onPress={() => {
-              //   router.push("/");
-              // }}
-            >
-              <A
-                href="https://www.youtube.com/watch?v=HT_ZvD94_kE"
-                className="mt-3"
-              >
-                <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
-                  Watch a Video
-                </H1>
-              </A>
-            </TouchableOpacity>
-            <TouchableOpacity
-              className="mt-5 h-12 w-[350px] rounded-md border-[2px] border-[#1960F2] bg-white  md:ml-5 "
-              onPress={() => {
-                router.push("/");
-              }}
-            >
-              <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center md:text-xl">
-                Write down your feeling
-              </H1>
-            </TouchableOpacity>
-          </View>
+         <ActionButton/>
 
           <View className="mt-5 flex flex-row items-center  ">
             <View className="w-[150px] border-[1px] border-[#989898] md:w-[340px]"></View>

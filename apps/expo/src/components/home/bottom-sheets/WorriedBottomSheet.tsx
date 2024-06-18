@@ -1,16 +1,14 @@
-import { Dimensions, Image, TouchableOpacity, View } from "react-native";
-import { useRouter } from "expo-router";
-
+import { Dimensions, Image, View } from "react-native";
 import H1 from "~/components/ui/Heading";
 import P from "~/components/ui/Text";
 import BottomSheetScrollView from "./BottomSheetScrollView";
+import ActionButton from "./ActionButton";
 
 export default function Component({
   worriedBottomRef,
 }: {
   worriedBottomRef: any;
 }) {
-  const router = useRouter();
   const screen_width = Dimensions.get("screen").width;
 
   return (
@@ -42,28 +40,7 @@ export default function Component({
             Here are some ideas:
           </P>
 
-          <View className="md:flex md:flex-row">
-            <TouchableOpacity
-              className="mt-5 h-12 w-[350px] rounded-md bg-[#1960F2]"
-              onPress={() => {
-                router.push("/");
-              }}
-            >
-              <H1 styling="text-lg tracking-wide text-white pt-2 text-center md:text-xl">
-                Exercise
-              </H1>
-            </TouchableOpacity>
-            <TouchableOpacity
-              className="mt-5 h-12 md:ml-5 w-[350px] rounded-md border-[2px] border-[#1960F2]  bg-white "
-              onPress={() => {
-                router.push("/");
-              }}
-            >
-              <H1 styling="text-lg tracking-wide text-[#1960F2] pt-2 text-center md:text-xl">
-                Write down your feeling
-              </H1>
-            </TouchableOpacity>
-          </View>
+         <ActionButton/>
 
           <View className="mt-5 flex flex-row items-center  ">
             <View className="w-[150px] border-[1px] border-[#989898] md:w-[340px]"></View>

@@ -4,20 +4,20 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 import { Stack, useRouter } from "expo-router";
 
-import { mentalHealthQuestions } from "~/components/tests/data";
+import { panasTest } from "~/components/tests/data";
 import CustomText from "~/components/ui/CustomText";
 import H1 from "~/components/ui/Heading";
 
 export default function Page() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
-  const currentQuestion = mentalHealthQuestions[questionIndex];
+  const currentQuestion = panasTest[questionIndex];
 
   const router = useRouter();
   const handleNextQuestion = () => {
     setQuestionIndex(questionIndex + 1);
 
-    if (questionIndex === mentalHealthQuestions.length - 1) {
+    if (questionIndex === panasTest.length - 1) {
         router.push({
           pathname: "/tests/results",
           params: {
@@ -62,18 +62,20 @@ export default function Page() {
           </Pressable>
           <H1 styling="text-xl md:text-2xl text-white pt-[32px]">{`Question ${
             questionIndex + 1
-          }/${mentalHealthQuestions.length}`}</H1>
-          <View className="mt-5 min-h-[500px] w-[100%] rounded-md bg-white p-5 shadow-sm">
+          }/${panasTest.length}`}</H1>
+          <View className="mt-5 min-h-[400px] w-[100%] rounded-md bg-white p-5 shadow-sm">
             <View>
-              <CustomText styling="text-[#505050] md:text-lg text-[14px]">
-                {currentQuestion?.shortTitle}
+
+                <View className="flex items-center flex-row">
+             <CustomText styling="text-[#505050] md:text-lg text-[14px]">
+               {`Are you feeling `}
               </CustomText>
-              <H1 styling="text-[16px] pt-[8px] md:text-lg">
-                {currentQuestion?.question}
-              </H1>
-              <CustomText styling="text-[#505050] pt-[8px] text-[14px]">
-                {currentQuestion?.shortQuestion}
+
+              <CustomText styling="text-[#505050] font-medium md:text-lg text-[14px]">
+                {currentQuestion?.qn}
               </CustomText>
+                </View>
+             
 
               {currentQuestion?.answers.map((ans) => (
                 <Pressable
@@ -89,7 +91,7 @@ export default function Page() {
                       borderWidth: 1,
                       borderRadius: 5,
                       paddingVertical: 8,
-                      borderColor: "#F3AB33",
+                      borderColor:"#F3AB33",
                     },
                   ]}
                 >

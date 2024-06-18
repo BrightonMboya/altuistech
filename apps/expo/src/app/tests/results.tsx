@@ -54,12 +54,12 @@ const Index = () => {
 
         <View className="mt-20 flex flex-col items-center justify-center ">
           <CustomText styling="text-center px-2 text-white text-[16px] md:text-2xl">
-            Your Mental Health Test rate is
+            Your Mental Health Test score is
           </CustomText>
           <P
             style="text-[#F3AB33] pt-[16px] text-2xl text-[28px]"
             textType="medium"
-          >{`${params.score}%`}</P>
+          >{`${params.score}/6`}</P>
 
           <View className="mt-[50px] flex w-[90%] flex-col items-center rounded-md border-[1px] border-[#b8b8b8] bg-white pb-5">
             <View className=" flex  flex-row rounded-md pl-10 pt-5 shadow-md">

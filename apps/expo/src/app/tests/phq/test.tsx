@@ -14,9 +14,9 @@ export default function Page() {
   const currentQuestion = mentalHealthQuestions[questionIndex];
 
   const router = useRouter();
-  const handleNextQuestion = () => {
+  const handleNextQuestion = (ans: any) => {
     setQuestionIndex(questionIndex + 1);
-
+    setCurrentScore(currentScore + ans.value);
     if (questionIndex === mentalHealthQuestions.length - 1) {
         router.push({
           pathname: "/tests/results",
@@ -32,6 +32,7 @@ export default function Page() {
     //     router.push("/sessions/available-proffesionals");
     //   }
     }
+    console.log(ans.value, currentScore)
   };
   return (
     <SafeAreaProvider className="h-screen bg-blue" style={{ flex: 1 }}>
@@ -42,7 +43,7 @@ export default function Page() {
               headerShown: false,
             }}
           />
-          <Pressable onPress={() => router.back()}>
+          <Pressable onPress={() => router.push("/")}>
             <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <Path
                 d="M4.24991 12.2743L19.2499 12.2743"
@@ -79,8 +80,9 @@ export default function Page() {
                 <Pressable
                   key={ans.id}
                   onPress={() => {
-                    setCurrentScore(currentScore + ans.value);
-                    handleNextQuestion();
+                    // setCurrentScore(currentScore + ans.value);
+                    
+                    handleNextQuestion(ans);
                   }}
                   style={({ pressed }) => [
                     {

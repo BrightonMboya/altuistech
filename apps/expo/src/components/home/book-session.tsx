@@ -6,12 +6,12 @@ export default function BookSession() {
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push("/sessions/");
+        router.push("/tests/phq");
       }}
     >
       <View className="mt-6">
         <Image
-          source={require("../../../assets/imgs/bookSession.png")}
+          source={require("../../../assets/imgs/test-img.png")}
           className="h-[106px] w-[90%] md:h-[150px] object-cover"
         />
 

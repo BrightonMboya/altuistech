@@ -106,7 +106,7 @@ const BottomTab = () => {
         </TouchableOpacity> */}
         <TouchableOpacity
           onPress={() => {
-            router.push("/tests");
+            router.push("/tests/phq");
           }}
         >
           <View className="flex flex-col items-center">
@@ -126,7 +126,7 @@ const BottomTab = () => {
             </Svg>
             <P
               style={`${
-                pathname === "/tests" ? "text-[#1960F2]" : "text-[#ddd]"
+                pathname.startsWith("/tests") ? "text-[#1960F2]" : "text-[#ddd]"
               }`}
             >
               Tests
