@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Pressable, ScrollView, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
@@ -14,26 +14,29 @@ export default function Page() {
   const currentQuestion = mentalHealthQuestions[questionIndex];
 
   const router = useRouter();
-  const handleNextQuestion = (ans: any) => {
-    setQuestionIndex(questionIndex + 1);
-    setCurrentScore(currentScore + ans.value);
-    if (questionIndex === mentalHealthQuestions.length - 1) {
-        router.push({
-          pathname: "/tests/results",
-          params: {
-            score: currentScore,
-            resultDetailIndex: 2,
-            showWarning: true
-          }
-        })
-    //   if (currentScore < 7) {
-    //     router.push("/resources");
-    //   } else {
-    //     router.push("/sessions/available-proffesionals");
-    //   }
+
+  useEffect(() => {
+    if (questionIndex === mentalHealthQuestions.length) {
+      router.push({
+        pathname: "/tests/results",
+        params: {
+          score: currentScore,
+          resultDetailIndex: 2,
+          showWarning: true
+        }
+      });
     }
-    console.log(ans.value, currentScore)
+
+    if (questionIndex === 0) {
+      setCurrentScore(0);
+    }
+  }, [questionIndex, currentScore, router]);
+
+  const handleNextQuestion = (ans: any) => {
+    setCurrentScore((currentScore) => currentScore + ans.value);
+    setQuestionIndex((questionIndex) => questionIndex + 1);
   };
+
   return (
     <SafeAreaProvider className="h-screen bg-blue" style={{ flex: 1 }}>
       <ScrollView>
@@ -53,7 +56,7 @@ export default function Page() {
                 stroke-linejoin="round"
               />
               <Path
-                d="M10.3002 18.2988C10.3002 18.2988 4.2502 15.0378 4.2502 12.2758C4.2502 9.51176 10.3002 6.24976 10.3002 6.24976"
+                d="M10.3002 18.2988C10.3002 18.2988 10.3002 18.2988 4.2502 15.0378 4.2502 12.2758 4.2502 9.51176 10.3002 6.24976"
                 stroke="white"
                 stroke-width="1.5"
                 stroke-linecap="round"
@@ -79,11 +82,7 @@ export default function Page() {
               {currentQuestion?.answers.map((ans) => (
                 <Pressable
                   key={ans.id}
-                  onPress={() => {
-                    // setCurrentScore(currentScore + ans.value);
-                    
-                    handleNextQuestion(ans);
-                  }}
+                  onPress={() => handleNextQuestion(ans)}
                   style={({ pressed }) => [
                     {
                       backgroundColor: "#FFF2EB",

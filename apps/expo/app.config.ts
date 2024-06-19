@@ -4,7 +4,7 @@ const defineConfig = (): ExpoConfig => ({
   name: "altuistech",
   slug: "altuistech",
   scheme: "expo",
-  version: "1.0.4",
+  version: "1.0.5",
   orientation: "portrait",
   icon: "./assets/adaptive-icon.png",
   userInterfaceStyle: "light",
@@ -20,7 +20,7 @@ const defineConfig = (): ExpoConfig => ({
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.emotions.altuistech",
-    buildNumber: "3",
+    buildNumber: "4",
   },
   android: {
     package: "com.mboya.altuistech",
